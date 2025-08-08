@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- Sitemap creado siguiendo el blueprint de SEO Local Master -->
+
+<!-- PÁGINA PRINCIPAL - Máxima prioridad (1.00) -->
+<url>
+  <loc>https://floreria.dondeseria.com/</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+
+<!-- PÁGINAS DE CATEGORÍAS SECUNDARIAS - Alta prioridad (0.80) -->
+<url>
+  <loc>https://floreria.dondeseria.com/tienda-flores-secas-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/floreria-mayorista-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/tienda-regalos-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/entrega-flores-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/tienda-canasta-regalos-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<!-- SERVICIOS ESPECÍFICOS - Categoría: Tienda de Flores Secas -->
+<url>
+  <loc>https://floreria.dondeseria.com/ramos-de-flores-secas-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/centros-de-mesa-con-flores-secas-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/coronas-de-flores-secas-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/flores-secas-en-jarron-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<!-- SERVICIOS ESPECÍFICOS - Categoría: Florería Mayorista -->
+<url>
+  <loc>https://floreria.dondeseria.com/venta-de-flores-al-por-mayor-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/flores-de-temporada-al-mayor-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/paquetes-para-florerias-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/flores-para-eventos-corporativos-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<!-- SERVICIOS ESPECÍFICOS - Categoría: Tienda de Regalos -->
+<url>
+  <loc>https://floreria.dondeseria.com/regalos-para-cumpleanos-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/detalles-para-aniversarios-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/desayunos-sorpresa-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/cajas-sorpresa-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<!-- SERVICIOS ESPECÍFICOS - Categoría: Entrega de Flores -->
+<url>
+  <loc>https://floreria.dondeseria.com/entrega-a-domicilio-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/entrega-el-mismo-dia-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/entrega-programada-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/entrega-en-hospitales-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<!-- SERVICIOS ESPECÍFICOS - Categoría: Tienda de Canastas de Regalos -->
+<url>
+  <loc>https://floreria.dondeseria.com/canastas-de-frutas-y-flores-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/canastas-gourmet-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/canastas-para-bebes-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://floreria.dondeseria.com/anchetas-amor-cucuta.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<!-- PÁGINA DE CATÁLOGO - Soporte general -->
+<url>
+  <loc>https://floreria.dondeseria.com/catalogo.html</loc>
+  <lastmod>2025-08-08T02:14:29+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
+
+</urlset>
