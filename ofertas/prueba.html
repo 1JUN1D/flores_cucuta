@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Massage Medellín | Therapeutic Massage El Poblado & Laureles</title>
+    <meta name="description"
+        content="Professional massage services in Medellín, El Poblado and Laureles. Therapeutic massage, deep tissue, couples massage, hot stone massage with home service. Book now!">
+    <meta name="keywords"
+        content="massage medellin, massage el poblado medellin, massage medellin poblado, massage poblado medellin, medellin massage poblado, massage laureles medellin, massage therapy medellin">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS1WV5B608"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LS1WV5B608');
+    </script>
+
+    <!-- Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17507894449"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17507894449');
+    </script>
+
+    <!-- WhatsApp TRACKING FUNCTION FOR GOOGLE ADS -->
+    <script>
+        function trackWhatsAppLead(whatsappUrl, eventLabel) {
+            try {
+                // Register conversion in Google Ads
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17507894449/JIq-CPGazo0bELGJtZxB',
+                    'event_callback': function () {
+                        console.log('Tracking successful, opening WhatsApp...');
+                        window.open(whatsappUrl, '_blank');
+                    }
+                });
+
+                // Backup: if callback fails, open WhatsApp after 300ms
+                setTimeout(function () {
+                    window.open(whatsappUrl, '_blank');
+                }, 300);
+
+            } catch (error) {
+                console.error('Tracking error:', error);
+                window.open(whatsappUrl, '_blank');
+            }
+            return false;
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #3498db;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-badge {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .massage-types {
+            margin-bottom: 2rem;
+        }
+
+        .massage-types h4 {
+            font-size: 1.1rem;
+            color: #34495e;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .massage-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .massage-item {
+            color: #555;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+        }
+
+        .massage-item::before {
+            content: '✨';
+            margin-right: 0.5rem;
+        }
+
+        .includes {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .includes h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .includes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .includes-item {
+            color: #555;
+            font-size: 0.9rem;
+            padding: 0.2rem 0;
+        }
+
+        .includes-item::before {
+            content: '✅';
+            margin-right: 0.5rem;
+        }
+
+        .pricing {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .price-option {
+            text-align: center;
+        }
+
+        .duration {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        .book-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .book-btn:hover {
+            background: linear-gradient(45deg, #2980b9, #21618c);
+            transform: translateY(-2px);
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 80px 0;
+            background: #ecf0f1;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .location-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+            
+            .massage-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Massage Services in Medellín</h1>
+            <p>Therapeutic & Relaxing Massage in El Poblado, Laureles & All Medellín Areas - Massage Medellin Poblado Service</p>
+            <button class="hero-btn"
+                onclick="return trackWhatsAppLead('https://wa.me/573214045702?text=Hello! I want to book a professional massage session in Medellín. Could you send me more information?', 'hero_cta_massage')">
+                Book Your Massage Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Massage Medellin Professional Services</h2>
+
+            <div class="services-grid">
+                <!-- Standard Massages - $70/$88 -->
+                <div class="service-card">
+                    <div class="service-badge">Most Popular</div>
+                    <h3 class="service-title">Professional Massage Sessions</h3>
+                    
+                    <div class="massage-types">
+                        <h4>Choose from these massage types:</h4>
+                        <div class="massage-list">
+                            <div class="massage-item">Therapeutic Massage</div>
+                            <div class="massage-item">Deep Tissue Massage</div>
+                            <div class="massage-item">Sports Massage</div>
+                            <div class="massage-item">Relaxing Massage</div>
+                            <div class="massage-item">Couples Massage</div>
+                            <div class="massage-item">Cupping Massage</div>
+                            <div class="massage-item">Prenatal Massage</div>
+                            <div class="massage-item">Postpartum Massage</div>
+                            <div class="massage-item">Decontracting Massage</div>
+                            <div class="massage-item">Hot Stone Massage</div>
+                            <div class="massage-item">Hot Candle Massage</div>
+                            <div class="massage-item">Lomi Lomi Massage</div>
+                        </div>
+                    </div>
+
+                    <div class="includes">
+                        <h4>All sessions include:</h4>
+                        <div class="includes-list">
+                            <div class="includes-item">Full body stretching</div>
+                            <div class="includes-item">Complete body massage</div>
+                            <div class="includes-item">Cranial massage</div>
+                            <div class="includes-item">Foot exfoliation</div>
+                            <div class="includes-item">Aromatherapy</div>
+                            <div class="includes-item">Music therapy</div>
+                        </div>
+                    </div>
+
+                    <div class="pricing">
+                        <div class="price-option">
+                            <div class="duration">1 Hour Session</div>
+                            <div class="price">$70 USD</div>
+                        </div>
+                        <div class="price-option">
+                            <div class="duration">90 Minutes Session</div>
+                            <div class="price">$88 USD</div>
+                        </div>
+                    </div>
+
+                    <button class="book-btn"
+                        onclick="return trackWhatsAppLead('https://wa.me/573214045702?text=Hello! I want to book a massage session. Could you help me choose the best type and check availability?', 'standard_massage_booking')">
+                        Book Standard Massage
+                    </button>
+                </div>
+
+                <!-- 4 Hands Massage - $132/$158 -->
+                <div class="service-card">
+                    <div class="service-badge">Premium Experience</div>
+                    <h3 class="service-title">4 Hands Massage</h3>
+                    
+                    <div class="massage-types">
+                        <h4>Ultimate luxury experience:</h4>
+                        <div class="massage-list">
+                            <div class="massage-item">Two professional therapists</div>
+                            <div class="massage-item">Synchronized movements</div>
+                            <div class="massage-item">Double the relaxation</div>
+                            <div class="massage-item">Perfect harmony technique</div>
+                        </div>
+                    </div>
+
+                    <div class="includes">
+                        <h4>Premium session includes:</h4>
+                        <div class="includes-list">
+                            <div class="includes-item">Full body stretching</div>
+                            <div class="includes-item">Complete body massage</div>
+                            <div class="includes-item">Cranial massage</div>
+                            <div class="includes-item">Foot exfoliation</div>
+                            <div class="includes-item">Aromatherapy</div>
+                            <div class="includes-item">Music therapy</div>
+                        </div>
+                    </div>
+
+                    <div class="pricing">
+                        <div class="price-option">
+                            <div class="duration">1 Hour Session</div>
+                            <div class="price">$132 USD</div>
+                        </div>
+                        <div class="price-option">
+                            <div class="duration">90 Minutes Session</div>
+                            <div class="price">$158 USD</div>
+                        </div>
+                    </div>
+
+                    <button class="book-btn"
+                        onclick="return trackWhatsAppLead('https://wa.me/573214045702?text=Hello! I want to book a 4 Hands Massage session. Could you provide more details about this premium experience?', '4hands_massage_booking')">
+                        Book 4 Hands Massage
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations">
+        <div class="container">
+            <h2 class="section-title">Massage El Poblado Medellin & Laureles Areas</h2>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="location-icon">🏢</div>
+                    <h3 class="location-title">Massage El Poblado Medellin</h3>
+                    <p>Professional massage services in the heart of El Poblado. Our massage Medellin poblado service includes home visits and studio sessions for ultimate convenience.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🌳</div>
+                    <h3 class="location-title">Massage Laureles Medellin</h3>
+                    <p>Relaxing massage therapy in the peaceful Laureles neighborhood. Our massage Medellin laureles service is perfect for wellness seekers in this tranquil area.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🏠</div>
+                    <h3 class="location-title">Medellin Massage Poblado Home Service</h3>
+                    <p>Enjoy professional massage poblado Medellin service in your own space. We bring all equipment for a complete spa experience at home.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🏨</div>
+                    <h3 class="location-title">Massage Therapy Medellin Hotel Service</h3>
+                    <p>Convenient massage therapy Medellin service at your hotel. Perfect for travelers seeking relaxation in El Poblado and surrounding areas.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">✨</div>
+                    <h3 class="location-title">Premium Spa Experience</h3>
+                    <p>For those seeking atma spa quality relaxing massage in El Poblado Medellín area, our premium services offer the ultimate wellness experience with professional techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready for Your Massage Experience?</h2>
+            <p>Book now and discover why we're the top choice for professional massage in Medellín</p>
+            <button class="hero-btn"
+                onclick="return trackWhatsAppLead('https://wa.me/573214045702?text=Hello! I want to book a massage session in Medellín. Please help me choose the best option and check your availability.', 'final_cta_massage')">
+                Book Your Session Today
+            </button>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="#"
+            onclick="return trackWhatsAppLead('https://wa.me/573214045702?text=Hello! I need information about massage services in Medellín', 'floating_whatsapp')">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.488"/>
+            </svg>
+        </a>
+    </div>
+
+</body>
+</html>
