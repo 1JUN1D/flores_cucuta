@@ -46,9 +46,45 @@
             font-style: italic;
         }
 
+        /* Filter Section */
+        .filter-section {
+            padding: 2rem 0;
+            background: rgba(131, 63, 74, 0.02);
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            background: white;
+            color: #833F4A;
+            border: 2px solid #833F4A;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #833F4A;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(131, 63, 74, 0.3);
+        }
+
         /* Catalog Section */
         .catalog {
-            padding: 80px 0;
+            padding: 60px 0 80px 0;
         }
 
         .products-grid {
@@ -70,6 +106,10 @@
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 50px rgba(131, 63, 74, 0.15);
+        }
+
+        .product-card.hidden {
+            display: none;
         }
 
         .product-image {
@@ -141,6 +181,21 @@
             box-shadow: 0 5px 15px rgba(131, 63, 74, 0.3);
         }
 
+        /* Category Badge */
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(131, 63, 74, 0.9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
@@ -179,6 +234,15 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
             .products-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -217,7 +281,7 @@
 
         @media (max-width: 480px) {
             .catalog {
-                padding: 60px 0;
+                padding: 40px 0 60px 0;
             }
 
             .container {

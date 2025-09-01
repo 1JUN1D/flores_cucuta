@@ -30,15 +30,13 @@
     <!-- End Meta Pixel Code -->
 
     <!-- Google tag (gtag.js) -->
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS1WV5B608"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-LS1WV5B608');          // Analytics
-        // Google Ads
+        gtag('config', 'G-LS1WV5B608');
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17503274952">
@@ -55,25 +53,20 @@
     <script>
         function trackWhatsAppLead(whatsappUrl, eventLabel) {
             try {
-                // Registrar conversión en Google Ads
                 gtag('event', 'conversion', {
                     'send_to': 'AW-17503274952/lA9PCODAu4wbEMiPm5pB',
                     'event_callback': function() {
-                        // Abrir WhatsApp después de registrar la conversión
                         window.open(whatsappUrl, '_blank');
                     }
                 });
             } catch (error) {
                 console.error('Error en tracking:', error);
-                // Si falla el tracking, abrir WhatsApp de todas formas
                 window.open(whatsappUrl, '_blank');
             }
             return false;
         }
     </script>
-
-<link rel="stylesheet" href="catalogo.css">
-
+    <link rel="stylesheet" href="catalogo.css">
 </head>
 
 <body>
@@ -89,20 +82,36 @@
         </div>
     </header>
 
-<!-- Catalog Section -->
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="rosas">Rosas</button>
+                <button class="filter-btn" data-category="girasoles">Girasoles</button>
+                <button class="filter-btn" data-category="gerberas">Gerberas</button>
+                <button class="filter-btn" data-category="tulipanes">Tulipanes</button>
+                <button class="filter-btn" data-category="flores-eternas">Flores Eternas</button>
+                <button class="filter-btn" data-category="celebraciones">Celebraciones</button>
+                <button class="filter-btn" data-category="especiales">Especiales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
     <section class="catalog">
         <div class="container">
             <div class="products-grid">
 
-                <!-- Product 4: Bouquet Diana -->
-                <div class="product-card">
+                <!-- Producto: Distinción Absoluta -->
+                <div class="product-card" data-category="especiales">
+                    <div class="category-badge">Especiales</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_3.webp" alt="Bouquet Diana - Ramo de 60 rosas">
+                        <img src="assets/flores_cucuta_3.webp" alt="Distinción Absoluta - Ramo de Clavejes y Lirios">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Distinción Absoluta</h2>
-                        <p class="product-description">Ramo de Clavejes y Lirios.
-                        </p>
+                        <p class="product-description">Ramo de Clavejes y Lirios.</p>
                         <div class="product-price">$50,000</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Distinción Absoluta de Ramo de Clavejes y Lirios por $50,000. ¿Podrías darme más información?', 'distincion_absoluta')">
@@ -111,15 +120,15 @@
                     </div>
                 </div>
 
-                <!-- Product 2: Bouquet Giselle -->
-                <div class="product-card">
+                <!-- Producto: Despertar de Alegría -->
+                <div class="product-card" data-category="gerberas">
+                    <div class="category-badge">Gerberas</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_18.webp" alt="Bouquet Giselle - Ramo de 10 gerberas">
+                        <img src="assets/flores_cucuta_18.webp" alt="Despertar de Alegría - Ramo de 10 gerberas">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Despertar de Alegría</h2>
-                        <p class="product-description">Ramo de 10 gerberas con tarjeta o mensaje personalizado con
-                            nombre.</p>
+                        <p class="product-description">Ramo de 10 gerberas con tarjeta o mensaje personalizado con nombre.</p>
                         <div class="product-price">$87,500</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Alegría de 10 gerberas por $87,500. ¿Podrías darme más información?', 'despertar_alegria_catalogo')">
@@ -128,16 +137,15 @@
                     </div>
                 </div>
 
-                <!-- Product 3: Bouquet Aurora -->
-                <div class="product-card">
+                <!-- Producto: Fusión Perfecta -->
+                <div class="product-card" data-category="rosas">
+                    <div class="category-badge">Rosas</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_2.webp" alt="Bouquet Aurora - Ramo de 24 rosas y claveles">
+                        <img src="assets/flores_cucuta_2.webp" alt="Fusión Perfecta - Ramo de 36 rosas y 6 girasoles">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Fusión Perfecta</h2>
-                        <p class="product-description">Ramo de 36 rosas y 6 girasoles con tarjeta personalizada con
-                            nombre.
-                        </p>
+                        <p class="product-description">Ramo de 36 rosas y 6 girasoles con tarjeta personalizada con nombre.</p>
                         <div class="product-price">$212,500</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Fusión Perfecta de 36 rosas y 6 girasoles por $212,500. ¿Podrías darme más información?', 'fusion_perfecta_catalogo')">
@@ -146,15 +154,15 @@
                     </div>
                 </div>
 
-                <!-- Product 1: Bouquet Bella -->
-                <div class="product-card">
+                <!-- Producto: Garantía de Amor -->
+                <div class="product-card" data-category="rosas">
+                    <div class="category-badge">Rosas</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_17.webp" alt="Bouquet Bella - Ramo de 12 rosas">
+                        <img src="assets/flores_cucuta_17.webp" alt="Garantía de Amor - Ramo de 12 rosas">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Garantía de Amor</h2>
-                        <p class="product-description">Ramo de 12 rosas con tarjeta o mensaje personalizado con nombre.
-                        </p>
+                        <p class="product-description">Ramo de 12 rosas con tarjeta o mensaje personalizado con nombre.</p>
                         <div class="product-price">$87,500</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Garantía de Amor de 12 rosas por $87,500. ¿Podrías darme más información?', 'garantia_amor')">
@@ -163,16 +171,15 @@
                     </div>
                 </div>
 
-                <!-- Product 5: Ramo 24 Rosas -->
-                <div class="product-card">
+                <!-- Producto: Conquista Definitiva -->
+                <div class="product-card" data-category="rosas">
+                    <div class="category-badge">Rosas</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_21.webp" alt="Bouquet Diana - Ramo de 60 rosas">
+                        <img src="assets/flores_cucuta_21.webp" alt="Conquista Definitiva - Ramo de 24 rosas">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Conquista Definitiva</h2>
-                        <p class="product-description">Ramo de 24 rosas y claveles con tarjeta o mensaje personalizado
-                            con nombre.
-                        </p>
+                        <p class="product-description">Ramo de 24 rosas y claveles con tarjeta o mensaje personalizado con nombre.</p>
                         <div class="product-price">$150,000</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Conquista Definitiva de 24 rosas por $150,000. ¿Podrías darme más información?', 'conquista_definitiva')">
@@ -181,16 +188,15 @@
                     </div>
                 </div>
 
-                <!-- Product 6: Ramo 60 Rosas -->
-                <div class="product-card">
+                <!-- Producto: Obra Maestra -->
+                <div class="product-card" data-category="rosas">
+                    <div class="category-badge">Rosas</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_1.webp" alt="Bouquet Diana - Ramo de 60 rosas">
+                        <img src="assets/flores_cucuta_1.webp" alt="Obra Maestra - Ramo de 60 rosas">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Obra Maestra</h2>
-                        <p class="product-description">Ramo de 60 rosas y claveles con tarjeta o mensaje personalizado
-                            con nombre.
-                        </p>
+                        <p class="product-description">Ramo de 60 rosas y claveles con tarjeta o mensaje personalizado con nombre.</p>
                         <div class="product-price">$250,000</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Bouquet Diana de 60 rosas por $250,000. ¿Podrías darme más información?', 'obra_maestra')">
@@ -199,17 +205,15 @@
                     </div>
                 </div>
 
-                <!-- Product 7: Ramo Ramo de 12 rosas, lirios y claveles -->
-                <div class="product-card">
+                <!-- Producto: Trilogía del Poder -->
+                <div class="product-card" data-category="rosas">
+                    <div class="category-badge">Rosas</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_22.webp" alt="Ramo de 12 rosas, lirios y claveles">
+                        <img src="assets/flores_cucuta_22.webp" alt="Trilogía del Poder - Ramo de 12 rosas, lirios y claveles">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Trilogía del Poder</h2>
-                        <p class="product-description">Ramo de 12 rosas, lirios y claveles con tarjeta o mensaje
-                            personalizado
-                            con nombre.
-                        </p>
+                        <p class="product-description">Ramo de 12 rosas, lirios y claveles con tarjeta o mensaje personalizado con nombre.</p>
                         <div class="product-price">$147,500</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ramo de 12 rosas, lirios y claveles por $147,500. ¿Podrías darme más información?', 'trilogia_poder')">
@@ -218,16 +222,15 @@
                     </div>
                 </div>
 
-                <!-- Product 8: Ramo de Girasoles -->
-                <div class="product-card">
+                <!-- Producto: Vitamina Emocional -->
+                <div class="product-card" data-category="girasoles">
+                    <div class="category-badge">Girasoles</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_23.webp" alt="Girasoles">
+                        <img src="assets/flores_cucuta_23.webp" alt="Vitamina Emocional - Girasoles">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Vitamina Emocional</h2>
-                        <p class="product-description">Ramo de 4 girasoles con tarjeta o mensaje personalizado
-                            con nombre.
-                        </p>
+                        <p class="product-description">Ramo de 4 girasoles con tarjeta o mensaje personalizado con nombre.</p>
                         <div class="product-price">$110,000</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ramo de Vitamina Emocional por $110,000. ¿Podrías darme más información?', 'vitamina_emocional')">
@@ -236,16 +239,15 @@
                     </div>
                 </div>
 
-                <!-- Product 9: Guardián del Corazón -->
-                <div class="product-card">
+                <!-- Producto: Guardián del Corazón -->
+                <div class="product-card" data-category="especiales">
+                    <div class="category-badge">Especiales</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_24.webp" alt="Girasoles">
+                        <img src="assets/flores_cucuta_24.webp" alt="Guardián del Corazón">
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">Guardián del Corazón</h2>
-                        <p class="product-description">Osito de 25 CM elaborado con rosas de foamy, almacenado en una
-                            caja de acetato y tarjeta personalizada y tres globos en helio
-                        </p>
+                        <p class="product-description">Osito de 25 CM elaborado con rosas de foamy, almacenado en una caja de acetato y tarjeta personalizada y tres globos en helio</p>
                         <div class="product-price">$260,000</div>
                         <button class="product-button"
                             onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Guardián del Corazón por $260,000. ¿Podrías darme más información?', 'guardian_corazon_catalogo')">
@@ -254,10 +256,130 @@
                     </div>
                 </div>
 
+                <!-- NUEVOS PRODUCTOS -->
+
+                <!-- Producto: Despertar de Primavera (Tulipanes) -->
+                <div class="product-card" data-category="tulipanes">
+                    <div class="category-badge">Tulipanes</div>
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/tulipanes/tulipanes_amarillos.webp" alt="Despertar de Primavera - Bouquet de tulipanes">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Despertar de Primavera</h2>
+                        <p class="product-description">Bouquet de tulipanes disponible en 4, 6 o 10 tulipanes, en un único color o en combinación de varios. Un detalle elegante y versátil para cualquier ocasión especial.</p>
+                        <div class="product-price">Desde $148,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Primavera (Bouquet de tulipanes) desde $148,000. ¿Podrías darme más información?', 'despertar_primavera')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Cápsula de Eternidad -->
+                <div class="product-card" data-category="flores-eternas">
+                    <div class="category-badge">Flores Eternas</div>
+                    <div class="product-image">
+                        <img src="assets/mini_ramo_eternas.jpeg" alt="Cápsula de Eternidad - Mini ramo de rosas eternas">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Cápsula de Eternidad</h2>
+                        <p class="product-description">Mini ramo de 7 rosas eternas acompañadas con perlas y mariposas decorativas. Disponible en múltiples colores.</p>
+                        <div class="product-price">$48,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Cápsula de Eternidad por $48,000. ¿Podrías darme más información?', 'capsula_eternidad')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Legado Inmortal -->
+                <div class="product-card" data-category="flores-eternas">
+                    <div class="category-badge">Flores Eternas</div>
+                    <div class="product-image">
+                        <img src="assets/bouquet_eternas.jpeg" alt="Legado Inmortal - Bouquet de 20 rosas eternas">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Legado Inmortal</h2>
+                        <p class="product-description">Hermoso bouquet elaborado con 20 rosas eternas, decorado con malla de perlas y mariposas doradas que realzan su elegancia. Incluye listón con mensaje especial y opción de mensaje personalizado.</p>
+                        <div class="product-price">$140,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Legado Inmortal por $140,000. ¿Podrías darme más información?', 'legado_inmortal')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Imperio Eterno -->
+                <div class="product-card" data-category="flores-eternas">
+                    <div class="category-badge">Flores Eternas</div>
+                    <div class="product-image">
+                        <img src="assets/bouquet_eternas_grandes.jpeg" alt="Imperio Eterno - Bouquet de 34 rosas eternas">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Imperio Eterno</h2>
+                        <p class="product-description">Hermoso bouquet elaborado con 34 rosas eternas, decorado con perlas y mariposas que realzan su elegancia. Incluye moño y mensaje especial.</p>
+                        <div class="product-price">$215,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Imperio Eterno por $215,000. ¿Podrías darme más información?', 'imperio_eterno')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Celebración de Vida -->
+                <div class="product-card" data-category="celebraciones">
+                    <div class="category-badge">Celebraciones</div>
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_cumpleanos.webp" alt="Celebración de Vida - Bouquet para cumpleaños">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Celebración de Vida</h2>
+                        <p class="product-description">Hermoso bouquet elaborado con 20 rosas frescas acompañadas de eucalipto, dispuesto en una base que mantiene las flores siempre radiantes. Incluye tarjeta personalizada, ideal para cumpleaños y celebraciones.</p>
+                        <div class="product-price">$125,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Celebración de Vida por $125,000. ¿Podrías darme más información?', 'celebracion_vida')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Juramento Sagrado -->
+                <div class="product-card" data-category="celebraciones">
+                    <div class="category-badge">Celebraciones</div>
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/ramo_bouquets/ramos_novias_naturales.webp" alt="Juramento Sagrado - Bouquet para novias">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Juramento Sagrado</h2>
+                        <p class="product-description">Bouquet compuesto por 18 rosas frescas, acompañado de diversos follajes que realzan su belleza y un listón decorativo. Un diseño delicado y personalizado, perfecto para el día más especial.</p>
+                        <div class="product-price">$500,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Juramento Sagrado por $500,000. ¿Podrías darme más información?', 'juramento_sagrado')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Coronación de Princesa -->
+                <div class="product-card" data-category="celebraciones">
+                    <div class="category-badge">Celebraciones</div>
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_quinceaneras.webp" alt="Coronación de Princesa - Bouquet para quinceañeras">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Coronación de Princesa</h2>
+                        <p class="product-description">Un diseño único compuesto por 48 rosas frescas, rodeadas de delicada flor nube, decorado con una corona dorada y un listón con mensaje especial. Perfecto para los 15 años.</p>
+                        <div class="product-price">$140,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Coronación de Princesa por $140,000. ¿Podrías darme más información?', 'coronacion_princesa')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
 
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
@@ -269,6 +391,41 @@
         </a>
     </div>
 
-</body>
+    <script>
+        // Sistema de filtrado de productos
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
 
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.classList.remove('hidden');
+                            // Restart animation
+                            card.style.animation = 'none';
+                            card.offsetHeight; // Trigger reflow
+                            card.style.animation = 'fadeInUp 0.6s ease-out';
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Inicializar todas las tarjetas como visibles
+            productCards.forEach(card => {
+                card.classList.remove('hidden');
+            });
+        });
+    </script>
+
+</body>
 </html>
