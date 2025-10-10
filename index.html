@@ -4,11 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos - Duquesa Floral | Ramos y Bouquets en Cúcuta</title>
+    <title>Duquesa Floral - Florería en Cúcuta | Flores Frescas y Secas</title>
     <meta name="description"
-        content="Catálogo completo de ramos y bouquets de Duquesa Floral en Cúcuta. Rosas, gerberas y arreglos florales con entrega a domicilio.">
+        content="Duquesa Floral - La mejor florería de Cúcuta. Flores frescas, secas, regalos y entrega a domicilio. Mayoristas y minoristas.">
     <link rel="shortcut icon" href="assets/duquesa-logo.png" type="image/x-icon">
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Duquesa Floral",
+        "image": "assets/duquesa-logo.png",
+        "@id": "https://florescucuta.dondeseria.com",
+        "url": "https://florescucuta.dondeseria.com",
+        "telephone": "3202791687",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Cl. 6 Nte. # 12-28",
+            "addressLocality": "Cúcuta",
+            "addressRegion": "Norte de Santander",
+            "addressCountry": "CO"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 7.905463420642316,
+            "longitude": -72.46951721899357
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday", 
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+        },
+        "sameAs": [
+            "https://www.instagram.com/floresencucuta"
+        ]
+    }
+    </script>
 
+    <link rel="stylesheet" href="styles.css">
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -30,13 +71,15 @@
     <!-- End Meta Pixel Code -->
 
     <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS1WV5B608"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-LS1WV5B608');
+        gtag('config', 'G-LS1WV5B608');          // Analytics
+        // Google Ads
     </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17503274952">
@@ -53,12 +96,20 @@
     <script>
         function trackWhatsAppLead(whatsappUrl, eventLabel) {
             try {
+                // Registrar conversión en Google Ads
                 gtag('event', 'conversion', {
                     'send_to': 'AW-17503274952/lA9PCODAu4wbEMiPm5pB',
-                    'event_callback': function() {
+                    'event_callback': function () {
+                        console.log('Tracking exitoso, abriendo WhatsApp...');
                         window.open(whatsappUrl, '_blank');
                     }
                 });
+
+                // Backup: si el callback falla, abre WhatsApp después de 300ms
+                setTimeout(function () {
+                    window.open(whatsappUrl, '_blank');
+                }, 300);
+
             } catch (error) {
                 console.error('Error en tracking:', error);
                 window.open(whatsappUrl, '_blank');
@@ -66,479 +117,258 @@
             return false;
         }
     </script>
-    <link rel="stylesheet" href="catalogo.css">
+
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
                 <img src="assets/duquesa-logo.png" alt="Duquesa Floral Logo">
             </div>
-            <h1>Nuestro Catálogo</h1>
-            <p>Ramos y bouquets únicos para cada ocasión especial</p>
-            <div class="decorative-line"></div>
-        </div>
-    </header>
-
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">Todos</button>
-                <button class="filter-btn" data-category="rosas">Rosas</button>
-                <button class="filter-btn" data-category="girasoles">Girasoles</button>
-                <button class="filter-btn" data-category="gerberas">Gerberas</button>
-                <button class="filter-btn" data-category="tulipanes">Tulipanes</button>
-                <button class="filter-btn" data-category="flores-eternas">Flores Eternas</button>
-                <button class="filter-btn" data-category="celebraciones">Celebraciones</button>
-                <button class="filter-btn" data-category="cumpleanos">Cumpleaños</button>
-                <button class="filter-btn" data-category="especiales">Especiales</button>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="/eventos/catalogo-cumpleanos.html">Cumpleaños</a></li>
+                <li><a href="/eventos/catalogo-flores-amarillas.html">Flores Amarillas</a></li>
+                <li><a href="/eventos/catalogo-amor-y-amistad.html">Amor y Amistad</a></li>
+                <li><a href="https://wa.me/573202791687" target="_blank">WhatsApp</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="assets/wallpaper.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Florería Premium en Cúcuta</h1>
+            <p class="hero-subtitle">Creamos momentos únicos con las flores más hermosas de la región</p>
+            <button class="cta-button"
+                onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, quiero hacer un pedido de flores', 'hero_button')">
+                Hacer Pedido
+            </button>
         </div>
     </section>
 
-    <!-- Catalog Section -->
-    <section class="catalog">
+    <!-- Products Cards -->
+    <section class="products">
         <div class="container">
-            <div class="products-grid">
-
-                <!-- Producto: Distinción Absoluta -->
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
+            <p class="section-title">Nuestros Productos Destacados</p>
+            <div class="cards-grid">
+                <!-- Product 1: Obra Maestra -->
+                <div class="product-card">
+                    <div class="product-badge">Más Vendido</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_3.webp" alt="Distinción Absoluta - Ramo de Clavejes y Lirios">
+                        <img src="assets/flores_cucuta_24.png" alt="Obra Maestra - Ramo de 60 rosas y claveles">
                     </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Distinción Absoluta</h2>
-                        <p class="product-description">Ramo de Clavejes y Lirios.</p>
-                        <div class="product-price">$50,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Distinción Absoluta de Ramo de Clavejes y Lirios por $50,000. ¿Podrías darme más información?', 'distincion_absoluta')">
+                    <div class="card-content">
+                        <p class="product-name">Guardián del Corazón</p>
+                        <p class="product-description">Osito de 25 CM elaborado con rosas de foamy, almacenado en una
+                            caja de acetato y tarjeta personalizada y tres globos en helio.</p>
+                        <p class="product-price">$250,000</p>
+                        <button class="order-btn"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Guardián del Corazón por $250,000. ¿Podrías darme más información?', 'guardian_corazon')">
                             Pedir Ahora
                         </button>
                     </div>
                 </div>
 
-                <!-- Producto: Despertar de Alegría -->
-                <div class="product-card" data-category="gerberas">
-                    <div class="category-badge">Gerberas</div>
-                    <div class="product-image">
-                        <img src="assets/flores_cucuta_18.webp" alt="Despertar de Alegría - Ramo de 10 gerberas">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Despertar de Alegría</h2>
-                        <p class="product-description">Ramo de 10 gerberas con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$87,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Alegría de 10 gerberas por $87,500. ¿Podrías darme más información?', 'despertar_alegria_catalogo')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Fusión Perfecta -->
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
+                <!-- Product 2: Fusión Perfecta -->
+                <div class="product-card">
+                    <div class="product-badge">Más Vendido</div>
                     <div class="product-image">
                         <img src="assets/flores_cucuta_2.webp" alt="Fusión Perfecta - Ramo de 36 rosas y 6 girasoles">
                     </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Fusión Perfecta</h2>
-                        <p class="product-description">Ramo de 36 rosas y 6 girasoles con tarjeta personalizada con nombre.</p>
-                        <div class="product-price">$212,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Fusión Perfecta de 36 rosas y 6 girasoles por $212,500. ¿Podrías darme más información?', 'fusion_perfecta_catalogo')">
+                    <div class="card-content">
+                        <p class="product-name">Fusión Perfecta</p>
+                        <p class="product-description">Ramo de 36 rosas y 6 girasoles con tarjeta personalizada con
+                            nombre.</p>
+                        <p class="product-price">$204,000</p>
+                        <button class="order-btn"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Fusión Perfecta de 36 rosas y 6 girasoles por $204,000. ¿Podrías darme más información?', 'fusion_perfecta')">
                             Pedir Ahora
                         </button>
                     </div>
                 </div>
 
-                <!-- Producto: Garantía de Amor -->
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
+                <!-- Product 3: Despertar de Alegría -->
+                <div class="product-card">
+                    <div class="product-badge">Más Vendido</div>
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_17.webp" alt="Garantía de Amor - Ramo de 12 rosas">
+                        <img src="assets/flores_cucuta_18.png" alt="Despertar de Alegría - Ramo de 10 gerberas">
                     </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Garantía de Amor</h2>
-                        <p class="product-description">Ramo de 12 rosas con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$87,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Garantía de Amor de 12 rosas por $87,500. ¿Podrías darme más información?', 'garantia_amor')">
+                    <div class="card-content">
+                        <p class="product-name">Despertar de Alegría</p>
+                        <p class="product-description">Ramo de 10 gerberas con tarjeta o mensaje personalizado con
+                            nombre.</p>
+                        <p class="product-price">$84,000</p>
+                        <button class="order-btn"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Alegría de 10 gerberas por $84,000. ¿Podrías darme más información?', 'despertar_alegria')">
                             Pedir Ahora
                         </button>
                     </div>
                 </div>
-
-                <!-- Producto: Conquista Definitiva -->
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
-                    <div class="product-image">
-                        <img src="assets/flores_cucuta_21.webp" alt="Conquista Definitiva - Ramo de 24 rosas">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Conquista Definitiva</h2>
-                        <p class="product-description">Ramo de 24 rosas y claveles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$150,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Conquista Definitiva de 24 rosas por $150,000. ¿Podrías darme más información?', 'conquista_definitiva')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Obra Maestra -->
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
-                    <div class="product-image">
-                        <img src="assets/flores_cucuta_1.webp" alt="Obra Maestra - Ramo de 60 rosas">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Obra Maestra</h2>
-                        <p class="product-description">Ramo de 60 rosas y claveles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$250,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Bouquet Diana de 60 rosas por $250,000. ¿Podrías darme más información?', 'obra_maestra')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Trilogía del Poder -->
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
-                    <div class="product-image">
-                        <img src="assets/flores_cucuta_22.webp" alt="Trilogía del Poder - Ramo de 12 rosas, lirios y claveles">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Trilogía del Poder</h2>
-                        <p class="product-description">Ramo de 12 rosas, lirios y claveles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$147,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ramo de 12 rosas, lirios y claveles por $147,500. ¿Podrías darme más información?', 'trilogia_poder')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Vitamina Emocional -->
-                <div class="product-card" data-category="girasoles">
-                    <div class="category-badge">Girasoles</div>
-                    <div class="product-image">
-                        <img src="assets/flores_cucuta_23.webp" alt="Vitamina Emocional - Girasoles">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Vitamina Emocional</h2>
-                        <p class="product-description">Ramo de 4 girasoles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$110,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ramo de Vitamina Emocional por $110,000. ¿Podrías darme más información?', 'vitamina_emocional')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Guardián del Corazón -->
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
-                    <div class="product-image">
-                        <img src="assets/flores_cucuta_24.webp" alt="Guardián del Corazón">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Guardián del Corazón</h2>
-                        <p class="product-description">Osito de 25 CM elaborado con rosas de foamy, almacenado en una caja de acetato y tarjeta personalizada y tres globos en helio</p>
-                        <div class="product-price">$260,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Guardián del Corazón por $260,000. ¿Podrías darme más información?', 'guardian_corazon_catalogo')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-
-                <!-- Producto: Despertar de Primavera (Tulipanes) -->
-                <div class="product-card" data-category="tulipanes">
-                    <div class="category-badge">Tulipanes</div>
-                    <div class="product-image">
-                        <img src="ofertas/imagenes/tulipanes/tulipanes_amarillos.webp" alt="Despertar de Primavera - Bouquet de tulipanes">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Despertar de Primavera</h2>
-                        <p class="product-description">Bouquet de tulipanes disponible en 4, 6 o 10 tulipanes, en un único color o en combinación de varios. Un detalle elegante y versátil para cualquier ocasión especial.</p>
-                        <div class="product-price">Desde $148,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Primavera (Bouquet de tulipanes) desde $148,000. ¿Podrías darme más información?', 'despertar_primavera')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Cápsula de Eternidad -->
-                <div class="product-card" data-category="flores-eternas">
-                    <div class="category-badge">Flores Eternas</div>
-                    <div class="product-image">
-                        <img src="assets/mini_ramo_eternas.webp" alt="Cápsula de Eternidad - Mini ramo de rosas eternas">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Cápsula de Eternidad</h2>
-                        <p class="product-description">Mini ramo de 7 rosas eternas acompañadas con perlas y mariposas decorativas. Disponible en múltiples colores.</p>
-                        <div class="product-price">$48,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Cápsula de Eternidad por $48,000. ¿Podrías darme más información?', 'capsula_eternidad')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Legado Inmortal -->
-                <div class="product-card" data-category="flores-eternas">
-                    <div class="category-badge">Flores Eternas</div>
-                    <div class="product-image">
-                        <img src="assets/bouquet_eternas.webp" alt="Legado Inmortal - Bouquet de 20 rosas eternas">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Legado Inmortal</h2>
-                        <p class="product-description">Hermoso bouquet elaborado con 20 rosas eternas, decorado con malla de perlas y mariposas doradas que realzan su elegancia. Incluye listón con mensaje especial y opción de mensaje personalizado.</p>
-                        <div class="product-price">$140,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Legado Inmortal por $140,000. ¿Podrías darme más información?', 'legado_inmortal')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Imperio Eterno -->
-                <div class="product-card" data-category="flores-eternas">
-                    <div class="category-badge">Flores Eternas</div>
-                    <div class="product-image">
-                        <img src="assets/bouquet_eternas_grandes.webp" alt="Imperio Eterno - Bouquet de 34 rosas eternas">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Imperio Eterno</h2>
-                        <p class="product-description">Hermoso bouquet elaborado con 34 rosas eternas, decorado con perlas y mariposas que realzan su elegancia. Incluye moño y mensaje especial.</p>
-                        <div class="product-price">$215,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Imperio Eterno por $215,000. ¿Podrías darme más información?', 'imperio_eterno')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Celebración de Vida -->
-                <div class="product-card" data-category="celebraciones">
-                    <div class="category-badge">Celebraciones</div>
-                    <div class="product-image">
-                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_cumpleanos.webp" alt="Celebración de Vida - Bouquet para cumpleaños">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Celebración de Vida</h2>
-                        <p class="product-description">Hermoso bouquet elaborado con 20 rosas frescas acompañadas de eucalipto, dispuesto en una base que mantiene las flores siempre radiantes. Incluye tarjeta personalizada, ideal para cumpleaños y celebraciones.</p>
-                        <div class="product-price">$125,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Celebración de Vida por $125,000. ¿Podrías darme más información?', 'celebracion_vida')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Juramento Sagrado -->
-                <div class="product-card" data-category="celebraciones">
-                    <div class="category-badge">Celebraciones</div>
-                    <div class="product-image">
-                        <img src="ofertas/imagenes/ramo_bouquets/ramos_novias_naturales.webp" alt="Juramento Sagrado - Bouquet para novias">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Juramento Sagrado</h2>
-                        <p class="product-description">Bouquet compuesto por 18 rosas frescas, acompañado de diversos follajes que realzan su belleza y un listón decorativo. Un diseño delicado y personalizado, perfecto para el día más especial.</p>
-                        <div class="product-price">$140,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Juramento Sagrado por $140,000. ¿Podrías darme más información?', 'juramento_sagrado')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Coronación de Princesa -->
-                <div class="product-card" data-category="celebraciones">
-                    <div class="category-badge">Celebraciones</div>
-                    <div class="product-image">
-                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_quinceaneras.webp" alt="Coronación de Princesa - Bouquet para quinceañeras">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Coronación de Princesa</h2>
-                        <p class="product-description">Un diseño único compuesto por 48 rosas frescas, rodeadas de delicada flor nube, decorado con una corona dorada y un listón con mensaje especial. Perfecto para los 15 años.</p>
-                        <div class="product-price">$240,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Coronación de Princesa por $240,000. ¿Podrías darme más información?', 'coronacion_princesa')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-
-                 <!-- NUEVOS PRODUCTOS -->
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
-                    <div class="product-image">
-                        <img src="../assets/amoryamistad/amoryamistad6.webp" alt="Precision Strike - Caja LOVE con rosas y bombones">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Precision Strike</h2>
-                        <p class="product-description">Caja "LOVE" con rosas rojas y 10 Ferrero Rocher. Impacto dirigido para máxima efectividad. Diseñado para el hombre que prefiere calidad sobre cantidad y resultados garantizados.</p>
-                        <div class="product-price">$212,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Precision Strike por $212,500. ¿Podrías darme más información?', 'precision_strike')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Arquitectura del Éxito -->
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
-                    <div class="product-image">
-                        <img src="../assets/amoryamistad/amoryamistad7.webp" alt="Arquitectura del Éxito - Caja circular sofisticada">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Arquitectura del Éxito</h2>
-                        <p class="product-description">Caja circular sofisticada: 18 bombones Ferrero Rocher en la base, rosas rojas con follaje en el nivel superior. Ingeniería emocional que demuestra tu capacidad de pensar diferente y ejecutar perfectamente.</p>
-                        <div class="product-price">$185,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Arquitectura del Éxito por $185,000. ¿Podrías darme más información?', 'arquitectura_exito')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Producto: Arsenal Completo -->
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
-                    <div class="product-image">
-                        <img src="../assets/amoryamistad/amoryamistad2.webp" alt="Arsenal Completo - Rosas frescas, flor nube y bombones">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Arsenal Completo</h2>
-                        <p class="product-description">Rosas frescas, flor nube y 11 bombones Ferrero Rocher en base elegante con lazo dorado. Domina la situación con esta combinación que cubre todas las expectativas. El tipo de detalle que te posiciona como el que siempre sabe qué hacer en momentos importantes.</p>
-                        <div class="product-price">$162,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Arsenal Completo por $162,500. ¿Podrías darme más información?', 'arsenal_completo')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Productos para Cumpleaños -->
-<!-- Productos para Cumpleaños -->
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
-                    <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos5.webp" alt="Alegría Multicolor">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Alegría Multicolor</h2>
-                        <p class="product-description">Bouquet de claveles frescos con base de oasis y tarjeta personalizada. Explosión de alegría en formato versátil. Los claveles representan amor duradero y gratitud, perfectos para cumpleaños donde quieres expresar que cada año juntos es un regalo. Frescura garantizada con diseño que mantiene las flores radiantes por días.</p>
-                        <div class="product-price">$60,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Alegría Multicolor por $60,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
-                    <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos1.webp" alt="Monumento de Amor">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Monumento de Amor</h2>
-                        <p class="product-description">110 rosas dispuestas en forma de corazón con mensaje personalizado en listón y 2 globos en helio. La declaración máxima que trasciende el tiempo. Diseñado para cumpleaños donde quieres crear una memoria imborrable que será recordada para siempre. Impacto monumental que marca la diferencia entre un cumpleaños común y un evento histórico personal.</p>
-                        <div class="product-price">$450,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Monumento de Amor por $450,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
-                    <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos6.webp" alt="Estrella Resplandeciente">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Estrella Resplandeciente</h2>
-                        <p class="product-description">Bouquet de astromelias con tarjeta personalizada. Las astromelias simbolizan amistad, devoción y prosperidad - el mensaje perfecto para cumpleaños. Flores de larga duración que representan que los deseos de felicidad trascienden el día. Diseño elegante que combina belleza natural con significado profundo. Ideal para celebrar años de amistad y lealtad.</p>
-                        <div class="product-price">$60,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Estrella Resplandeciente por $60,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
-                    <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos2.webp" alt="Sinfonía Dorada">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Sinfonía Dorada</h2>
-                        <p class="product-description">56 rosas combinadas con 1 girasol radiante y delicada manzanilla. Fusión perfecta entre elegancia (rosas) y felicidad pura (girasol). El ramo que celebra la vida en su máxima expresión. Para cumpleaños donde quieres transmitir que cada año es una nueva oportunidad de brillar. Energía positiva concentrada en un diseño único.</p>
-                        <div class="product-price">$265,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Sinfonía Dorada por $265,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
-                    <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos3.webp" alt="Nube de Celebración">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Nube de Celebración</h2>
-                        <p class="product-description">52 rosas frescas con delicada flor nube y moño decorativo. Sofisticación pura para quien cumple años con estilo. El balance perfecto entre abundancia y refinamiento. Diseñado para transmitir que este cumpleaños merece lo mejor, sin excesos innecesarios. Clase absoluta en cada detalle.</p>
-                        <div class="product-price">$240,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Nube de Celebración por $240,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
-                    <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos4.webp" alt="Esencia de Felicidad">
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">Esencia de Felicidad</h2>
-                        <p class="product-description">20 rosas frescas en arreglo clásico con tarjeta personalizada. El balance ideal entre tradición y efectividad. Para cumpleaños donde buscas transmitir afecto genuino sin complicaciones. Directo al corazón, con el simbolismo exacto que toda celebración necesita. Elegancia eficiente que nunca pasa de moda.</p>
-                        <div class="product-price">$145,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Esencia de Felicidad por $145,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
-                    </div>
-                </div>
-
-
-
             </div>
         </div>
     </section>
 
+    <!-- Photo Collage -->
+    <section class="gallery">
+        <div class="container">
+            <p class="section-title">Galería de Nuestros Trabajos</p>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="assets/flores_cucuta_5.webp" alt="Arreglo floral 1">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/flores_cucuta_6.webp" alt="Arreglo floral 2">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/flores_cucuta_7.webp" alt="Arreglo floral 3">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/flores_cucuta_8.webp" alt="Arreglo floral 4">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/flores_cucuta_9.webp" alt="Arreglo floral 5">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/flores_cucuta_10.webp" alt="Arreglo floral 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-item">
+                    <h2>Tienda de Flores Secas</h2>
+                    <p>Descubre nuestra exclusiva colección de flores secas, perfectas para decoración duradera y
+                        elegante. Nuestras flores secas mantienen su belleza natural por mucho más tiempo, ideales para
+                        hogares, oficinas y eventos especiales. Cada pieza es cuidadosamente seleccionada y tratada con
+                        técnicas artesanales que preservan sus colores y formas naturales, creando arreglos únicos que
+                        no requieren mantenimiento y aportan un toque sofisticado a cualquier espacio.</p>
+                    <button class="service-btn" onclick="window.open('tienda-flores-secas-cucuta.html', '_self')">Ver
+                        Más</button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/flores_cucuta_16.webp" alt="Flores Secas">
+                </div>
+            </div>
+
+            <div class="services-grid reverse">
+                <div class="service-image">
+                    <img src="assets/flores_cucuta_13.webp" alt="Mayorista">
+                </div>
+                <div class="service-item">
+                    <h2>Florería Mayorista</h2>
+                    <p>Somos proveedores confiables para eventos grandes, bodas, celebraciones corporativas y otros
+                        floristas. Ofrecemos precios especiales por volumen y la más amplia variedad de flores frescas
+                        importadas y nacionales. Nuestro servicio mayorista incluye asesoría personalizada, entregas
+                        programadas y flexibilidad en pedidos de gran escala. Trabajamos con los mejores cultivadores de
+                        la región para garantizar frescura y calidad en cada entrega, adaptándonos a las necesidades
+                        específicas de cada cliente mayorista.</p>
+                    <button class="service-btn" onclick="window.open('floreria-mayorista-cucuta.html', '_self')">Ver
+                        Más</button>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <h2>Tienda de Regalos</h2>
+                    <p>Complementa tus arreglos florales con nuestra selección de regalos especiales: chocolates
+                        gourmet, velas aromáticas, peluches, globos temáticos y accesorios decorativos únicos. Cada
+                        regalo es cuidadosamente seleccionado para crear experiencias memorables y emotivas. Ofrecemos
+                        opciones para todas las ocasiones: cumpleaños, aniversarios, San Valentín, Día de la Madre y
+                        celebraciones especiales. Nuestro equipo te ayudará a crear el combo perfecto que transmita
+                        exactamente lo que quieres expresar.</p>
+                    <button class="service-btn" onclick="window.open('tienda-regalos-cucuta.html', '_self')">Ver
+                        Más</button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/flores_cucuta_14.webp" alt="Regalos">
+                </div>
+            </div>
+
+            <div class="services-grid reverse">
+                <div class="service-image">
+                    <img src="assets/flores_cucuta_15.webp" alt="Entrega">
+                </div>
+                <div class="service-item">
+                    <h2>Entrega de Flores</h2>
+                    <p>Servicio de entrega rápida y confiable en toda la ciudad de Cúcuta y municipios aledaños. Nuestro
+                        equipo especializado garantiza que tus flores lleguen en perfecto estado y en el momento exacto
+                        que necesitas. Ofrecemos entregas el mismo día para pedidos realizados antes de las 2:00 PM,
+                        entregas programadas para fechas especiales y servicio express para ocasiones urgentes. Cada
+                        entrega incluye seguimiento en tiempo real y confirmación fotográfica de la recepción para tu
+                        total tranquilidad.</p>
+                    <button class="service-btn" onclick="window.open('entrega-flores-cucuta.html', '_self')">Ver
+                        Más</button>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <h2>Tienda de Canastas de Regalos</h2>
+                    <p>Canastas temáticas diseñadas para sorprender en cada ocasión especial. Combinamos flores frescas
+                        o secas con productos gourmet, vinos selectos, chocolates artesanales, frutas frescas y
+                        accesorios únicos. Cada canasta es personalizada según la ocasión y el presupuesto, desde
+                        opciones corporativas elegantes hasta canastas románticas íntimas. Nuestro equipo de diseño crea
+                        presentaciones espectaculares que causan impacto desde el primer momento, perfectas para regalo
+                        empresarial, celebraciones familiares o gestos románticos especiales.</p>
+                    <button class="service-btn" onclick="window.open('tienda-canasta-regalos-cucuta.html', '_self')">Ver
+                        Más</button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/flores_cucuta_12.webp" alt="Canastas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="location">
+        <div class="container">
+            <p class="section-title">Ubicación</p>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.9752411607245!2d-72.4689307304661!3d7.905414327867251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66453a0b727233%3A0x9f242aefe70aef13!2sFloristeria%20Cucuta%20%7C%20Duquesa%20Floral!5e0!3m2!1ses-419!2sco!4v1754605639457!5m2!1ses-419!2sco"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Duquesa Floral</p>
+                <a href="https://www.instagram.com/floresencucuta" target="_blank" class="instagram-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <p class="footer-year">2025</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
-        <a href="#" onclick="return trackWhatsAppLead('https://wa.me/573202791687', 'floating_button_catalogo')">
+        <a href="#" onclick="return trackWhatsAppLead('https://wa.me/573202791687', 'floating_button')">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.488" />
@@ -547,64 +377,25 @@
     </div>
 
     <script>
-        // Sistema de filtrado de productos con URL
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const productCards = document.querySelectorAll('.product-card');
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
 
-            // Función para aplicar un filtro
-            function applyFilter(category) {
-                // Actualizar botones
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                const activeButton = document.querySelector(`[data-category="${category}"]`);
-                if (activeButton) {
-                    activeButton.classList.add('active');
-                }
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-                // Filtrar productos
-                productCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.classList.remove('hidden');
-                        card.style.animation = 'none';
-                        card.offsetHeight;
-                        card.style.animation = 'fadeInUp 0.6s ease-out';
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-
-                // Actualizar URL
-                const url = new URL(window.location);
-                if (category === 'all') {
-                    url.searchParams.delete('category');
-                } else {
-                    url.searchParams.set('category', category);
-                }
-                window.history.pushState({}, '', url);
-            }
-
-            // Evento click en botones de filtro
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    applyFilter(category);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-
-            // Leer categoría de la URL al cargar
-            const urlParams = new URLSearchParams(window.location.search);
-            const categoryFromURL = urlParams.get('category');
-            
-            if (categoryFromURL) {
-                applyFilter(categoryFromURL);
-            } else {
-                // Inicializar todas las tarjetas como visibles
-                productCards.forEach(card => {
-                    card.classList.remove('hidden');
-                });
-            }
         });
     </script>
-
 </body>
+
 </html>
