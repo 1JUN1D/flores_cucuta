@@ -256,7 +256,6 @@
                     </div>
                 </div>
 
-                <!-- NUEVOS PRODUCTOS -->
 
                 <!-- Producto: Despertar de Primavera (Tulipanes) -->
                 <div class="product-card" data-category="tulipanes">
@@ -377,6 +376,58 @@
                     </div>
                 </div>
 
+
+                 <!-- NUEVOS PRODUCTOS -->
+                <div class="product-card" data-category="especiales">
+                    <div class="category-badge">Especiales</div>
+                    <div class="product-image">
+                        <img src="../assets/amoryamistad/amoryamistad6.webp" alt="Precision Strike - Caja LOVE con rosas y bombones">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Precision Strike</h2>
+                        <p class="product-description">Caja "LOVE" con rosas rojas y 10 Ferrero Rocher. Impacto dirigido para máxima efectividad. Diseñado para el hombre que prefiere calidad sobre cantidad y resultados garantizados.</p>
+                        <div class="product-price">$212,500</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Precision Strike por $212,500. ¿Podrías darme más información?', 'precision_strike')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Arquitectura del Éxito -->
+                <div class="product-card" data-category="especiales">
+                    <div class="category-badge">Especiales</div>
+                    <div class="product-image">
+                        <img src="../assets/amoryamistad/amoryamistad7.webp" alt="Arquitectura del Éxito - Caja circular sofisticada">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Arquitectura del Éxito</h2>
+                        <p class="product-description">Caja circular sofisticada: 18 bombones Ferrero Rocher en la base, rosas rojas con follaje en el nivel superior. Ingeniería emocional que demuestra tu capacidad de pensar diferente y ejecutar perfectamente.</p>
+                        <div class="product-price">$185,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Arquitectura del Éxito por $185,000. ¿Podrías darme más información?', 'arquitectura_exito')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto: Arsenal Completo -->
+                <div class="product-card" data-category="especiales">
+                    <div class="category-badge">Especiales</div>
+                    <div class="product-image">
+                        <img src="../assets/amoryamistad/amoryamistad2.webp" alt="Arsenal Completo - Rosas frescas, flor nube y bombones">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Arsenal Completo</h2>
+                        <p class="product-description">Rosas frescas, flor nube y 11 bombones Ferrero Rocher en base elegante con lazo dorado. Domina la situación con esta combinación que cubre todas las expectativas. El tipo de detalle que te posiciona como el que siempre sabe qué hacer en momentos importantes.</p>
+                        <div class="product-price">$162,500</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Arsenal Completo por $162,500. ¿Podrías darme más información?', 'arsenal_completo')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -391,41 +442,41 @@
         </a>
     </div>
 
-    <script>
-        // Sistema de filtrado de productos
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const productCards = document.querySelectorAll('.product-card');
+<script>
+    // Sistema de filtrado de productos
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remover clase active de todos los botones
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Agregar clase active al botón clickeado
-                    this.classList.add('active');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Agregar clase active al botón clickeado
+                this.classList.add('active');
 
-                    const category = this.getAttribute('data-category');
+                const category = this.getAttribute('data-category');
 
-                    productCards.forEach(card => {
-                        if (category === 'all' || card.getAttribute('data-category') === category) {
-                            card.classList.remove('hidden');
-                            // Restart animation
-                            card.style.animation = 'none';
-                            card.offsetHeight; // Trigger reflow
-                            card.style.animation = 'fadeInUp 0.6s ease-out';
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.classList.remove('hidden');
+                        // Restart animation
+                        card.style.animation = 'none';
+                        card.offsetHeight; // Trigger reflow
+                        card.style.animation = 'fadeInUp 0.6s ease-out';
+                    } else {
+                        card.classList.add('hidden');
+                    }
                 });
             });
-
-            // Inicializar todas las tarjetas como visibles
-            productCards.forEach(card => {
-                card.classList.remove('hidden');
-            });
         });
-    </script>
+
+        // Inicializar todas las tarjetas como visibles
+        productCards.forEach(card => {
+            card.classList.remove('hidden');
+        });
+    });
+</script>
 
 </body>
 </html>
