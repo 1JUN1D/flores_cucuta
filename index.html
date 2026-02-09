@@ -122,6 +122,26 @@
 
 <body>
     <!-- Navigation -->
+    <!-- Valentine's Day Modal/Flyer -->
+    <div class="valentine-modal" id="valentineModal">
+        <div class="valentine-overlay"></div>
+        <div class="valentine-content">
+            <div class="floating-hearts">
+                <span class="heart">❤️</span>
+                <span class="heart">💕</span>
+                <span class="heart">💖</span>
+                <span class="heart">💗</span>
+                <span class="heart">💓</span>
+                <span class="heart">💝</span>
+                <span class="heart">❤️</span>
+                <span class="heart">💕</span>
+            </div>
+            <h2>¡Catálogo de San Valentín! 💝</h2>
+            <p>Descubre nuestros productos especiales para Amor y Amistad</p>
+            <a href="/eventos/catalogo-amor-y-amistad.html" class="valentine-btn">Ver Catálogo ❤️</a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -129,10 +149,10 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
+                <!--<li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="/eventos/catalogo-cumpleanos.html">Cumpleaños</a></li>
-                <li><a href="/eventos/catalogo-flores-amarillas.html">Flores Amarillas</a></li>
-                <li><a href="/eventos/catalogo-amor-y-amistad.html">Amor y Amistad</a></li>
+                <li><a href="/eventos/catalogo-flores-amarillas.html">Flores Amarillas</a></li>-->
+                <li><a href="/eventos/catalogo-amor-y-amistad.html">San Valentin</a></li>
                 <li><a href="https://wa.me/573202791687" target="_blank">WhatsApp</a></li>
             </ul>
             <div class="hamburger">
@@ -156,6 +176,11 @@
                 onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, quiero hacer un pedido de flores', 'hero_button')">
                 Hacer Pedido
             </button>
+            <a href="/eventos/catalogo-amor-y-amistad.html" class="cta-button catalog-btn">
+                <span class="heart-emoji">💖</span>
+                Ver Catálogo
+                <span class="heart-emoji">💖</span>
+            </a>
         </div>
     </section>
 
@@ -375,6 +400,22 @@
             </svg>
         </a>
     </div>
+
+        // Valentine's Modal Auto-close
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('valentineModal');
+            
+            // Cerrar automáticamente después de 5 segundos
+            setTimeout(function() {
+                modal.classList.add('hidden');
+            }, 5000);
+            
+            // Cerrar al hacer click en el overlay
+            const overlay = document.querySelector('.valentine-overlay');
+            overlay.addEventListener('click', function() {
+                modal.classList.add('hidden');
+            });
+        });
 
     <script>
         // Mobile menu toggle
