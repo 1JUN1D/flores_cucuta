@@ -103,6 +103,20 @@ const CATALOGO = [
         tags: ["dia-madre", "rosas", "bouquets", "precio-bajo"]
     },
     {
+        nombre: "Experiencia Dulce",
+        descripcion: "Bandeja con wafles cubiertos de frutas frescas, wraps de pollo, jamón, queso y lechuga, yogur griego con granola, brownie con frutos secos, jugo de naranja y chocolisto.",
+        precio: 180000,
+        imagen: "https://desayunosorpresacucuta.dondeseria.com/assets/ancheta_3.webp",
+        tags: ["dia-madre", "desayunos", "precio-medio"]
+    },
+    {
+        nombre: "Alegría con Girasol",
+        descripcion: "Sándwich doble piso, huevos revueltos con salchicha ranchera, ensalada de frutas, jugo de naranja, chocolisto, 3 Ferrero Rocher y arreglo floral con girasol.",
+        precio: 210000,
+        imagen: "https://desayunosorpresacucuta.dondeseria.com/assets/ancheta_4.webp",
+        tags: ["dia-madre", "desayunos", "girasoles", "chocolates", "precio-medio"]
+    },
+    {
         nombre: "Reina del Sol",
         descripcion: "Espectacular bouquet con girasoles y rosas rojas con listón 'Feliz Día de la Madre'.",
         precio: 450000,
