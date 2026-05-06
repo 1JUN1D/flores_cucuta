@@ -52,6 +52,74 @@
             background: rgba(131, 63, 74, 0.02);
         }
 
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 50px 14px 50px;
+            border: 2px solid #833F4A;
+            border-radius: 30px;
+            background: white;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(131, 63, 74, 0.05);
+        }
+
+        .search-input:focus {
+            border-color: #EABE81;
+            box-shadow: 0 4px 20px rgba(234, 190, 129, 0.25);
+        }
+
+        .search-input::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: #833F4A;
+            pointer-events: none;
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #833F4A;
+            color: white;
+            border: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            line-height: 1;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .search-clear:hover {
+            background: #EABE81;
+            color: #833F4A;
+            transform: translateY(-50%) scale(1.1);
+        }
+
         .filter-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -72,6 +140,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: inherit;
         }
 
         .filter-btn:hover,
@@ -80,6 +149,61 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(131, 63, 74, 0.3);
+        }
+
+        /* Botón destacado: Día de la Madre */
+        .filter-btn--featured {
+            background: linear-gradient(135deg, #EABE81, #f4d4a3);
+            color: #833F4A;
+            border: 2px solid #EABE81;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(234, 190, 129, 0.45);
+            position: relative;
+            animation: featuredPulse 2.4s ease-in-out infinite;
+        }
+
+        .filter-btn--featured:hover,
+        .filter-btn--featured.active {
+            background: linear-gradient(135deg, #833F4A, #a54d5a);
+            color: #EABE81;
+            border-color: #833F4A;
+            box-shadow: 0 6px 22px rgba(131, 63, 74, 0.5);
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        @keyframes featuredPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(234, 190, 129, 0.45); }
+            50%      { box-shadow: 0 6px 24px rgba(234, 190, 129, 0.85); }
+        }
+
+        /* Contador de resultados */
+        .results-counter {
+            text-align: center;
+            color: #833F4A;
+            font-size: 0.95rem;
+            margin-top: 0.6rem;
+            opacity: 0.85;
+        }
+
+        .results-counter strong {
+            color: #EABE81;
+            font-size: 1.1rem;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 1rem;
+            color: #833F4A;
+        }
+
+        .empty-state h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            color: #777;
         }
 
         /* Catalog Section */
@@ -194,6 +318,29 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .category-badge--featured {
+            background: linear-gradient(135deg, #EABE81, #d99c5b);
+            color: #833F4A;
+            box-shadow: 0 3px 10px rgba(234, 190, 129, 0.55);
+        }
+
+        /* Número de producto */
+        .product-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.92);
+            color: #833F4A;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            z-index: 2;
         }
 
         /* WhatsApp Floating Button */

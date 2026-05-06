@@ -10,6 +10,106 @@ const ADS_CONVERSION_ID = 'AW-17503274952/zu_KCLCYgaQcEMiPm5pB';
 
 // Catálogo de productos
 const CATALOGO = [
+    // ─── DÍA DE LA MADRE ───
+    {
+        nombre: "Just For You Mamá",
+        descripcion: "Hermoso detalle compuesto por rosas artificiales de excelente calidad, acompañado de un globo con mensaje para mamá. Un detalle destinado a durar meses en excelente estado.",
+        precio: 110000,
+        imagen: "../assets/dia_madres/flores25.webp",
+        tags: ["dia-madre", "cajas", "precio-bajo"]
+    },
+    {
+        nombre: "Abrazo Dulce",
+        descripcion: "Tierno oso de peluche acompañado de globo burbuja con mensaje especial y 3 Ferrero Rocher.",
+        precio: 182000,
+        imagen: "../assets/dia_madres/flores26.webp",
+        tags: ["dia-madre", "chocolates", "precio-medio"]
+    },
+    {
+        nombre: "Detalle Natural",
+        descripcion: "Hermoso detalle de flores naturales acompañado con dos Ferrero Rocher.",
+        precio: 125000,
+        imagen: "../assets/dia_madres/flores27.webp",
+        tags: ["dia-madre", "chocolates", "bouquets", "precio-bajo"]
+    },
+    {
+        nombre: "Eternidad Floral",
+        descripcion: "Detalle elaborado con diversas flores artificiales de alta calidad, larga duración.",
+        precio: 110000,
+        imagen: "../assets/dia_madres/flores28.webp",
+        tags: ["dia-madre", "precio-bajo"]
+    },
+    {
+        nombre: "Sol de Mamá",
+        descripcion: "Imponente arreglo en caja blanca con girasoles, rosas amarillas, claveles y eucalipto. Premium.",
+        precio: 480000,
+        imagen: "../assets/dia_madres/flores29.webp",
+        tags: ["dia-madre", "girasoles", "premium", "precio-alto"]
+    },
+    {
+        nombre: "Caricia Maternal",
+        descripcion: "Caja rosa con astromelias, crisantemos en tonos rosados y Ferrero Rocher.",
+        precio: 100000,
+        imagen: "../assets/dia_madres/flores30.webp",
+        tags: ["dia-madre", "cajas", "chocolates", "precio-bajo"]
+    },
+    {
+        nombre: "Globo Feliz Mamá",
+        descripcion: "Caja con globo personalizado 'Feliz Mamá', flores artificiales y caja de Ferrero Rocher.",
+        precio: 140000,
+        imagen: "../assets/dia_madres/flores31.webp",
+        tags: ["dia-madre", "cajas", "chocolates", "precio-bajo"]
+    },
+    {
+        nombre: "Sol Maternal",
+        descripcion: "Caja con globo 'Feliz Mamá', girasol radiante, claveles rojos y Ferrero Rocher.",
+        precio: 168000,
+        imagen: "../assets/dia_madres/flores32.webp",
+        tags: ["dia-madre", "cajas", "girasoles", "chocolates", "precio-medio"]
+    },
+    {
+        nombre: "Elegancia Rosada",
+        descripcion: "Caja redonda rosa con hortensias, rosas y crisantemos en tonos rosa pastel.",
+        precio: 200000,
+        imagen: "../assets/dia_madres/flores33.webp",
+        tags: ["dia-madre", "cajas", "rosas", "precio-medio"]
+    },
+    {
+        nombre: "Mi Mundo Mamá",
+        descripcion: "Bolsa decorativa 'Flower World' con girasol central y claveles en tonos rosados.",
+        precio: 120000,
+        imagen: "../assets/dia_madres/flores34.webp",
+        tags: ["dia-madre", "girasoles", "precio-bajo"]
+    },
+    {
+        nombre: "Desayuno Sorpresa Mamá",
+        descripcion: "Ensalada de frutas, jugo de naranja, chocolisto, 2 sándwiches de jamón/queso/pollo y waffles.",
+        precio: 170000,
+        imagen: "../assets/dia_madres/flores35.webp",
+        tags: ["dia-madre", "desayunos", "precio-medio"]
+    },
+    {
+        nombre: "Mini Desayuno Mamá",
+        descripcion: "Mix de maní, mini chips de chocolate, jugo de naranja, waffles con fruta y 2 sándwiches.",
+        precio: 68000,
+        imagen: "../assets/dia_madres/flores36.webp",
+        tags: ["dia-madre", "desayunos", "precio-bajo"]
+    },
+    {
+        nombre: "Beso Rojo Maternal",
+        descripcion: "Ramo de rosas rojas con eucalipto y empaque 'Feliz Día Mamá' con lazo rojo.",
+        precio: 110000,
+        imagen: "../assets/dia_madres/flores37.webp",
+        tags: ["dia-madre", "rosas", "bouquets", "precio-bajo"]
+    },
+    {
+        nombre: "Reina del Sol",
+        descripcion: "Espectacular bouquet con girasoles y rosas rojas con listón 'Feliz Día de la Madre'.",
+        precio: 450000,
+        imagen: "../assets/dia_madres/flores38.webp",
+        tags: ["dia-madre", "girasoles", "rosas", "bouquets", "premium", "precio-alto"]
+    },
+
     // ─── ROSAS ───
     {
         nombre: "Garantía de Amor",
@@ -246,10 +346,23 @@ function productWA(nombre, precio) {
     return false;
 }
 
+/* ─── Normalización (minúsculas + sin tildes) ─── */
+function normalizeText(str) {
+    return (str || '')
+        .toString()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '');
+}
+
 /* ─── Renderizar tarjeta de producto ─── */
-function renderCard(p) {
-    return '<div class="product-item" data-tags="' + p.tags.join(',') + '" data-price="' + p.precio + '">' +
-        '<div class="product-image"><img src="' + p.imagen + '" alt="' + p.nombre + '" loading="lazy"></div>' +
+function renderCard(p, num) {
+    return '<div class="product-item" data-tags="' + p.tags.join(',') + '" data-price="' + p.precio + '" data-number="' + num + '">' +
+        '<div class="product-image">' +
+            '<span class="product-number">#' + num + '</span>' +
+            (p.tags.indexOf('dia-madre') >= 0 ? '<span class="product-featured-badge">Día de la Madre</span>' : '') +
+            '<img src="' + p.imagen + '" alt="' + p.nombre + '" loading="lazy">' +
+        '</div>' +
         '<div class="product-info">' +
             '<h3>' + p.nombre + '</h3>' +
             '<p>' + p.descripcion + '</p>' +
@@ -268,10 +381,16 @@ function filterProducts() {
 
     var activeFilter = document.querySelector('.filter-btn.active');
     var filterVal = activeFilter ? activeFilter.getAttribute('data-filter') : 'todos';
-    var searchVal = (document.getElementById('search-input') ? document.getElementById('search-input').value : '').toLowerCase().trim();
+    var rawSearch = document.getElementById('search-input') ? document.getElementById('search-input').value : '';
+    var searchVal = normalizeText(rawSearch.trim());
 
-    // Ordenar: prioridad de la landing primero
+    // Ordenar: dia-madre primero, luego prioridad de la landing
     var sorted = CATALOGO.slice().sort(function (a, b) {
+        // Día de la madre tiene prioridad absoluta cuando estamos cerca de la fecha
+        var aDia = a.tags.indexOf('dia-madre') >= 0 ? 0 : 1;
+        var bDia = b.tags.indexOf('dia-madre') >= 0 ? 0 : 1;
+        if (aDia !== bDia) return aDia - bDia;
+
         if (LANDING_PRIORITY_TAG) {
             var aHas = a.tags.indexOf(LANDING_PRIORITY_TAG) >= 0 ? 0 : 1;
             var bHas = b.tags.indexOf(LANDING_PRIORITY_TAG) >= 0 ? 0 : 1;
@@ -282,8 +401,11 @@ function filterProducts() {
 
     var html = '';
     var count = 0;
+    var num = 0;
 
     sorted.forEach(function (p) {
+        num++;
+
         // Filtro por tag
         if (filterVal !== 'todos') {
             if (filterVal === 'precio-bajo' && p.precio >= 150000) return;
@@ -296,11 +418,11 @@ function filterProducts() {
 
         // Filtro por búsqueda
         if (searchVal) {
-            var haystack = (p.nombre + ' ' + p.descripcion + ' ' + p.tags.join(' ')).toLowerCase();
+            var haystack = normalizeText(num + ' #' + num + ' ' + p.nombre + ' ' + p.descripcion + ' ' + p.tags.join(' '));
             if (haystack.indexOf(searchVal) < 0) return;
         }
 
-        html += renderCard(p);
+        html += renderCard(p, num);
         count++;
     });
 
@@ -311,18 +433,66 @@ function filterProducts() {
 
     var empty = document.getElementById('empty-state');
     if (empty) empty.style.display = count === 0 ? 'block' : 'none';
+
+    // Mostrar/ocultar botón de limpiar búsqueda
+    var clearBtn = document.getElementById('search-clear');
+    if (clearBtn) {
+        clearBtn.style.display = rawSearch ? 'flex' : 'none';
+    }
+}
+
+/* ─── URL: leer/escribir filtro activo ─── */
+function readFilterFromURL() {
+    var params = new URLSearchParams(window.location.search);
+    var f = params.get('filter') || params.get('category');
+    if (!f) {
+        var hash = (window.location.hash || '').replace(/^#\??/, '').trim();
+        if (hash) f = hash;
+    }
+    return f;
+}
+
+function updateURLForFilter(filter) {
+    try {
+        var url = new URL(window.location.href);
+        if (filter === 'todos' || !filter) {
+            url.searchParams.delete('filter');
+            url.searchParams.delete('category');
+            window.history.replaceState({}, '', url.pathname + url.search);
+        } else {
+            url.searchParams.set('filter', filter);
+            window.history.replaceState({}, '', url.pathname + url.search + '#' + filter);
+        }
+    } catch (e) { /* noop */ }
+}
+
+function applyFilterByName(filter, updateUrl) {
+    var btn = document.querySelector('.filter-btn[data-filter="' + filter + '"]');
+    if (!btn) {
+        btn = document.querySelector('.filter-btn[data-filter="todos"]');
+        filter = 'todos';
+    }
+    document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+    filterProducts();
+    if (updateUrl !== false) updateURLForFilter(filter);
 }
 
 /* ─── Inicializar catálogo ─── */
 function initCatalog() {
-    filterProducts();
+    // Aplicar filtro inicial desde URL si existe
+    var initialFilter = readFilterFromURL();
+    if (initialFilter) {
+        applyFilterByName(initialFilter, false);
+    } else {
+        filterProducts();
+    }
 
     // Filtros
     document.querySelectorAll('.filter-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
-            this.classList.add('active');
-            filterProducts();
+            var f = this.getAttribute('data-filter');
+            applyFilterByName(f, true);
         });
     });
 
@@ -334,9 +504,23 @@ function initCatalog() {
 
     var clearBtn = document.getElementById('search-clear');
     if (clearBtn) {
+        clearBtn.style.display = 'none';
         clearBtn.addEventListener('click', function () {
-            if (searchInput) searchInput.value = '';
+            if (searchInput) {
+                searchInput.value = '';
+                searchInput.focus();
+            }
             filterProducts();
         });
     }
+
+    // Soporte navegación atrás/adelante y cambio de hash
+    window.addEventListener('popstate', function () {
+        var f = readFilterFromURL() || 'todos';
+        applyFilterByName(f, false);
+    });
+    window.addEventListener('hashchange', function () {
+        var f = readFilterFromURL() || 'todos';
+        applyFilterByName(f, false);
+    });
 }

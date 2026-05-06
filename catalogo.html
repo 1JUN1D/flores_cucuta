@@ -85,8 +85,18 @@
     <!-- Filter Section -->
     <section class="filter-section">
         <div class="container">
+            <!-- Barra de búsqueda -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar producto, número, descripción... (ej: 27, rosas, mamá)">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <button class="search-clear" id="search-clear" type="button" aria-label="Limpiar búsqueda">&times;</button>
+            </div>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn filter-btn--featured" data-category="dia-madre">💐 Día de la Madre</button>
                 <button class="filter-btn" data-category="rosas">Rosas</button>
                 <button class="filter-btn" data-category="girasoles">Girasoles</button>
                 <button class="filter-btn" data-category="gerberas">Gerberas</button>
@@ -96,6 +106,9 @@
                 <button class="filter-btn" data-category="cumpleanos">Cumpleaños</button>
                 <button class="filter-btn" data-category="especiales">Especiales</button>
             </div>
+            <div class="results-counter">
+                Mostrando <strong id="results-count">0</strong> productos
+            </div>
         </div>
     </section>
 
@@ -103,7 +116,257 @@
 <!-- Catalog Section -->
     <section class="catalog">
         <div class="container">
+            <div class="empty-state" id="empty-state" style="display:none;">
+                <h3>No se encontraron productos</h3>
+                <p>Intenta con otro filtro o término de búsqueda</p>
+            </div>
             <div class="products-grid">
+
+                <!-- ═══════════════════════════════════════════════════════════ -->
+                <!-- ════════════════ DÍA DE LA MADRE ═════════════════════════ -->
+                <!-- ═══════════════════════════════════════════════════════════ -->
+
+                <!-- Producto Día de la Madre: Just For You Mamá -->
+                <div class="product-card" data-category="dia-madre" data-keywords="caja flores artificiales rosas mama madre globo just for you detalle">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores25.webp" alt="Just For You Mamá - Caja decorativa con rosas artificiales y mensaje Happy Mother Day" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Just For You Mamá</h2>
+                        <p class="product-description">Hermoso detalle compuesto por rosas artificiales de excelente calidad, acompañado de un globo con mensaje para mamá. Un detalle destinado a durar meses en excelente estado.</p>
+                        <div class="product-price">$110,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Just For You Mamá por $110,000. ¿Podrías darme más información?', 'dia_madre_just_for_you')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Abrazo Dulce -->
+                <div class="product-card" data-category="dia-madre" data-keywords="oso peluche globo burbuja ferrero rocher chocolates mama madre">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores26.webp" alt="Abrazo Dulce - Oso de peluche con globo burbuja y Ferrero Rocher" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Abrazo Dulce</h2>
+                        <p class="product-description">Tierno oso de peluche acompañado de un globo burbuja con mensaje especial para mamá y 3 Ferrero Rocher. Un regalo cálido que combina ternura y dulzura.</p>
+                        <div class="product-price">$182,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Abrazo Dulce por $182,000. ¿Podrías darme más información?', 'dia_madre_abrazo_dulce')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Detalle Natural -->
+                <div class="product-card" data-category="dia-madre" data-keywords="flores naturales ferrero rocher chocolates mama madre detalle">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores27.webp" alt="Detalle Natural - Flores naturales con Ferrero Rocher" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Detalle Natural</h2>
+                        <p class="product-description">Hermoso detalle de flores naturales acompañado con dos Ferrero Rocher. Frescura, color y dulzura en un mismo regalo para sorprender a mamá.</p>
+                        <div class="product-price">$125,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Detalle Natural por $125,000. ¿Podrías darme más información?', 'dia_madre_detalle_natural')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Eternidad Floral -->
+                <div class="product-card" data-category="dia-madre" data-keywords="flores artificiales eternas mama madre detalle duradero">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores28.webp" alt="Eternidad Floral - Detalle de diversas flores artificiales" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Eternidad Floral</h2>
+                        <p class="product-description">Detalle elaborado con diversas flores artificiales de alta calidad. Un regalo elegante y de larga duración para conservar como recuerdo de un día especial.</p>
+                        <div class="product-price">$110,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Eternidad Floral por $110,000. ¿Podrías darme más información?', 'dia_madre_eternidad_floral')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Sol de Mamá -->
+                <div class="product-card" data-category="dia-madre" data-keywords="girasoles rosas blancas claveles caja grande premium mama madre eucalipto">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores29.webp" alt="Sol de Mamá - Gran arreglo en caja con girasoles, rosas blancas y eucalipto" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Sol de Mamá</h2>
+                        <p class="product-description">Imponente arreglo en caja blanca con girasoles, rosas amarillas, crisantemos blancos, claveles y delicados toques de eucalipto. Una declaración de amor maternal en gran formato, ideal para celebrar a la reina de la casa.</p>
+                        <div class="product-price">$480,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sol de Mamá por $480,000. ¿Podrías darme más información?', 'dia_madre_sol_mama')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Caricia Maternal -->
+                <div class="product-card" data-category="dia-madre" data-keywords="caja rosa astromelias crisantemos ferrero rocher chocolates mama madre">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores30.webp" alt="Caricia Maternal - Caja rosa con astromelias, crisantemos y Ferrero Rocher" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Caricia Maternal</h2>
+                        <p class="product-description">Caja rosa decorada con lazo, astromelias y crisantemos en delicados tonos rosados, acompañados de Ferrero Rocher. Un detalle suave y femenino que abraza a mamá con dulzura.</p>
+                        <div class="product-price">$100,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Caricia Maternal por $100,000. ¿Podrías darme más información?', 'dia_madre_caricia_maternal')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Globo Feliz Mamá -->
+                <div class="product-card" data-category="dia-madre" data-keywords="globo feliz mama rosas artificiales ferrero rocher chocolates caja madre">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores31.webp" alt="Globo Feliz Mamá - Caja con globo Feliz Mamá, flores y Ferrero Rocher" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Globo Feliz Mamá</h2>
+                        <p class="product-description">Caja decorativa con globo personalizado "Feliz Mamá", arreglo de flores artificiales en tonos rojos y crema, y caja de Ferrero Rocher. Un regalo completo y duradero para celebrar su día.</p>
+                        <div class="product-price">$140,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Globo Feliz Mamá por $140,000. ¿Podrías darme más información?', 'dia_madre_globo_feliz')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Sol Maternal -->
+                <div class="product-card" data-category="dia-madre" data-keywords="globo feliz mama girasol claveles rojos ferrero rocher caja madre">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores32.webp" alt="Sol Maternal - Caja con globo Feliz Mamá, girasol, claveles rojos y Ferrero Rocher" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Sol Maternal</h2>
+                        <p class="product-description">Caja Duquesa Floral con globo personalizado "Feliz Mamá", un radiante girasol acompañado de claveles rojos y rosados, junto con Ferrero Rocher. La combinación perfecta de alegría, pasión y dulzura para mamá.</p>
+                        <div class="product-price">$168,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sol Maternal por $168,000. ¿Podrías darme más información?', 'dia_madre_sol_maternal')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Elegancia Rosada -->
+                <div class="product-card" data-category="dia-madre" data-keywords="caja redonda hortensias rosas crisantemos rosadas mama madre">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores33.webp" alt="Elegancia Rosada - Caja redonda con hortensias, rosas y crisantemos en tonos rosa" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Elegancia Rosada</h2>
+                        <p class="product-description">Sofisticada caja redonda rosa con hortensias, rosas y crisantemos en delicados tonos rosa pastel. Un arreglo de aire romántico y femenino que rinde homenaje a la elegancia de mamá.</p>
+                        <div class="product-price">$200,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Elegancia Rosada por $200,000. ¿Podrías darme más información?', 'dia_madre_elegancia_rosada')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Mi Mundo Mamá -->
+                <div class="product-card" data-category="dia-madre" data-keywords="bolsa flower world girasol claveles rosa mama madre">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores34.webp" alt="Mi Mundo Mamá - Bolsa Flower World con girasol y claveles rosa" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Mi Mundo Mamá</h2>
+                        <p class="product-description">Bolsa decorativa "You The Most Beautiful Flower World" con un girasol central rodeado de claveles en tonos rosados. Un detalle original y poético que le dice a mamá que ella es nuestro mundo entero.</p>
+                        <div class="product-price">$120,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Mi Mundo Mamá por $120,000. ¿Podrías darme más información?', 'dia_madre_mi_mundo_mama')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Desayuno Sorpresa Mamá -->
+                <div class="product-card" data-category="dia-madre" data-keywords="desayuno mama madre sorpresa frutas jugo naranja chocolisto sandwich waffles jamon queso pollo">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores35.webp" alt="Desayuno Sorpresa Mamá - Bandeja completa con frutas, sandwiches y waffles" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Desayuno Sorpresa Mamá</h2>
+                        <p class="product-description">Ensalada de frutas, jugo de naranja y chocolisto, dos sándwiches de jamón, queso y pollo, waffles con jamón y queso, todo presentado con una hermosa decoración. El desayuno perfecto para que mamá despierte sintiéndose única.</p>
+                        <div class="product-price">$170,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Desayuno Sorpresa Mamá por $170,000. ¿Podrías darme más información?', 'dia_madre_desayuno_sorpresa')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Mini Desayuno Mamá -->
+                <div class="product-card" data-category="dia-madre" data-keywords="desayuno mama madre sorpresa mani chips chocolate jugo naranja waffles fruta sandwich jamon queso mini">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores36.webp" alt="Mini Desayuno Mamá - Mix de maní, chips, jugo, waffles con fruta y sandwiches" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Mini Desayuno Mamá</h2>
+                        <p class="product-description">Mix de maní, mini chips de chocolate, jugo de naranja, waffles con fruta y 2 sándwiches de jamón y queso. Un desayuno compacto, delicioso y perfecto para empezar el día consintiendo a mamá.</p>
+                        <div class="product-price">$68,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Mini Desayuno Mamá por $68,000. ¿Podrías darme más información?', 'dia_madre_mini_desayuno')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Beso Rojo Maternal -->
+                <div class="product-card" data-category="dia-madre" data-keywords="rosas rojas eucalipto feliz dia mama ramo madre listón rojo">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores37.webp" alt="Beso Rojo Maternal - Ramo de rosas rojas con empaque Feliz Día Mamá" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Beso Rojo Maternal</h2>
+                        <p class="product-description">Elegante ramo de rosas rojas frescas con eucalipto, presentado en un empaque blanco con detalle dorado "Feliz Día Mamá" y rematado con un imponente lazo rojo. Pasión, gratitud y elegancia en un solo gesto.</p>
+                        <div class="product-price">$110,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Beso Rojo Maternal por $110,000. ¿Podrías darme más información?', 'dia_madre_beso_rojo')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto Día de la Madre: Reina del Sol -->
+                <div class="product-card" data-category="dia-madre" data-keywords="bouquet grande girasoles rosas rojas listón feliz dia de la madre premium mama">
+                    <div class="category-badge category-badge--featured">Día de la Madre</div>
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores38.webp" alt="Reina del Sol - Bouquet con girasoles, rosas rojas y listón Feliz Día de la Madre" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Reina del Sol</h2>
+                        <p class="product-description">Espectacular bouquet con varios girasoles radiantes y rosas rojas, envuelto en papel decorativo con un listón blanco con la inscripción dorada "Feliz Día de la Madre". Un homenaje monumental para la mujer más importante de tu vida.</p>
+                        <div class="product-price">$450,000</div>
+                        <button class="product-button"
+                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Reina del Sol por $450,000. ¿Podrías darme más información?', 'dia_madre_reina_del_sol')">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════════════════════ -->
+                <!-- ════════════════ FIN DÍA DE LA MADRE ═════════════════════ -->
+                <!-- ═══════════════════════════════════════════════════════════ -->
 
                 <!-- Producto: Distinción Absoluta -->
                 <div class="product-card" data-category="especiales">
@@ -542,63 +805,172 @@
     </div>
 
     <script>
-        // Sistema de filtrado de productos con URL
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const productCards = document.querySelectorAll('.product-card');
-
-            // Función para aplicar un filtro
-            function applyFilter(category) {
-                // Actualizar botones
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                const activeButton = document.querySelector(`[data-category="${category}"]`);
-                if (activeButton) {
-                    activeButton.classList.add('active');
-                }
-
-                // Filtrar productos
-                productCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.classList.remove('hidden');
-                        card.style.animation = 'none';
-                        card.offsetHeight;
-                        card.style.animation = 'fadeInUp 0.6s ease-out';
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-
-                // Actualizar URL
-                const url = new URL(window.location);
-                if (category === 'all') {
-                    url.searchParams.delete('category');
-                } else {
-                    url.searchParams.set('category', category);
-                }
-                window.history.pushState({}, '', url);
+        // ============================================================
+        // CATALOGO - Filtrado, búsqueda y URL compartible
+        // ============================================================
+        (function () {
+            // Normaliza texto: minúsculas + sin tildes/diacríticos
+            function normalize(str) {
+                return (str || '')
+                    .toString()
+                    .toLowerCase()
+                    .normalize('NFD')
+                    .replace(/[̀-ͯ]/g, '');
             }
 
-            // Evento click en botones de filtro
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    applyFilter(category);
+            document.addEventListener('DOMContentLoaded', function () {
+                var filterButtons = document.querySelectorAll('.filter-btn');
+                var productCards = document.querySelectorAll('.product-card');
+                var searchInput = document.getElementById('search-input');
+                var clearBtn = document.getElementById('search-clear');
+                var resultsCount = document.getElementById('results-count');
+                var emptyState = document.getElementById('empty-state');
+
+                // 1) Asignar número a cada producto y construir el "haystack" de búsqueda
+                productCards.forEach(function (card, idx) {
+                    var n = idx + 1;
+                    card.setAttribute('data-number', n);
+
+                    // Insertar badge de número
+                    var imageContainer = card.querySelector('.product-image');
+                    if (imageContainer && !card.querySelector('.product-number')) {
+                        var numBadge = document.createElement('div');
+                        numBadge.className = 'product-number';
+                        numBadge.textContent = '#' + n;
+                        imageContainer.appendChild(numBadge);
+                    }
+
+                    // Construir cadena de búsqueda normalizada
+                    var title = card.querySelector('.product-title');
+                    var desc = card.querySelector('.product-description');
+                    var badge = card.querySelector('.category-badge');
+                    var keywords = card.getAttribute('data-keywords') || '';
+                    var category = card.getAttribute('data-category') || '';
+
+                    var haystack = normalize(
+                        n + ' #' + n + ' ' +
+                        (title ? title.textContent : '') + ' ' +
+                        (desc ? desc.textContent : '') + ' ' +
+                        (badge ? badge.textContent : '') + ' ' +
+                        keywords + ' ' +
+                        category.replace(/-/g, ' ')
+                    );
+                    card.setAttribute('data-haystack', haystack);
+                });
+
+                var currentCategory = 'all';
+
+                function applyFilters() {
+                    var rawSearch = searchInput ? searchInput.value : '';
+                    var search = normalize(rawSearch.trim());
+                    var visible = 0;
+
+                    productCards.forEach(function (card) {
+                        var matchCat = (currentCategory === 'all') ||
+                            (card.getAttribute('data-category') === currentCategory);
+                        var matchSearch = !search ||
+                            (card.getAttribute('data-haystack') || '').indexOf(search) >= 0;
+
+                        if (matchCat && matchSearch) {
+                            card.classList.remove('hidden');
+                            visible++;
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    if (resultsCount) resultsCount.textContent = visible;
+                    if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
+
+                    if (clearBtn) {
+                        clearBtn.style.display = rawSearch ? 'flex' : 'none';
+                    }
+                }
+
+                function setActiveButton(category) {
+                    filterButtons.forEach(function (b) { b.classList.remove('active'); });
+                    var btn = document.querySelector('.filter-btn[data-category="' + category + '"]');
+                    if (btn) btn.classList.add('active');
+                }
+
+                function updateURL(category) {
+                    var url = new URL(window.location.href);
+                    if (category === 'all') {
+                        url.searchParams.delete('category');
+                        url.hash = '';
+                        window.history.replaceState({}, '', url.pathname + url.search);
+                    } else {
+                        url.searchParams.set('category', category);
+                        // También agregamos hash legible para compartir (#dia-madre)
+                        window.history.replaceState({}, '', url.pathname + url.search + '#' + category);
+                    }
+                }
+
+                function applyCategory(category, updateUrl) {
+                    var validCategories = Array.from(filterButtons).map(function (b) {
+                        return b.getAttribute('data-category');
+                    });
+                    if (validCategories.indexOf(category) < 0) {
+                        category = 'all';
+                    }
+                    currentCategory = category;
+                    setActiveButton(category);
+                    applyFilters();
+                    if (updateUrl !== false) updateURL(category);
+                }
+
+                // 2) Eventos de los botones de filtro
+                filterButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var category = this.getAttribute('data-category');
+                        applyCategory(category, true);
+                    });
+                });
+
+                // 3) Eventos de búsqueda
+                if (searchInput) {
+                    searchInput.addEventListener('input', applyFilters);
+                }
+                if (clearBtn) {
+                    clearBtn.style.display = 'none';
+                    clearBtn.addEventListener('click', function () {
+                        if (searchInput) {
+                            searchInput.value = '';
+                            searchInput.focus();
+                        }
+                        applyFilters();
+                    });
+                }
+
+                // 4) Leer categoría de URL (?category=... o #dia-madre)
+                function readCategoryFromURL() {
+                    var params = new URLSearchParams(window.location.search);
+                    var cat = params.get('category');
+                    if (!cat) {
+                        var hash = window.location.hash.replace(/^#\??/, '').trim();
+                        if (hash) cat = hash;
+                    }
+                    return cat;
+                }
+
+                var initialCategory = readCategoryFromURL();
+                if (initialCategory) {
+                    applyCategory(initialCategory, false);
+                } else {
+                    applyCategory('all', false);
+                }
+
+                // 5) Soporte para navegación atrás/adelante
+                window.addEventListener('popstate', function () {
+                    var cat = readCategoryFromURL() || 'all';
+                    applyCategory(cat, false);
+                });
+                window.addEventListener('hashchange', function () {
+                    var cat = readCategoryFromURL() || 'all';
+                    applyCategory(cat, false);
                 });
             });
-
-            // Leer categoría de la URL al cargar
-            const urlParams = new URLSearchParams(window.location.search);
-            const categoryFromURL = urlParams.get('category');
-            
-            if (categoryFromURL) {
-                applyFilter(categoryFromURL);
-            } else {
-                // Inicializar todas las tarjetas como visibles
-                productCards.forEach(card => {
-                    card.classList.remove('hidden');
-                });
-            }
-        });
+        })();
     </script>
 
 </body>
