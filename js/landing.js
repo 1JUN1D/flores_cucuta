@@ -10,11 +10,11 @@ const ADS_CONVERSION_ID = 'AW-17503274952/zu_KCLCYgaQcEMiPm5pB';
 
 // Catálogo de productos
 const CATALOGO = [
-    // ─── DÍA DE LA MADRE ───
+    // ─── DETALLES ESPECIALES ───
     {
-        nombre: "Just For You Mamá",
-        descripcion: "Hermoso detalle compuesto por rosas artificiales de excelente calidad, acompañado de un globo con mensaje para mamá. Un detalle destinado a durar meses en excelente estado.",
-        precio: 110000,
+        nombre: "Just For You",
+        descripcion: "Hermoso detalle compuesto por rosas artificiales de excelente calidad, acompañado de un globo con mensaje especial. Un detalle destinado a durar meses en excelente estado.",
+        precio: 89000,
         imagen: "../assets/dia_madres/flores25.webp",
         tags: ["dia-madre", "cajas", "precio-bajo"]
     },
@@ -28,7 +28,7 @@ const CATALOGO = [
     {
         nombre: "Detalle Natural",
         descripcion: "Hermoso detalle de flores naturales acompañado con dos Ferrero Rocher.",
-        precio: 125000,
+        precio: 86000,
         imagen: "../assets/dia_madres/flores27.webp",
         tags: ["dia-madre", "chocolates", "bouquets", "precio-bajo"]
     },
@@ -40,29 +40,15 @@ const CATALOGO = [
         tags: ["dia-madre", "precio-bajo"]
     },
     {
-        nombre: "Sol de Mamá",
+        nombre: "Sol Radiante",
         descripcion: "Imponente arreglo en caja blanca con girasoles, rosas amarillas, claveles y eucalipto. Premium.",
         precio: 480000,
         imagen: "../assets/dia_madres/flores29.webp",
         tags: ["dia-madre", "girasoles", "premium", "precio-alto"]
     },
     {
-        nombre: "Caricia Maternal",
-        descripcion: "Caja rosa con astromelias, crisantemos en tonos rosados y Ferrero Rocher.",
-        precio: 100000,
-        imagen: "../assets/dia_madres/flores30.webp",
-        tags: ["dia-madre", "cajas", "chocolates", "precio-bajo"]
-    },
-    {
-        nombre: "Globo Feliz Mamá",
-        descripcion: "Caja con globo personalizado 'Feliz Mamá', flores artificiales y caja de Ferrero Rocher.",
-        precio: 140000,
-        imagen: "../assets/dia_madres/flores31.webp",
-        tags: ["dia-madre", "cajas", "chocolates", "precio-bajo"]
-    },
-    {
-        nombre: "Sol Maternal",
-        descripcion: "Caja con globo 'Feliz Mamá', girasol radiante, claveles rojos y Ferrero Rocher.",
+        nombre: "Sol Vibrante",
+        descripcion: "Caja Duquesa Floral con globo personalizado, girasol radiante, claveles rojos y Ferrero Rocher.",
         precio: 168000,
         imagen: "../assets/dia_madres/flores32.webp",
         tags: ["dia-madre", "cajas", "girasoles", "chocolates", "precio-medio"]
@@ -75,29 +61,22 @@ const CATALOGO = [
         tags: ["dia-madre", "cajas", "rosas", "precio-medio"]
     },
     {
-        nombre: "Mi Mundo Mamá",
-        descripcion: "Bolsa decorativa 'Flower World' con girasol central y claveles en tonos rosados.",
-        precio: 120000,
-        imagen: "../assets/dia_madres/flores34.webp",
-        tags: ["dia-madre", "girasoles", "precio-bajo"]
-    },
-    {
-        nombre: "Desayuno Sorpresa Mamá",
+        nombre: "Desayuno Sorpresa",
         descripcion: "Ensalada de frutas, jugo de naranja, chocolisto, 2 sándwiches de jamón/queso/pollo y waffles.",
         precio: 170000,
         imagen: "../assets/dia_madres/flores35.webp",
         tags: ["dia-madre", "desayunos", "precio-medio"]
     },
     {
-        nombre: "Mini Desayuno Mamá",
+        nombre: "Mini Desayuno",
         descripcion: "Mix de maní, mini chips de chocolate, jugo de naranja, waffles con fruta y 2 sándwiches.",
         precio: 68000,
         imagen: "../assets/dia_madres/flores36.webp",
         tags: ["dia-madre", "desayunos", "precio-bajo"]
     },
     {
-        nombre: "Beso Rojo Maternal",
-        descripcion: "Ramo de rosas rojas con eucalipto y empaque 'Feliz Día Mamá' con lazo rojo.",
+        nombre: "Beso Rojo",
+        descripcion: "Ramo de rosas rojas con eucalipto y empaque elegante con lazo rojo.",
         precio: 110000,
         imagen: "../assets/dia_madres/flores37.webp",
         tags: ["dia-madre", "rosas", "bouquets", "precio-bajo"]
@@ -118,10 +97,17 @@ const CATALOGO = [
     },
     {
         nombre: "Reina del Sol",
-        descripcion: "Espectacular bouquet con girasoles y rosas rojas con listón 'Feliz Día de la Madre'.",
+        descripcion: "Espectacular bouquet con girasoles y rosas rojas con listón decorativo dorado.",
         precio: 450000,
         imagen: "../assets/dia_madres/flores38.webp",
         tags: ["dia-madre", "girasoles", "rosas", "bouquets", "premium", "precio-alto"]
+    },
+    {
+        nombre: "Romance Duquesa",
+        descripcion: "Elegante bolsa Duquesa Floral 'Flower World' disponible en dos versiones: rosas rojas con claveles e hipérico, o rosas rosadas con lisianthus. Detalles en paniculata y eucalipto, presentación premium.",
+        precio: 165000,
+        imagen: "../assets/flores_cucuta_25.webp",
+        tags: ["rosas", "cajas", "premium", "precio-medio"]
     },
 
     // ─── ROSAS ───
@@ -374,7 +360,7 @@ function renderCard(p, num) {
     return '<div class="product-item" data-tags="' + p.tags.join(',') + '" data-price="' + p.precio + '" data-number="' + num + '">' +
         '<div class="product-image">' +
             '<span class="product-number">#' + num + '</span>' +
-            (p.tags.indexOf('dia-madre') >= 0 ? '<span class="product-featured-badge">Día de la Madre</span>' : '') +
+            (p.tags.indexOf('dia-madre') >= 0 ? '<span class="product-featured-badge">Detalles Especiales</span>' : '') +
             '<img src="' + p.imagen + '" alt="' + p.nombre + '" loading="lazy">' +
         '</div>' +
         '<div class="product-info">' +
@@ -536,5 +522,102 @@ function initCatalog() {
     window.addEventListener('hashchange', function () {
         var f = readFilterFromURL() || 'todos';
         applyFilterByName(f, false);
+    });
+
+    // Vista previa de imágenes de productos
+    initImagePreview();
+}
+
+/* ─── Vista previa (lightbox) de imágenes ─── */
+function initImagePreview() {
+    if (document.getElementById('image-preview-modal')) return;
+
+    // CSS inyectado dinámicamente
+    var css = ''
+        + '.product-image{cursor:zoom-in}'
+        + '.product-image img{transition:transform .25s ease}'
+        + '.product-image:hover img{transform:scale(1.03)}'
+        + '.image-preview-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;z-index:9999;padding:1rem;opacity:0;pointer-events:none;transition:opacity .25s ease}'
+        + '.image-preview-modal.is-open{opacity:1;pointer-events:auto}'
+        + '.image-preview-modal[hidden]{display:none !important}'
+        + '.image-preview-content{position:relative;max-width:min(95vw,1100px);max-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:previewZoom .28s ease}'
+        + '@keyframes previewZoom{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}'
+        + '.image-preview-img{max-width:100%;max-height:85vh;width:auto;height:auto;border-radius:12px;box-shadow:0 25px 60px rgba(0,0,0,.45);background:#fff;object-fit:contain}'
+        + '.image-preview-caption{color:#fff;margin-top:.85rem;font-size:.95rem;text-align:center;max-width:90%;text-shadow:0 2px 6px rgba(0,0,0,.6)}'
+        + '.image-preview-close{position:fixed;top:1rem;right:1.25rem;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:#222;font-size:1.9rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.35);transition:transform .15s ease,background .15s ease;z-index:10000}'
+        + '.image-preview-close:hover{background:#fff;transform:scale(1.08)}'
+        + '.image-preview-close:active{transform:scale(.95)}'
+        + 'body.preview-open{overflow:hidden}'
+        + '@media (max-width:600px){.image-preview-close{top:.6rem;right:.6rem;width:42px;height:42px;font-size:1.7rem}.image-preview-img{max-height:78vh;border-radius:8px}.image-preview-caption{font-size:.85rem}}';
+
+    var styleTag = document.createElement('style');
+    styleTag.id = 'image-preview-styles';
+    styleTag.textContent = css;
+    document.head.appendChild(styleTag);
+
+    // Modal
+    var modal = document.createElement('div');
+    modal.id = 'image-preview-modal';
+    modal.className = 'image-preview-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Vista previa de imagen');
+    modal.hidden = true;
+    modal.innerHTML = ''
+        + '<button class="image-preview-close" type="button" aria-label="Cerrar vista previa">&times;</button>'
+        + '<div class="image-preview-content" role="document">'
+        +   '<img class="image-preview-img" alt="" />'
+        +   '<div class="image-preview-caption"></div>'
+        + '</div>';
+    document.body.appendChild(modal);
+
+    var imgEl   = modal.querySelector('.image-preview-img');
+    var capEl   = modal.querySelector('.image-preview-caption');
+    var closeBt = modal.querySelector('.image-preview-close');
+
+    function openPreview(src, alt, title) {
+        imgEl.src = src;
+        imgEl.alt = alt || '';
+        capEl.textContent = title || alt || '';
+        modal.hidden = false;
+        void modal.offsetWidth;
+        modal.classList.add('is-open');
+        document.body.classList.add('preview-open');
+    }
+    function closePreview() {
+        modal.classList.remove('is-open');
+        document.body.classList.remove('preview-open');
+        setTimeout(function () {
+            modal.hidden = true;
+            imgEl.src = '';
+        }, 260);
+    }
+
+    // Delegación global: click en imagen dentro de .product-image / .product-item / .product-card
+    document.addEventListener('click', function (e) {
+        var target = e.target;
+        if (!target) return;
+        // No interferir con botones
+        if (target.closest && target.closest('button, a')) return;
+        var wrapper = target.closest && target.closest('.product-image');
+        if (!wrapper) return;
+        var img = wrapper.querySelector('img');
+        if (!img) return;
+        e.preventDefault();
+        var card = wrapper.closest('.product-item, .product-card');
+        var title = '';
+        if (card) {
+            var t = card.querySelector('.product-title, h3, h2');
+            if (t) title = (t.textContent || '').trim();
+        }
+        openPreview(img.currentSrc || img.src, img.alt, title);
+    });
+
+    closeBt.addEventListener('click', closePreview);
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) closePreview();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closePreview();
     });
 }
