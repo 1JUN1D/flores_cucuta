@@ -75,6 +75,13 @@ const CATALOGO = [
         tags: ["dia-madre", "desayunos", "precio-bajo"]
     },
     {
+        nombre: "Reflejo de Amor",
+        descripcion: "Arreglo circular de rosas rojas frescas rodeando un espejo grabado con la frase \"Eres la mejor mamá\". Un detalle único, elegante y con un mensaje eterno.",
+        precio: 212000,
+        imagen: "../assets/flores_cucuta_26.webp",
+        tags: ["dia-madre", "rosas", "premium", "precio-medio"]
+    },
+    {
         nombre: "Beso Rojo",
         descripcion: "Ramo de rosas rojas con eucalipto y empaque elegante con lazo rojo.",
         precio: 110000,
@@ -203,13 +210,14 @@ const CATALOGO = [
     },
 
     // ─── ESPECIALES ───
-    {
-        nombre: "Distinción Absoluta",
-        descripcion: "Ramo de Claveles y Lirios.",
-        precio: 50000,
-        imagen: "../assets/flores_cucuta_3.webp",
-        tags: ["bouquets", "precio-bajo"]
-    },
+    // Producto "Distinción Absoluta" OCULTO del catálogo
+    // {
+    //     nombre: "Distinción Absoluta",
+    //     descripcion: "Ramo de Claveles y Lirios.",
+    //     precio: 50000,
+    //     imagen: "../assets/flores_cucuta_3.webp",
+    //     tags: ["bouquets", "precio-bajo"]
+    // },
     {
         nombre: "Guardián del Corazón",
         descripcion: "Osito de 25 CM elaborado con rosas de foamy en caja de acetato, tarjeta personalizada y tres globos en helio.",
