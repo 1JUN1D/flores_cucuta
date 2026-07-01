@@ -10,6 +10,71 @@ const ADS_CONVERSION_ID = 'AW-17503274952/zu_KCLCYgaQcEMiPm5pB';
 
 // Catálogo de productos
 const CATALOGO = [
+    // ─── DESTACADOS / NOVEDADES ───
+    {
+        nombre: "Ternura Kitty",
+        descripcion: "Espectacular arreglo escultórico en forma de Hello Kitty elaborado con crisantemos blancos, un tierno moño de rosas rosadas y detalle de rosas amarillas. Una obra floral única para sorprender y enamorar.",
+        precio: 520000,
+        imagen: "../assets/flores_cucuta_27.webp",
+        tags: ["especiales", "destacado", "bouquets", "precio-alto"]
+    },
+    {
+        nombre: "Jardín Encantado",
+        descripcion: "Lujoso arreglo en caja rosa que reúne orquídeas cymbidium, lirios naranjas, girasoles, gerberas y rosas lavanda entre hortensias y claveles. Una explosión de color y sofisticación.",
+        precio: 545000,
+        imagen: "../assets/flores_cucuta_32.webp",
+        tags: ["especiales", "destacado", "cajas", "girasoles", "gerberas", "precio-alto"]
+    },
+    {
+        nombre: "Noche Estrellada",
+        descripcion: "Ramo artístico inspirado en 'La Noche Estrellada' de Van Gogh: hortensias y rosas en tonos azules con crisantemos amarillos y una lámina decorativa de la icónica obra. Arte que florece.",
+        precio: 160000,
+        imagen: "../assets/flores_cucuta_35.webp",
+        tags: ["especiales", "destacado", "bouquets", "precio-medio"]
+    },
+    {
+        nombre: "Amor de 200 Rosas",
+        descripcion: "Imponente ramo de 200 rosas rojas coronado con iniciales personalizadas hechas en flor nube (gypsophila), envuelto en elegante papel negro. Un gesto monumental de amor. Letras a elección del cliente.",
+        precio: 820000,
+        imagen: "../assets/flores_cucuta_28.webp",
+        tags: ["rosas", "bouquets", "precio-alto"]
+    },
+    {
+        nombre: "Fuego Silvestre",
+        descripcion: "Vibrante ramo en tonos rojos que combina rosas, gerberas, claveles y astromelias, envuelto en papel blanco. Intensidad y elegancia para una ocasión inolvidable.",
+        precio: 360000,
+        imagen: "../assets/flores_cucuta_29.webp",
+        tags: ["gerberas", "rosas", "bouquets", "precio-alto"]
+    },
+    {
+        nombre: "Corazón Ferrero",
+        descripcion: "Arreglo en forma de corazón con 33 Ferrero Rocher en el centro, rodeado de 52 rosas rojas y billetes decorativos a elección del cliente. Precio base del ramo; el dinero alrededor se ajusta a tu gusto.",
+        precio: 650000,
+        imagen: "../assets/flores_cucuta_30.webp",
+        tags: ["especiales", "chocolates", "precio-alto"]
+    },
+    {
+        nombre: "Ruta de Campeón",
+        descripcion: "Original ramo con 12 rosas rojas, flor nube y 5 carritos Hot Wheels. El regalo perfecto para los amantes de los autos, grandes y pequeños.",
+        precio: 167000,
+        imagen: "../assets/flores_cucuta_31.webp",
+        tags: ["especiales", "bouquets", "rosas", "precio-medio"]
+    },
+    {
+        nombre: "Cerezo Rojo",
+        descripcion: "Romántico ramo de 60 rosas rojas adornado con cerezas y un delicado moño rosado, envuelto en tul beige. Pasión y dulzura en una presentación de ensueño.",
+        precio: 265000,
+        imagen: "../assets/flores_cucuta_33.webp",
+        tags: ["rosas", "bouquets", "precio-alto"]
+    },
+    {
+        nombre: "Nube Pastel",
+        descripcion: "Encantador ramo de 36 rosas acompañado de mini rosas y claveles en tonos rosa, amarillo y pastel, envuelto en papel lila. Ternura y frescura en cada pétalo.",
+        precio: 232000,
+        imagen: "../assets/flores_cucuta_34.webp",
+        tags: ["rosas", "bouquets", "precio-medio"]
+    },
+
     // ─── DETALLES ESPECIALES ───
     {
         nombre: "Just For You",
@@ -17,13 +82,6 @@ const CATALOGO = [
         precio: 89000,
         imagen: "../assets/dia_madres/flores25.webp",
         tags: ["dia-madre", "cajas", "precio-bajo"]
-    },
-    {
-        nombre: "Abrazo Dulce",
-        descripcion: "Tierno oso de peluche acompañado de globo burbuja con mensaje especial y 3 Ferrero Rocher.",
-        precio: 182000,
-        imagen: "../assets/dia_madres/flores26.webp",
-        tags: ["dia-madre", "chocolates", "precio-medio"]
     },
     {
         nombre: "Detalle Natural",
@@ -47,13 +105,6 @@ const CATALOGO = [
         tags: ["dia-madre", "girasoles", "premium", "precio-alto"]
     },
     {
-        nombre: "Sol Vibrante",
-        descripcion: "Caja Duquesa Floral con globo personalizado, girasol radiante, claveles rojos y Ferrero Rocher.",
-        precio: 168000,
-        imagen: "../assets/dia_madres/flores32.webp",
-        tags: ["dia-madre", "cajas", "girasoles", "chocolates", "precio-medio"]
-    },
-    {
         nombre: "Elegancia Rosada",
         descripcion: "Caja redonda rosa con hortensias, rosas y crisantemos en tonos rosa pastel.",
         precio: 200000,
@@ -61,46 +112,11 @@ const CATALOGO = [
         tags: ["dia-madre", "cajas", "rosas", "precio-medio"]
     },
     {
-        nombre: "Desayuno Sorpresa",
-        descripcion: "Ensalada de frutas, jugo de naranja, chocolisto, 2 sándwiches de jamón/queso/pollo y waffles.",
-        precio: 170000,
-        imagen: "../assets/dia_madres/flores35.webp",
-        tags: ["dia-madre", "desayunos", "precio-medio"]
-    },
-    {
-        nombre: "Mini Desayuno",
-        descripcion: "Mix de maní, mini chips de chocolate, jugo de naranja, waffles con fruta y 2 sándwiches.",
-        precio: 68000,
-        imagen: "../assets/dia_madres/flores36.webp",
-        tags: ["dia-madre", "desayunos", "precio-bajo"]
-    },
-    {
         nombre: "Reflejo de Amor",
         descripcion: "Arreglo circular de rosas rojas frescas rodeando un espejo grabado con la frase \"Eres la mejor mamá\". Un detalle único, elegante y con un mensaje eterno.",
         precio: 212000,
         imagen: "../assets/flores_cucuta_26.webp",
         tags: ["dia-madre", "rosas", "premium", "precio-medio"]
-    },
-    {
-        nombre: "Beso Rojo",
-        descripcion: "Ramo de rosas rojas con eucalipto y empaque elegante con lazo rojo.",
-        precio: 110000,
-        imagen: "../assets/dia_madres/flores37.webp",
-        tags: ["dia-madre", "rosas", "bouquets", "precio-bajo"]
-    },
-    {
-        nombre: "Experiencia Dulce",
-        descripcion: "Bandeja con wafles cubiertos de frutas frescas, wraps de pollo, jamón, queso y lechuga, yogur griego con granola, brownie con frutos secos, jugo de naranja y chocolisto.",
-        precio: 180000,
-        imagen: "https://desayunosorpresacucuta.dondeseria.com/assets/ancheta_3.webp",
-        tags: ["dia-madre", "desayunos", "precio-medio"]
-    },
-    {
-        nombre: "Alegría con Girasol",
-        descripcion: "Sándwich doble piso, huevos revueltos con salchicha ranchera, ensalada de frutas, jugo de naranja, chocolisto, 3 Ferrero Rocher y arreglo floral con girasol.",
-        precio: 210000,
-        imagen: "https://desayunosorpresacucuta.dondeseria.com/assets/ancheta_4.webp",
-        tags: ["dia-madre", "desayunos", "girasoles", "chocolates", "precio-medio"]
     },
     {
         nombre: "Reina del Sol",
@@ -145,13 +161,6 @@ const CATALOGO = [
         precio: 265000,
         imagen: "../assets/flores_cucuta_1.webp",
         tags: ["rosas", "bouquets", "premium", "precio-alto"]
-    },
-    {
-        nombre: "Trilogía del Poder",
-        descripcion: "Ramo de 12 rosas, lirios y claveles con tarjeta o mensaje personalizado con nombre.",
-        precio: 162500,
-        imagen: "../assets/flores_cucuta_22.webp",
-        tags: ["rosas", "bouquets", "precio-medio"]
     },
     {
         nombre: "Esencia de Felicidad",
@@ -224,20 +233,6 @@ const CATALOGO = [
         precio: 275000,
         imagen: "../assets/flores_cucuta_24.webp",
         tags: ["premium", "precio-alto"]
-    },
-    {
-        nombre: "Precision Strike",
-        descripcion: "Caja \"LOVE\" con rosas rojas y 10 Ferrero Rocher. Diseñado para máxima efectividad.",
-        precio: 300500,
-        imagen: "../assets/amoryamistad/amoryamistad6.webp",
-        tags: ["chocolates", "cajas", "premium", "precio-alto"]
-    },
-    {
-        nombre: "Arquitectura del Éxito",
-        descripcion: "Caja circular sofisticada: 18 Ferrero Rocher en la base, rosas rojas con follaje en el nivel superior.",
-        precio: 200000,
-        imagen: "../assets/amoryamistad/amoryamistad7.webp",
-        tags: ["chocolates", "cajas", "precio-medio"]
     },
     {
         nombre: "Arsenal Completo",
@@ -365,10 +360,14 @@ function normalizeText(str) {
 
 /* ─── Renderizar tarjeta de producto ─── */
 function renderCard(p, num) {
-    return '<div class="product-item" data-tags="' + p.tags.join(',') + '" data-price="' + p.precio + '" data-number="' + num + '">' +
+    var isDest = p.tags.indexOf('destacado') >= 0;
+    var badge = isDest
+        ? '<span class="product-featured-badge product-featured-badge--dest">✨ Destacado</span>'
+        : (p.tags.indexOf('dia-madre') >= 0 ? '<span class="product-featured-badge">Detalles Especiales</span>' : '');
+    return '<div class="product-item' + (isDest ? ' product-item--destacado' : '') + '" data-tags="' + p.tags.join(',') + '" data-price="' + p.precio + '" data-number="' + num + '">' +
         '<div class="product-image">' +
             '<span class="product-number">#' + num + '</span>' +
-            (p.tags.indexOf('dia-madre') >= 0 ? '<span class="product-featured-badge">Detalles Especiales</span>' : '') +
+            badge +
             '<img src="' + p.imagen + '" alt="' + p.nombre + '" loading="lazy">' +
         '</div>' +
         '<div class="product-info">' +
@@ -392,11 +391,16 @@ function filterProducts() {
     var rawSearch = document.getElementById('search-input') ? document.getElementById('search-input').value : '';
     var searchVal = normalizeText(rawSearch.trim());
 
-    // Ordenar: dia-madre primero, luego prioridad de la landing
+    // Ordenar: destacados primero, luego dia-madre, luego prioridad de la landing
     var sorted = CATALOGO.slice().sort(function (a, b) {
-        // Día de la madre tiene prioridad absoluta cuando estamos cerca de la fecha
-        var aDia = a.tags.indexOf('dia-madre') >= 0 ? 0 : 1;
-        var bDia = b.tags.indexOf('dia-madre') >= 0 ? 0 : 1;
+        // Productos destacados encabezan la vitrina
+        var aDest = a.tags.indexOf('destacado') >= 0 ? 0 : 1;
+        var bDest = b.tags.indexOf('destacado') >= 0 ? 0 : 1;
+        if (aDest !== bDest) return aDest - bDest;
+
+        // Día de la madre va al final del listado
+        var aDia = a.tags.indexOf('dia-madre') >= 0 ? 1 : 0;
+        var bDia = b.tags.indexOf('dia-madre') >= 0 ? 1 : 0;
         if (aDia !== bDia) return aDia - bDia;
 
         if (LANDING_PRIORITY_TAG) {

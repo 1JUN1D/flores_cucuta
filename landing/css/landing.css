@@ -512,12 +512,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 24px;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* ⚡ Anti-desbordamiento horizontal en móvil */
+html, body { max-width: 100%; overflow-x: hidden; }
+.product-item, .product-item--destacado { max-width: 100%; min-width: 0; }
+.product-image img { max-width: 100%; }
 .product-item {
     background: #fff;
     border-radius: 12px;
@@ -834,4 +839,208 @@ img { max-width: 100%; height: auto; display: block; }
     .zone-badge { font-size: .78rem; padding: 5px 14px; }
     .filter-btn { font-size: .75rem; padding: 5px 10px; }
     .search-input { font-size: .88rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ██  REDISEÑO PREMIUM — Tarjetas de vanguardia + optimización  ██
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@property --dq-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+:root { --dq-angle: 0deg; }
+
+.products-container {
+    gap: 34px 26px;
+    max-width: 1140px;
+}
+
+/* ⚡ Rendimiento: omitir render de tarjetas fuera de pantalla */
+.product-item {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 420px;
+}
+
+/* Aparición al hacer scroll (sin JS; si no hay soporte, se muestran igual) */
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .product-item {
+            animation: dqRevealL linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 40%;
+        }
+        @keyframes dqRevealL {
+            from { opacity: 0; transform: translateY(34px) scale(.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    }
+}
+
+/* ---------- Tarjeta base rediseñada ---------- */
+.product-item {
+    border-radius: 22px;
+    overflow: visible;
+    box-shadow: 0 14px 34px rgba(44,44,44,.10);
+    position: relative;
+    transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+}
+
+/* Barra de acento superior */
+.product-item::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #ff7eb9, #c75c93, #ff7eb9);
+    border-radius: 22px 22px 0 0;
+    z-index: 4;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 28px 52px rgba(44,44,44,.20);
+}
+
+/* Imagen con corte diagonal dinámico */
+.product-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    border-radius: 22px 22px 0 0;
+}
+
+.product-item:hover .product-image img {
+    transform: scale(1.08);
+}
+
+/* Número y badge más redondeados */
+.product-number {
+    top: 14px; left: 14px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #2c2c2c, #444);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+    z-index: 5;
+}
+
+.product-featured-badge {
+    top: 14px; right: 14px;
+    border-radius: 30px;
+    z-index: 5;
+}
+
+/* Contenido tipo capa flotante sobre la imagen */
+.product-info {
+    position: relative;
+    z-index: 3;
+    margin-top: -1.2rem;
+    background: #fff;
+    border-radius: 26px 26px 22px 22px;
+    padding: 1.5rem 1.4rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: .5rem;
+}
+
+.product-info h3::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 42px; height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #ff7eb9, #c75c93);
+}
+
+/* Precio como píldora */
+.product-footer .price {
+    background: linear-gradient(135deg, #fff0f6, #ffe1ee);
+    color: #c75c93;
+    padding: .35rem .95rem;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    box-shadow: inset 0 0 0 2px rgba(199,92,147,.25);
+}
+
+/* Botón con destello */
+.product-footer .btn-order {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(37,211,102,.35);
+}
+
+.product-footer .btn-order::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -120%;
+    width: 55%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.5), transparent);
+    transform: skewX(-20deg);
+    transition: left .6s ease;
+}
+
+.product-item:hover .btn-order::after { left: 140%; }
+
+/* ---------- Tarjeta DESTACADA premium ---------- */
+.product-item--destacado {
+    background: linear-gradient(150deg, #fff, #fff7fb);
+    box-shadow: 0 18px 42px rgba(199,92,147,.28);
+}
+
+.product-item--destacado::before {
+    height: 7px;
+    background: linear-gradient(90deg, #EABE81, #c75c93, #EABE81);
+}
+
+/* Marco con degradado de marca: estático en reposo, gira SOLO al pasar el
+   mouse para mantener el rendimiento. */
+.product-item--destacado::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 25px;
+    padding: 3px;
+    background: conic-gradient(from var(--dq-angle), #EABE81, #ff7eb9, #c75c93, #d99c5b, #EABE81);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.product-item--destacado:hover {
+    transform: translateY(-12px) scale(1.015);
+    box-shadow: 0 32px 60px rgba(199,92,147,.36);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .product-item--destacado:hover::after { animation: dqSpin 4s linear infinite; }
+}
+
+@keyframes dqSpin { to { --dq-angle: 360deg; } }
+
+.product-featured-badge--dest {
+    background: linear-gradient(135deg, #EABE81, #d99c5b);
+    color: #7a3b1f;
+    box-shadow: 0 3px 10px rgba(217,156,91,.6);
+    letter-spacing: .3px;
+}
+
+.product-item--destacado .price {
+    background: linear-gradient(135deg, #fff6e8, #ffe9c9);
+    color: #b57a2c;
+    box-shadow: inset 0 0 0 2px rgba(217,156,91,.35);
+}
+
+@media (max-width: 600px) {
+    .product-info { margin-top: -1rem; }
+    .products-container { gap: 26px 18px; }
 }

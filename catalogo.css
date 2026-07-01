@@ -213,7 +213,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
             gap: 3rem;
             margin-top: 2rem;
         }
@@ -396,7 +396,7 @@
             }
 
             .product-card {
-                margin: 0 10px;
+                margin: 0;
             }
 
             .product-image {
@@ -468,3 +468,552 @@
         .product-card:nth-child(4) {
             animation-delay: 0.4s;
         }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ██  REDISEÑO PREMIUM — Cards de vanguardia + optimización  ██
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@property --dq-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+:root {
+    --dq-wine: #833F4A;
+    --dq-wine-soft: #a54d5a;
+    --dq-gold: #EABE81;
+    --dq-gold-deep: #d99c5b;
+    --dq-cream: #fff8f2;
+    --dq-angle: 0deg;
+}
+
+/* ---------- Fondo general con textura suave ---------- */
+body {
+    background:
+        radial-gradient(circle at 12% 8%, rgba(234,190,129,.10), transparent 42%),
+        radial-gradient(circle at 88% 92%, rgba(131,63,74,.08), transparent 45%),
+        linear-gradient(135deg, #fbf7f3, #ffffff);
+    background-repeat: no-repeat;
+}
+
+/* ⚡ Anti-desbordamiento horizontal (evita scroll lateral y franja blanca) */
+html, body { max-width: 100%; overflow-x: hidden; }
+.products-grid, .destacados-grid { max-width: 100%; }
+.product-card, .cotiza-card, .product-card--destacado {
+    max-width: 100%;
+    min-width: 0;
+}
+.product-image img, .cotiza-slide { max-width: 100%; }
+
+/* ═══════════════ BANDA DE DESTACADOS ═══════════════ */
+.destacados-band {
+    margin: 0.5rem 0 4rem;
+    position: relative;
+    padding: 2.5rem 0 3rem;
+}
+
+.destacados-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(234,190,129,.14), rgba(131,63,74,.08));
+    border-radius: 32px;
+    z-index: 0;
+}
+
+.destacados-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.destacados-kicker {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--dq-gold-deep);
+    margin-bottom: 0.4rem;
+}
+
+.destacados-title {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    color: var(--dq-wine);
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0.1rem 0 0.5rem;
+    text-shadow: 1px 2px 4px rgba(131,63,74,.12);
+}
+
+.destacados-sub {
+    color: #97727a;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+.destacados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 3rem 2.2rem;
+    justify-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Tarjeta destacada PREMIUM (marco degradado animado) ---------- */
+.product-card--destacado {
+    background: #fff;
+    border-radius: 28px;
+    overflow: visible;
+    text-align: center;
+    max-width: 370px;
+    padding: 14px 14px 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 22px 48px rgba(131, 63, 74, .18);
+    transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s ease;
+    animation: destacadoRise 0.7s ease-out both;
+}
+
+@keyframes destacadoRise {
+    from { opacity: 0; transform: translateY(36px) scale(.94); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Marco con degradado de marca: estático en reposo, gira SOLO al pasar el
+   mouse (una tarjeta a la vez) para no consumir CPU de más. */
+.product-card--destacado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: auto;
+    border-radius: 28px;
+    padding: 3px;
+    background: conic-gradient(from var(--dq-angle),
+        var(--dq-gold), var(--dq-wine), var(--dq-gold-deep), var(--dq-wine-soft), var(--dq-gold));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.product-card--destacado:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 34px 62px rgba(131, 63, 74, .28);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .product-card--destacado:hover::before {
+        animation: dqSpin 4s linear infinite;
+    }
+}
+
+@keyframes dqSpin { to { --dq-angle: 360deg; } }
+
+/* Foto enmarcada con esquinas suaves (sin recortes ni filtros pesados) */
+.product-card--destacado .product-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 300px;
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    clip-path: none;
+    background: none;
+    filter: none;
+}
+
+.product-card--destacado .product-image img {
+    transform: scale(1);
+    transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+}
+
+.product-card--destacado:hover .product-image img {
+    transform: scale(1.07);
+}
+
+/* Ocultar número/badge duplicados dentro de la foto */
+.product-card--destacado .product-number,
+.product-card--destacado .category-badge {
+    display: none !important;
+}
+
+/* Cinta "Destacado" flotante sobre la esquina de la foto */
+.destacado-ribbon {
+    position: absolute;
+    top: 28px;
+    left: -4px;
+    z-index: 3;
+    background: linear-gradient(135deg, var(--dq-wine), var(--dq-wine-soft));
+    color: var(--dq-gold);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.68rem;
+    padding: 7px 18px;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 0 8px 18px rgba(131, 63, 74, .4);
+}
+
+.product-card--destacado .product-content {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    margin-top: 0;
+    padding: 1.3rem 0.8rem 0.3rem;
+    box-shadow: none;
+}
+
+.product-card--destacado .product-title {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card--destacado .product-description {
+    min-height: auto;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Precio tipo joya dorada, flotando sobre la foto */
+.product-card--destacado .product-price {
+    order: -1;
+    margin: -2.6rem auto 0.9rem;
+    background: linear-gradient(135deg, var(--dq-gold), var(--dq-gold-deep));
+    color: var(--dq-wine);
+    border: 3px solid #fff;
+    box-shadow: 0 10px 22px rgba(217, 156, 91, .45);
+    position: relative;
+    z-index: 3;
+    transform: none;
+}
+
+.product-card--destacado:hover .product-price {
+    transform: translateY(-2px) scale(1.04);
+}
+
+.product-card--destacado .product-button {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* ═══════════════ TARJETAS NORMALES — REDISEÑO ═══════════════ */
+.products-grid {
+    gap: 3.5rem 2.5rem;
+}
+
+.product-card {
+    overflow: visible;
+    border-radius: 26px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(131,63,74,.12);
+}
+
+/* Barra de acento superior */
+.product-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 7px;
+    background: linear-gradient(90deg, var(--dq-wine), var(--dq-gold), var(--dq-wine-soft));
+    border-radius: 26px 26px 0 0;
+    z-index: 4;
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 34px 60px rgba(131,63,74,.22);
+}
+
+/* Imagen con corte diagonal dinámico */
+.product-image {
+    height: 300px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    border-radius: 26px 26px 0 0;
+}
+
+/* Contenido superpuesto tipo capa flotante */
+.product-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    margin-top: -1.6rem;
+    background: #fff;
+    border-radius: 30px 30px 24px 24px;
+    padding: 2.4rem 2rem 2.2rem;
+}
+
+/* Precio como medallón dorado flotante (reordenado arriba) */
+.product-price {
+    order: -1;
+    margin: -4.3rem 0 1.3rem;
+    background: linear-gradient(135deg, var(--dq-gold), var(--dq-gold-deep));
+    color: var(--dq-wine);
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 0.55rem 1.7rem;
+    border-radius: 40px;
+    border: 3px solid #fff;
+    box-shadow: 0 12px 26px rgba(131,63,74,.30);
+    text-shadow: none;
+    letter-spacing: .3px;
+    position: relative;
+    z-index: 5;
+    transition: transform .3s ease;
+}
+
+.product-card:hover .product-price {
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* Título con florituras */
+.product-title {
+    position: relative;
+    padding-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Subrayado decorativo dorado (limpio, sin glifos que puedan fallar) */
+.product-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--dq-gold), var(--dq-gold-deep));
+}
+
+/* Títulos con degradado de marca. Uso background-IMAGE (no el atajo
+   background:) porque el atajo reinicia background-clip y rompía el texto. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .product-title {
+        background-image: linear-gradient(90deg, var(--dq-wine), var(--dq-gold-deep) 145%);
+        -webkit-background-clip: text;
+                background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .product-card--destacado .product-title {
+        background-image: linear-gradient(90deg, var(--dq-wine), var(--dq-gold-deep));
+    }
+}
+
+/* Badge de categoría tipo píldora con brillo */
+.category-badge {
+    top: 18px;
+    right: 18px;
+    padding: 6px 15px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.95);
+    color: var(--dq-wine);
+    box-shadow: 0 4px 12px rgba(131,63,74,.25);
+    z-index: 4;
+}
+
+.product-number {
+    top: 18px;
+    left: 18px;
+    z-index: 4;
+    background: linear-gradient(135deg, var(--dq-wine), var(--dq-wine-soft));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(131,63,74,.3);
+}
+
+/* Botón con destello al pasar */
+.product-button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    max-width: 260px;
+}
+
+.product-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+    transform: skewX(-20deg);
+    transition: left .6s ease;
+}
+
+.product-card:hover .product-button::after {
+    left: 130%;
+}
+
+/* ⚡ Rendimiento: no renderizar tarjetas fuera de pantalla (páginas largas
+   cargan y hacen scroll mucho más rápido) */
+.products-grid .product-card {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 520px;
+}
+
+/* Aparición al hacer scroll — impulsada por el compositor, sin JS.
+   Va dentro de @supports para que, si el navegador no lo soporta, las
+   tarjetas simplemente se muestren (nunca quedan ocultas). */
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .products-grid .product-card {
+            animation: dqReveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 42%;
+        }
+        @keyframes dqReveal {
+            from { opacity: 0; transform: translateY(42px) scale(.96); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    }
+}
+
+/* ---------- Responsive del rediseño ---------- */
+@media (max-width: 900px) {
+    .destacados-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .destacados-band { padding: 2rem 0 2.5rem; }
+    .destacados-grid { gap: 2.5rem 1.5rem; }
+    .products-grid { gap: 3rem 1.5rem; }
+    .product-price { font-size: 1.35rem; margin-top: -3.8rem; }
+    .product-card--destacado .product-image { height: 260px; }
+    .product-card--destacado .product-price { margin-top: -2.4rem; }
+    .product-title { font-size: 1.55rem; }
+}
+
+@media (max-width: 480px) {
+    .destacados-band { padding: 1.4rem 0 2rem; }
+    .destacados-band::before { border-radius: 22px; }
+    .destacados-title { font-size: 1.9rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .product-image { height: 240px; }
+    .product-content { padding: 2rem 1.4rem 1.8rem; }
+    .product-price { font-size: 1.25rem; }
+    .product-card--destacado { max-width: 340px; padding: 12px 12px 1.1rem; }
+    .product-card--destacado .product-image { height: 230px; }
+    .product-card--destacado .product-price { margin-top: -2.2rem; }
+    .product-card--destacado .product-title { font-size: 1.5rem; }
+    .destacado-ribbon { font-size: 0.62rem; padding: 6px 14px; top: 22px; }
+}
+
+/* ═══════════════ CARD "COTIZA TU ARREGLO" (carrusel) ═══════════════ */
+.cotiza-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(155deg, #ffffff, #fdf4ea);
+    border: 2px dashed rgba(234, 190, 129, .85);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(131, 63, 74, .14);
+    animation: fadeInUp .7s ease-out both;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.cotiza-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 55px rgba(131, 63, 74, .22);
+}
+
+/* Barra de acento superior */
+.cotiza-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 7px;
+    background: linear-gradient(90deg, var(--dq-gold), var(--dq-wine), var(--dq-gold));
+    z-index: 5;
+}
+
+/* Carrusel de fotos */
+.cotiza-carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #f3e9df;
+}
+
+.cotiza-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 1s ease, transform 6s ease;
+    will-change: opacity;
+}
+
+.cotiza-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.cotiza-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    background: linear-gradient(135deg, var(--dq-wine), var(--dq-wine-soft));
+    color: var(--dq-gold);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.72rem;
+    padding: 6px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(131, 63, 74, .4);
+}
+
+.cotiza-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.9rem 2rem 2rem;
+}
+
+.cotiza-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--dq-wine);
+    line-height: 1.25;
+    margin-bottom: 0.8rem;
+}
+
+.cotiza-desc {
+    font-size: 1.05rem;
+    color: #6a5560;
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+}
+
+.cotiza-card .product-button {
+    margin-top: auto;
+    max-width: 280px;
+}
+
+@media (max-width: 480px) {
+    .cotiza-carousel { height: 240px; }
+    .cotiza-content { padding: 1.6rem 1.4rem 1.8rem; }
+    .cotiza-title { font-size: 1.5rem; }
+}
