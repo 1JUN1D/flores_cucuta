@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos - Duquesa Floral | Ramos y Bouquets en Cúcuta</title>
     <meta name="description"
-        content="Catálogo completo de ramos y bouquets de Duquesa Floral en Cúcuta. Rosas, gerberas y arreglos florales con entrega a domicilio.">
+        content="Catálogo de Duquesa Floral en Cúcuta: ramos para Amor y Amistad, flores amarillas, rosas, girasoles, eternas y detalles con chocolates. Entrega a domicilio.">
     <link rel="shortcut icon" href="assets/duquesa-logo.png" type="image/x-icon">
 
     <!-- Meta Pixel Code -->
@@ -35,17 +35,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-LS1WV5B608');
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17503274952">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
         gtag('config', 'AW-17503274952');
     </script>
 
@@ -66,6 +56,10 @@
             return false;
         }
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="catalogo.css">
 </head>
 
@@ -73,21 +67,26 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <img src="assets/duquesa-logo.png" alt="Duquesa Floral Logo">
-            </div>
-            <h1>Nuestro Catálogo</h1>
-            <p>Ramos y bouquets únicos para cada ocasión especial</p>
-            <div class="decorative-line"></div>
+            <div class="logo"><img src="assets/duquesa-logo.png" alt="Duquesa Floral"></div>
+            <h1 class="wordmark">DUQUESA<small>FLORAL</small></h1>
+            <p>Ramos, cajas y detalles con domicilio en Cúcuta</p>
         </div>
     </header>
 
-    <!-- Filter Section -->
+    <!-- Navegación de secciones -->
+    <nav class="section-nav" aria-label="Secciones del catálogo">
+        <div class="container">
+            <a href="#amor" data-section="amor">❤️ Amor y Amistad</a>
+            <a href="#amarillas" data-section="amarillas">💛 Flores Amarillas</a>
+            <a href="#mas" data-section="mas">Más arreglos</a>
+        </div>
+    </nav>
+
+    <!-- Búsqueda y filtros -->
     <section class="filter-section">
         <div class="container">
-            <!-- Barra de búsqueda -->
             <div class="search-container">
-                <input type="text" class="search-input" id="search-input" placeholder="Buscar producto, número, descripción... (ej: 27, rosas, girasol)">
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar por número, nombre o flor (ej: 41, girasoles, ferrero)">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/>
                     <path d="m21 21-4.35-4.35"/>
@@ -96,865 +95,760 @@
             </div>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">Todos</button>
-                <button class="filter-btn filter-btn--featured" data-category="dia-madre">💐 Detalles Especiales</button>
+                <button class="filter-btn filter-btn--evento" data-category="amor">❤️ Amor y Amistad</button>
+                <button class="filter-btn filter-btn--evento" data-category="amarillas">💛 Flores Amarillas</button>
                 <button class="filter-btn" data-category="rosas">Rosas</button>
                 <button class="filter-btn" data-category="girasoles">Girasoles</button>
-                <button class="filter-btn" data-category="gerberas">Gerberas</button>
                 <button class="filter-btn" data-category="tulipanes">Tulipanes</button>
-                <button class="filter-btn" data-category="flores-eternas">Flores Eternas</button>
-                <button class="filter-btn" data-category="celebraciones">Celebraciones</button>
-                <button class="filter-btn" data-category="cumpleanos">Cumpleaños</button>
-                <button class="filter-btn" data-category="especiales">Especiales</button>
+                <button class="filter-btn" data-category="eternas">Eternas</button>
+                <button class="filter-btn" data-category="chocolates">Con chocolates</button>
+                <button class="filter-btn" data-category="peluches">Con peluche</button>
+                <button class="filter-btn" data-category="cajas">Cajas</button>
+                <button class="filter-btn" data-category="precio-bajo">Menos de $150.000</button>
+                <button class="filter-btn" data-category="precio-medio">$150.000 – $250.000</button>
+                <button class="filter-btn" data-category="precio-alto">Más de $250.000</button>
             </div>
-            <div class="results-counter">
-                Mostrando <strong id="results-count">0</strong> productos
-            </div>
+            <div class="results-counter">Mostrando <strong id="results-count">0</strong> productos</div>
         </div>
     </section>
 
-    <!-- Catalog Section -->
-<!-- Catalog Section -->
-    <section class="catalog">
+    <!-- Catálogo -->
+    <main class="catalog">
         <div class="container">
             <div class="empty-state" id="empty-state" style="display:none;">
                 <h3>No se encontraron productos</h3>
                 <p>Intenta con otro filtro o término de búsqueda</p>
             </div>
-            <!-- ═══════════════════════════════════════════════════════════ -->
-            <!-- ════════════════════ DESTACADOS ══════════════════════════ -->
-            <!-- ═══════════════════════════════════════════════════════════ -->
-            <div class="destacados-band" id="destacados-band">
-                <div class="destacados-heading">
-                    <span class="destacados-kicker">Lo más especial</span>
-                    <h2 class="destacados-title">✨ Destacados</h2>
-                    <p class="destacados-sub">Nuestras creaciones más impresionantes, elegidas para enamorar</p>
+
+            <section class="seccion" id="amor" data-section="amor" data-date="2026-09-19">
+                <div class="seccion-head">
+                    <h2>❤️ Amor y Amistad</h2>
+                    <span class="ln"></span>
+                    <span class="date">19 de septiembre</span><span class="countdown" data-date="2026-09-19"></span>
                 </div>
-                <div class="destacados-grid">
-
-                    <!-- Destacado: Ternura Kitty (27) -->
-                    <div class="product-card product-card--destacado" data-category="especiales" data-keywords="hello kitty gato crisantemos blancos rosas rosadas amarillas escultura floral figura personaje especial premium destacado">
-                        <div class="destacado-ribbon">Destacado</div>
-                        <div class="category-badge category-badge--featured">✨ Destacado</div>
-                        <div class="product-image">
-                            <img src="assets/flores_cucuta_27.webp" alt="Ternura Kitty - Arreglo escultórico de Hello Kitty con crisantemos blancos, moño de rosas rosadas y rosas amarillas" loading="lazy">
-                        </div>
-                        <div class="product-content">
-                            <h2 class="product-title">Ternura Kitty</h2>
-                            <p class="product-description">Espectacular arreglo escultórico en forma de Hello Kitty elaborado con crisantemos blancos, un tierno moño de rosas rosadas y detalle de rosas amarillas. Una obra floral única para sorprender y enamorar.</p>
-                            <div class="product-price">$520,000</div>
-                            <button class="product-button"
-                                onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ternura Kitty por $520,000. ¿Podrías darme más información?', 'destacado_ternura_kitty')">
-                                Pedir Ahora
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Destacado: Jardín Encantado (32) -->
-                    <div class="product-card product-card--destacado" data-category="especiales" data-keywords="caja rosa orquideas cymbidium lirios naranjas girasoles gerberas rosas lavanda hortensias claveles colorido premium destacado">
-                        <div class="destacado-ribbon">Destacado</div>
-                        <div class="category-badge category-badge--featured">✨ Destacado</div>
-                        <div class="product-image">
-                            <img src="assets/flores_cucuta_32.webp" alt="Jardín Encantado - Arreglo colorido en caja rosa con orquídeas, lirios, girasoles, gerberas y rosas lavanda" loading="lazy">
-                        </div>
-                        <div class="product-content">
-                            <h2 class="product-title">Jardín Encantado</h2>
-                            <p class="product-description">Lujoso arreglo en caja rosa que reúne orquídeas cymbidium, lirios naranjas, girasoles, gerberas y rosas lavanda entre hortensias y claveles. Una explosión de color y sofisticación.</p>
-                            <div class="product-price">$545,000</div>
-                            <button class="product-button"
-                                onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Jardín Encantado por $545,000. ¿Podrías darme más información?', 'destacado_jardin_encantado')">
-                                Pedir Ahora
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Destacado: Noche Estrellada (35) -->
-                    <div class="product-card product-card--destacado" data-category="especiales" data-keywords="van gogh noche estrellada hortensias azules rosas azules crisantemos amarillos arte bouquet artistico destacado">
-                        <div class="destacado-ribbon">Destacado</div>
-                        <div class="category-badge category-badge--featured">✨ Destacado</div>
-                        <div class="product-image">
-                            <img src="assets/flores_cucuta_35.webp" alt="Noche Estrellada - Ramo artístico inspirado en Van Gogh con hortensias azules, rosas azules y crisantemos amarillos" loading="lazy">
-                        </div>
-                        <div class="product-content">
-                            <h2 class="product-title">Noche Estrellada</h2>
-                            <p class="product-description">Ramo artístico inspirado en "La Noche Estrellada" de Van Gogh: hortensias y rosas en tonos azules con crisantemos amarillos y una lámina decorativa de la icónica obra. Arte que florece.</p>
-                            <div class="product-price">$160,000</div>
-                            <button class="product-button"
-                                onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Noche Estrellada por $160,000. ¿Podrías darme más información?', 'destacado_noche_estrellada')">
-                                Pedir Ahora
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="products-grid">
-
-                <!-- CTA: Cotiza tu arreglo personalizado -->
-                <div class="cotiza-card">
-                    <div class="cotiza-carousel">
-                        <span class="cotiza-tag">✦ A tu medida</span>
-                        <img class="cotiza-slide is-active" src="assets/flores_cucuta_27.webp" alt="Arreglo floral personalizado" loading="lazy">
-                        <img class="cotiza-slide" src="assets/flores_cucuta_32.webp" alt="Arreglo floral personalizado" loading="lazy">
-                        <img class="cotiza-slide" src="assets/flores_cucuta_35.webp" alt="Arreglo floral personalizado" loading="lazy">
-                        <img class="cotiza-slide" src="assets/flores_cucuta_29.webp" alt="Arreglo floral personalizado" loading="lazy">
-                        <img class="cotiza-slide" src="assets/flores_cucuta_33.webp" alt="Arreglo floral personalizado" loading="lazy">
-                        <img class="cotiza-slide" src="assets/flores_cucuta_34.webp" alt="Arreglo floral personalizado" loading="lazy">
-                    </div>
-                    <div class="cotiza-content">
-                        <h2 class="cotiza-title">Cotiza tu arreglo personalizado</h2>
-                        <p class="cotiza-desc">¿Tienes una idea en mente? Diseñamos el arreglo perfecto a tu gusto, ocasión y presupuesto. Cuéntanos y lo hacemos realidad.</p>
-                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, quiero cotizar un arreglo personalizado. ¿Me ayudan?', 'cotiza_personalizado')">Cotizar por WhatsApp</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="rosas" data-keywords="200 rosas rojas iniciales letras personalizadas flor nube gypsophila paniculata ramo gigante papel negro amor destacado">
-                    <div class="category-badge">Rosas</div>
+                <p class="seccion-sub">Detalles para celebrar el amor y la amistad</p>
+                <div class="products-grid">
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo detalles" data-number="36" data-keywords="skincare cuidado facial spa regalo mujer amiga detalles">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_28.webp" alt="Amor de 200 Rosas - Ramo gigante de 200 rosas rojas con iniciales en flor nube" loading="lazy">
+                        <img src="assets/flores_cucuta_36.webp" alt="Kit Amor Propio - Set de balaca y muñequeras, parches anti acné, 3 pomos para polvos, mascarilla velo, pañitos para rostro, parche de colágeno con niacinamida para ojeras y colágeno para labios" loading="lazy">
+                        <span class="product-number">Nº 36</span>
+                        <span class="product-price">$91.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Amor de 200 Rosas</h2>
-                        <p class="product-description">Imponente ramo de 200 rosas rojas coronado con iniciales personalizadas hechas en flor nube (gypsophila), envuelto en elegante papel negro. Un gesto monumental de amor. Letras a elección del cliente.</p>
-                        <div class="product-price">$820,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Amor de 200 Rosas por $820,000. ¿Podrías darme más información?', 'amor_200_rosas')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Kit Amor Propio</h3>
+                        <p class="product-description">Set de balaca y muñequeras, parches anti acné, 3 pomos para polvos, mascarilla velo, pañitos para rostro, parche de colágeno con niacinamida para ojeras y colágeno para labios. Un regalo de autocuidado para consentir a quien más quieres.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Kit Amor Propio (Nº 36) por $91.000. ¿Podrías darme más información?', 'kit_amor_propio')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="gerberas" data-keywords="mix rosas gerberas claveles astromelias rojo ramo papel blanco intenso variado">
-                    <div class="category-badge">Gerberas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-alto peluches eternas" data-number="37" data-keywords="osito foamy globos helio caja peluches eternas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_29.webp" alt="Fuego Silvestre - Ramo rojo con rosas, gerberas, claveles y astromelias" loading="lazy">
+                        <img src="assets/flores_cucuta_37.webp" alt="Oso de Rosas - Oso de 30 cm elaborado en rosas, presentado en caja de acetato con lazo rojo y acompañado de 2 globos de helio" loading="lazy">
+                        <span class="product-number">Nº 37</span>
+                        <span class="product-price">$275.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Fuego Silvestre</h2>
-                        <p class="product-description">Vibrante ramo en tonos rojos que combina rosas, gerberas, claveles y astromelias, envuelto en papel blanco. Intensidad y elegancia para una ocasión inolvidable.</p>
-                        <div class="product-price">$360,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Fuego Silvestre por $360,000. ¿Podrías darme más información?', 'fuego_silvestre')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Oso de Rosas</h3>
+                        <p class="product-description">Oso de 30 cm elaborado en rosas, presentado en caja de acetato con lazo rojo y acompañado de 2 globos de helio. Un detalle que no se marchita y llena de emoción cualquier espacio.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Oso de Rosas (Nº 37) por $275.000. ¿Podrías darme más información?', 'oso_de_rosas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="especiales" data-keywords="corazon ferrero rocher chocolates 33 rosas rojas 52 billetes dinero regalo personalizado especial">
-                    <div class="category-badge">Especiales</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio eternas peluches" data-number="38" data-keywords="osito rosas eternas 21 eternas peluches">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_30.webp" alt="Corazón Ferrero - Arreglo en forma de corazón con Ferrero Rocher, rosas rojas y billetes" loading="lazy">
+                        <img src="assets/flores_cucuta_38.webp" alt="Abrazo Eterno - 21 rosas eternas en tonos rosa y dorado con mariposas decorativas y un tierno peluche en el centro" loading="lazy">
+                        <span class="product-number">Nº 38</span>
+                        <span class="product-price">$160.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Corazón Ferrero</h2>
-                        <p class="product-description">Arreglo en forma de corazón con 33 Ferrero Rocher en el centro, rodeado de 52 rosas rojas y billetes decorativos a elección del cliente. Precio base del ramo; el dinero alrededor se ajusta a tu gusto.</p>
-                        <div class="product-price">$650,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Corazón Ferrero (base $650,000 + dinero a elección). ¿Podrías darme más información?', 'corazon_ferrero')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Abrazo Eterno</h3>
+                        <p class="product-description">21 rosas eternas en tonos rosa y dorado con mariposas decorativas y un tierno peluche en el centro. Dura para siempre, igual que lo que sientes.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Abrazo Eterno (Nº 38) por $160.000. ¿Podrías darme más información?', 'abrazo_eterno')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="especiales" data-keywords="12 rosas rojas flor nube gypsophila hot wheels carritos autos regalo niños hombre especial">
-                    <div class="category-badge">Especiales</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo eternas peluches" data-number="39" data-keywords="osito rosas eternas 11 economico eternas peluches">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_31.webp" alt="Ruta de Campeón - Ramo de 12 rosas rojas con flor nube y 5 carritos Hot Wheels" loading="lazy">
+                        <img src="assets/flores_cucuta_39.webp" alt="Ternura Eterna - 11 rosas eternas rosadas y doradas con mariposas y un peluche de oso" loading="lazy">
+                        <span class="product-number">Nº 39</span>
+                        <span class="product-price">$100.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Ruta de Campeón</h2>
-                        <p class="product-description">Original ramo con 12 rosas rojas, flor nube y 5 carritos Hot Wheels. El regalo perfecto para los amantes de los autos, grandes y pequeños.</p>
-                        <div class="product-price">$167,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ruta de Campeón por $167,000. ¿Podrías darme más información?', 'ruta_de_campeon')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Ternura Eterna</h3>
+                        <p class="product-description">11 rosas eternas rosadas y doradas con mariposas y un peluche de oso. El detalle ideal para decir “te quiero” sin gastar de más.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ternura Eterna (Nº 39) por $100.000. ¿Podrías darme más información?', 'ternura_eterna')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas" data-keywords="60 rosas rojas cerezas moño rosado tul beige ramo romantico premium">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo rosas chocolates" data-number="40" data-keywords="12 rosas ferrero bombones rosas chocolates">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_33.webp" alt="Cerezo Rojo - Ramo de 60 rosas rojas con cerezas y moño rosado" loading="lazy">
+                        <img src="assets/flores_cucuta_40.webp" alt="Dulce Docena - Ramo de 12 rosas rojas con flor nube y 3 Ferrero Rocher, envuelto en papel blanco con lazo rojo" loading="lazy">
+                        <span class="product-number">Nº 40</span>
+                        <span class="product-price">$122.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Cerezo Rojo</h2>
-                        <p class="product-description">Romántico ramo de 60 rosas rojas adornado con cerezas y un delicado moño rosado, envuelto en tul beige. Pasión y dulzura en una presentación de ensueño.</p>
-                        <div class="product-price">$265,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Cerezo Rojo por $265,000. ¿Podrías darme más información?', 'cerezo_rojo')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Dulce Docena</h3>
+                        <p class="product-description">Ramo de 12 rosas rojas con flor nube y 3 Ferrero Rocher, envuelto en papel blanco con lazo rojo. Clásico, dulce y directo al corazón.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Dulce Docena (Nº 40) por $122.000. ¿Podrías darme más información?', 'dulce_docena')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas" data-keywords="36 rosas mini rosas claveles rosa amarillo pastel papel lila ramo tierno primaveral">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo rosas chocolates cajas" data-number="41" data-keywords="caja corazon ferrero cancion mensajes rosas chocolates cajas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_34.webp" alt="Nube Pastel - Ramo de 36 rosas con mini rosas y claveles en tonos pastel" loading="lazy">
+                        <img src="assets/flores_cucuta_41.webp" alt="10 Razones para Amarte - Caja corazón negra con 4 rosas rojas, flor nube, 12 Ferrero Rocher y los mensajes de la canción en su interior" loading="lazy">
+                        <span class="product-number">Nº 41</span>
+                        <span class="product-price">$130.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Nube Pastel</h2>
-                        <p class="product-description">Encantador ramo de 36 rosas acompañado de mini rosas y claveles en tonos rosa, amarillo y pastel, envuelto en papel lila. Ternura y frescura en cada pétalo.</p>
-                        <div class="product-price">$232,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Nube Pastel por $232,000. ¿Podrías darme más información?', 'nube_pastel')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">10 Razones para Amarte</h3>
+                        <p class="product-description">Caja corazón negra con 4 rosas rojas, flor nube, 12 Ferrero Rocher y los mensajes de la canción en su interior. Cada razón viene con una flor y un dulce.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el 10 Razones para Amarte (Nº 41) por $130.000. ¿Podrías darme más información?', '10_razones_para_amarte')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas" data-keywords="bolsa duquesa floral flower world rosas rojas rosadas claveles eucalipto paniculata lisianthus premium romance">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio rosas" data-number="42" data-keywords="corazon 35 rosas topper feliz dia rosas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_25.webp" alt="Romance Duquesa - Bolsa Flower World disponible en versión de rosas rojas o rosas rosadas" loading="lazy">
+                        <img src="assets/flores_cucuta_42.webp" alt="Corazón Feliz Día - 35 rosas rojas dispuestas en forma de corazón con perlas y topper dorado “Feliz Día”" loading="lazy">
+                        <span class="product-number">Nº 42</span>
+                        <span class="product-price">$175.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Romance Duquesa</h2>
-                        <p class="product-description">Elegante bolsa Duquesa Floral "Flower World" disponible en dos versiones: rosas rojas con claveles e hipérico, o rosas rosadas con lisianthus.
-Detalles en paniculata y eucalipto, una presentación premium ideal para regalar romance y elegancia.</p>
-                        <div class="product-price">$165,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Romance Duquesa por $165,000. ¿Podrías darme más información?', 'romance_duquesa')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Corazón Feliz Día</h3>
+                        <p class="product-description">35 rosas rojas dispuestas en forma de corazón con perlas y topper dorado “Feliz Día”. Para que lo vea y sonría antes de leer la tarjeta.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Corazón Feliz Día (Nº 42) por $175.000. ¿Podrías darme más información?', 'corazon_feliz_dia')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="gerberas">
-                    <div class="category-badge">Gerberas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo rosas chocolates cajas" data-number="43" data-keywords="caja corazon 11 ferrero rosas rosadas rosas chocolates cajas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_18.webp" alt="Despertar de Alegría - Ramo de 10 gerberas">
+                        <img src="assets/flores_cucuta_43.webp" alt="Corazón Ferrero Mixto - Caja corazón con rosas rojas y rosadas, flor nube y 11 Ferrero Rocher, con lazo dorado" loading="lazy">
+                        <span class="product-number">Nº 43</span>
+                        <span class="product-price">$145.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Despertar de Alegría</h2>
-                        <p class="product-description">Ramo de 10 gerberas con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$95,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Alegría de 10 gerberas por $87,500. ¿Podrías darme más información?', 'despertar_alegria_catalogo')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Corazón Ferrero Mixto</h3>
+                        <p class="product-description">Caja corazón con rosas rojas y rosadas, flor nube y 11 Ferrero Rocher, con lazo dorado. Flores y chocolate en una sola sorpresa.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Corazón Ferrero Mixto (Nº 43) por $145.000. ¿Podrías darme más información?', 'corazon_ferrero_mixto')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo detalles" data-number="44" data-keywords="fresas con crema postre economico detalles">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_2.webp" alt="Fusión Perfecta - Ramo de 36 rosas y 6 girasoles">
+                        <img src="assets/flores_cucuta_44.webp" alt="Fresas &amp; Rosas - Caja portable con fresas con crema en vaso de 12 onzas, rosas rojas frescas y eucalipto" loading="lazy">
+                        <span class="product-number">Nº 44</span>
+                        <span class="product-price">$66.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Fusión Perfecta</h2>
-                        <p class="product-description">Ramo de 36 rosas y 6 girasoles con tarjeta personalizada con nombre.</p>
-                        <div class="product-price">$227,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Fusión Perfecta de 36 rosas y 6 girasoles por $227,500. ¿Podrías darme más información?', 'fusion_perfecta_catalogo')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Fresas &amp; Rosas</h3>
+                        <p class="product-description">Caja portable con fresas con crema en vaso de 12 onzas, rosas rojas frescas y eucalipto. Un antojo romántico, perfecto para sorprender en la oficina.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Fresas &amp; Rosas (Nº 44) por $66.000. ¿Podrías darme más información?', 'fresas_rosas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-bajo desayunos chocolates" data-number="45" data-keywords="desayuno sorpresa sandwich brownie jugo desayunos chocolates">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_17.webp" alt="Garantía de Amor - Ramo de 12 rosas">
+                        <img src="assets/flores_cucuta_45.webp" alt="Desayuno Sorpresa - Bandeja con 2 sándwiches de jamón y queso con vegetales, ensalada de frutas con yogurt griego, 3 Ferrero Rocher, brownie y jugo de naranja o Chocolisto" loading="lazy">
+                        <span class="product-number">Nº 45</span>
+                        <span class="product-price">$110.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Garantía de Amor</h2>
-                        <p class="product-description">Ramo de 12 rosas con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$102,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Garantía de Amor de 12 rosas por $102,500. ¿Podrías darme más información?', 'garantia_amor')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Desayuno Sorpresa</h3>
+                        <p class="product-description">Bandeja con 2 sándwiches de jamón y queso con vegetales, ensalada de frutas con yogurt griego, 3 Ferrero Rocher, brownie y jugo de naranja o Chocolisto. La forma más rica de empezar el día juntos.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Desayuno Sorpresa (Nº 45) por $110.000. ¿Podrías darme más información?', 'desayuno_sorpresa')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio rosas" data-number="46" data-keywords="60 rosas cerezas rosas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_21.webp" alt="Conquista Definitiva - Ramo de 24 rosas">
+                        <img src="assets/flores_cucuta_46.webp" alt="Cerezas de Amor - Ramo de 60 rosas rojas decorado con cerezas, perlas y moño rosado, envuelto en papel crema" loading="lazy">
+                        <span class="product-number">Nº 46</span>
+                        <span class="product-price">$240.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Conquista Definitiva</h2>
-                        <p class="product-description">Ramo de 24 rosas y claveles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$165,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Conquista Definitiva de 24 rosas por $165,000. ¿Podrías darme más información?', 'conquista_definitiva')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Cerezas de Amor</h3>
+                        <p class="product-description">Ramo de 60 rosas rojas decorado con cerezas, perlas y moño rosado, envuelto en papel crema. Abundante, romántico y para dejar sin palabras.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Cerezas de Amor (Nº 46) por $240.000. ¿Podrías darme más información?', 'cerezas_de_amor')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="rosas">
-                    <div class="category-badge">Rosas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio tulipanes" data-number="47" data-keywords="6 tulipanes rosados tulipanes">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_1.webp" alt="Obra Maestra - Ramo de 60 rosas">
+                        <img src="assets/flores_cucuta_47.webp" alt="Tulipanes Rosados - Ramo de 6 tulipanes rosados con eucalipto y flor nube, envuelto en papel celeste con lazo rosa" loading="lazy">
+                        <span class="product-number">Nº 47</span>
+                        <span class="product-price">$222.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Obra Maestra</h2>
-                        <p class="product-description">Ramo de 60 rosas y claveles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$265,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Bouquet Diana de 60 rosas por $265,000. ¿Podrías darme más información?', 'obra_maestra')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Tulipanes Rosados</h3>
+                        <p class="product-description">Ramo de 6 tulipanes rosados con eucalipto y flor nube, envuelto en papel celeste con lazo rosa. Delicado, fresco y diferente a las rosas de siempre.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Tulipanes Rosados (Nº 47) por $222.000. ¿Podrías darme más información?', 'tulipanes_rosados')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="girasoles">
-                    <div class="category-badge">Girasoles</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio rosas" data-number="48" data-keywords="bolsa flower world claveles hiperico eucalipto rosas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_23.webp" alt="Vitamina Emocional - Girasoles">
+                        <img src="assets/flores_cucuta_48.webp" alt="Flower World Rojo - Bolsa floral con rosas rojas, claveles, hipérico, eucalipto y flor nube" loading="lazy">
+                        <span class="product-number">Nº 48</span>
+                        <span class="product-price">$170.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Vitamina Emocional</h2>
-                        <p class="product-description">Ramo de 4 girasoles con tarjeta o mensaje personalizado con nombre.</p>
-                        <div class="product-price">$110,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ramo de Vitamina Emocional por $110,000. ¿Podrías darme más información?', 'vitamina_emocional')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Flower World Rojo</h3>
+                        <p class="product-description">Bolsa floral con rosas rojas, claveles, hipérico, eucalipto y flor nube. Se regala, se lleva y se luce en cualquier mesa.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Flower World Rojo (Nº 48) por $170.000. ¿Podrías darme más información?', 'flower_world_rojo')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio rosas" data-number="59" data-keywords="24 rosas rojas love rosas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_24.webp" alt="Guardián del Corazón">
+                        <img src="assets/flores_cucuta_59.webp" alt="Dos Docenas de Amor - Ramo de 24 rosas rojas con perlas y mariposas doradas, envuelto en papel blanco con detalles “Love”" loading="lazy">
+                        <span class="product-number">Nº 59</span>
+                        <span class="product-price">$150.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Guardián del Corazón</h2>
-                        <p class="product-description">Osito de 25 CM elaborado con rosas de foamy, almacenado en una caja de acetato y tarjeta personalizada y tres globos en helio</p>
-                        <div class="product-price">$275,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Guardián del Corazón por $275,000. ¿Podrías darme más información?', 'guardian_corazon_catalogo')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Dos Docenas de Amor</h3>
+                        <p class="product-description">Ramo de 24 rosas rojas con perlas y mariposas doradas, envuelto en papel blanco con detalles “Love”. El gesto clásico que nunca falla.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Dos Docenas de Amor (Nº 59) por $150.000. ¿Podrías darme más información?', 'dos_docenas_de_amor')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="tulipanes">
-                    <div class="category-badge">Tulipanes</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-medio rosas" data-number="60" data-keywords="60 rosas rojas papel negro rosas">
                     <div class="product-image">
-                        <img src="ofertas/imagenes/tulipanes/tulipanes_amarillos.webp" alt="Despertar de Primavera - Bouquet de tulipanes">
+                        <img src="assets/flores_cucuta_60.webp" alt="Sesenta Rosas - Ramo de 60 rosas rojas con flor nube, envuelto en papel negro con borde dorado" loading="lazy">
+                        <span class="product-number">Nº 60</span>
+                        <span class="product-price">$250.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Despertar de Primavera</h2>
-                        <p class="product-description">Bouquet de tulipanes disponible en 4, 6 o 10 tulipanes, en un único color o en combinación de varios. Un detalle elegante y versátil para cualquier ocasión especial.</p>
-                        <div class="product-price">Desde $148,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Primavera (Bouquet de tulipanes) desde $148,000. ¿Podrías darme más información?', 'despertar_primavera')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Sesenta Rosas</h3>
+                        <p class="product-description">Ramo de 60 rosas rojas con flor nube, envuelto en papel negro con borde dorado. Impacto total para un amor en grande.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sesenta Rosas (Nº 60) por $250.000. ¿Podrías darme más información?', 'sesenta_rosas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="flores-eternas">
-                    <div class="category-badge">Flores Eternas</div>
+                <div class="product-card" data-section="amor" data-tags="amor precio-alto rosas especiales" data-number="28" data-keywords="200 rosas iniciales letras gigante rosas especiales">
                     <div class="product-image">
-                        <img src="assets/mini_ramo_eternas.webp" alt="Cápsula de Eternidad - Mini ramo de rosas eternas">
+                        <img src="assets/flores_cucuta_28.webp" alt="Amor de 200 Rosas - 200 rosas rojas coronadas con iniciales personalizadas en flor nube, envueltas en papel negro" loading="lazy">
+                        <span class="product-number">Nº 28</span>
+                        <span class="product-price">$820.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Cápsula de Eternidad</h2>
-                        <p class="product-description">Mini ramo de 7 rosas eternas acompañadas con perlas y mariposas decorativas. Disponible en múltiples colores.</p>
-                        <div class="product-price">$53,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Cápsula de Eternidad por $53,000. ¿Podrías darme más información?', 'capsula_eternidad')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Amor de 200 Rosas</h3>
+                        <p class="product-description">200 rosas rojas coronadas con iniciales personalizadas en flor nube, envueltas en papel negro. El gesto más grande que puedes regalar.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Amor de 200 Rosas (Nº 28) por $820.000. ¿Podrías darme más información?', 'amor_de_200_rosas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
+                </div>
+            </section>
 
-                <div class="product-card" data-category="flores-eternas">
-                    <div class="category-badge">Flores Eternas</div>
+            <section class="seccion" id="amarillas" data-section="amarillas" data-date="2026-09-21">
+                <div class="seccion-head">
+                    <h2>💛 Flores Amarillas</h2>
+                    <span class="ln"></span>
+                    <span class="date">21 de septiembre</span><span class="countdown" data-date="2026-09-21"></span>
+                </div>
+                <p class="seccion-sub">Girasoles, tulipanes y rosas amarillas para el 21</p>
+                <div class="products-grid">
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo eternas" data-number="49" data-keywords="7 rosas eternas amarillas economico eternas">
                     <div class="product-image">
-                        <img src="assets/bouquet_eternas.webp" alt="Legado Inmortal - Bouquet de 20 rosas eternas">
+                        <img src="assets/flores_cucuta_49.webp" alt="Mini Sol Eterno - Mini ramo de 7 rosas eternas amarillas con perlas y mariposa dorada, envuelto en papel blanco con lazo dorado" loading="lazy">
+                        <span class="product-number">Nº 49</span>
+                        <span class="product-price">$53.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Legado Inmortal</h2>
-                        <p class="product-description">Hermoso bouquet elaborado con 20 rosas eternas, decorado con malla de perlas y mariposas doradas que realzan su elegancia. Incluye listón con mensaje especial y opción de mensaje personalizado.</p>
-                        <div class="product-price">$145,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Legado Inmortal por $145,000. ¿Podrías darme más información?', 'legado_inmortal')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Mini Sol Eterno</h3>
+                        <p class="product-description">Mini ramo de 7 rosas eternas amarillas con perlas y mariposa dorada, envuelto en papel blanco con lazo dorado. Pequeño, duradero y perfecto para el 21 de septiembre.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Mini Sol Eterno (Nº 49) por $53.000. ¿Podrías darme más información?', 'mini_sol_eterno')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="flores-eternas">
-                    <div class="category-badge">Flores Eternas</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-medio rosas" data-number="50" data-keywords="24 rosas amarillas rosas">
                     <div class="product-image">
-                        <img src="assets/bouquet_eternas_grandes.webp" alt="Imperio Eterno - Bouquet de 34 rosas eternas">
+                        <img src="assets/flores_cucuta_50.webp" alt="24 Rosas Amarillas - Ramo de 24 rosas amarillas con eucalipto y perlas, envuelto en papel celeste con lazo dorado" loading="lazy">
+                        <span class="product-number">Nº 50</span>
+                        <span class="product-price">$180.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Imperio Eterno</h2>
-                        <p class="product-description">Hermoso bouquet elaborado con 34 rosas eternas, decorado con perlas y mariposas que realzan su elegancia. Incluye moño y mensaje especial.</p>
-                        <div class="product-price">$220,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Imperio Eterno por $220,000. ¿Podrías darme más información?', 'imperio_eterno')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">24 Rosas Amarillas</h3>
+                        <p class="product-description">Ramo de 24 rosas amarillas con eucalipto y perlas, envuelto en papel celeste con lazo dorado. Luz y buena energía para quien te alegra la vida.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el 24 Rosas Amarillas (Nº 50) por $180.000. ¿Podrías darme más información?', '24_rosas_amarillas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="celebraciones">
-                    <div class="category-badge">Celebraciones</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo eternas" data-number="51" data-keywords="12 rosas eternas amarillas doradas eternas">
                     <div class="product-image">
-                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_cumpleanos.webp" alt="Celebración de Vida - Bouquet para cumpleaños">
+                        <img src="assets/flores_cucuta_51.webp" alt="Docena Eterna Dorada - 12 rosas eternas en tono amarillo dorado con perlas y mariposa, en papel blanco con lazo dorado" loading="lazy">
+                        <span class="product-number">Nº 51</span>
+                        <span class="product-price">$90.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Celebración de Vida</h2>
-                        <p class="product-description">Hermoso bouquet elaborado con 20 rosas frescas acompañadas de eucalipto, dispuesto en una base que mantiene las flores siempre radiantes. Incluye tarjeta personalizada, ideal para cumpleaños y celebraciones.</p>
-                        <div class="product-price">$140,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Celebración de Vida por $140,000. ¿Podrías darme más información?', 'celebracion_vida')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Docena Eterna Dorada</h3>
+                        <p class="product-description">12 rosas eternas en tono amarillo dorado con perlas y mariposa, en papel blanco con lazo dorado. Un sol que no se marchita.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Docena Eterna Dorada (Nº 51) por $90.000. ¿Podrías darme más información?', 'docena_eterna_dorada')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="celebraciones">
-                    <div class="category-badge">Celebraciones</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo tulipanes" data-number="52" data-keywords="tulipanes amarillos 4 6 10 tulipanes">
                     <div class="product-image">
-                        <img src="ofertas/imagenes/ramo_bouquets/ramos_novias_naturales.webp" alt="Juramento Sagrado - Bouquet para novias">
+                        <img src="assets/flores_cucuta_52.webp" alt="Tulipanes Amarillos - Ramo de tulipanes amarillos disponible desde 4 unidades, con flor nube y papel rosado" loading="lazy">
+                        <span class="product-number">Nº 52</span>
+                        <span class="product-price">Desde $148.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Juramento Sagrado</h2>
-                        <p class="product-description">Bouquet compuesto por 18 rosas frescas, acompañado de diversos follajes que realzan su belleza y un listón decorativo. Un diseño delicado y personalizado, perfecto para el día más especial.</p>
-                        <div class="product-price">$155,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Juramento Sagrado por $155,000. ¿Podrías darme más información?', 'juramento_sagrado')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Tulipanes Amarillos</h3>
+                        <p class="product-description">Ramo de tulipanes amarillos disponible desde 4 unidades, con flor nube y papel rosado. Frescura y luz para el Día de las Flores Amarillas.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Tulipanes Amarillos (Nº 52) por Desde $148.000. ¿Podrías darme más información?', 'tulipanes_amarillos')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="celebraciones">
-                    <div class="category-badge">Celebraciones</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-alto girasoles rosas" data-number="53" data-keywords="10 girasoles 50 rosas grande girasoles rosas">
                     <div class="product-image">
-                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_quinceaneras.webp" alt="Coronación de Princesa - Bouquet para quinceañeras">
+                        <img src="assets/flores_cucuta_53.webp" alt="Sol y Rosas - 10 girasoles con 50 rosas en tonos rosa y blanco, envueltos en papel rosa con borde dorado" loading="lazy">
+                        <span class="product-number">Nº 53</span>
+                        <span class="product-price">$318.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Coronación de Princesa</h2>
-                        <p class="product-description">Un diseño único compuesto por 48 rosas frescas, rodeadas de delicada flor nube, decorado con una corona dorada y un listón con mensaje especial. Perfecto para los 15 años.</p>
-                        <div class="product-price">$255,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Coronación de Princesa por $255,000. ¿Podrías darme más información?', 'coronacion_princesa')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Sol y Rosas</h3>
+                        <p class="product-description">10 girasoles con 50 rosas en tonos rosa y blanco, envueltos en papel rosa con borde dorado. Un arreglo enorme para una ocasión enorme.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sol y Rosas (Nº 53) por $318.000. ¿Podrías darme más información?', 'sol_y_rosas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="especiales">
-                    <div class="category-badge">Especiales</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo rosas" data-number="54" data-keywords="12 rosas amarillas rosas">
                     <div class="product-image">
-                        <img src="../assets/amoryamistad/amoryamistad2.webp" alt="Arsenal Completo - Rosas frescas, flor nube y bombones">
+                        <img src="assets/flores_cucuta_54.webp" alt="Docena Amarilla - Ramo de 12 rosas amarillas rodeadas de flor nube, en papel crema con lazo dorado" loading="lazy">
+                        <span class="product-number">Nº 54</span>
+                        <span class="product-price">$140.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Arsenal Completo</h2>
-                        <p class="product-description">Rosas frescas, flor nube y 11 bombones Ferrero Rocher en base elegante con lazo dorado. Domina la situación con esta combinación que cubre todas las expectativas. El tipo de detalle que te posiciona como el que siempre sabe qué hacer en momentos importantes.</p>
-                        <div class="product-price">$177,500</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Arsenal Completo por $177,500. ¿Podrías darme más información?', 'arsenal_completo')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Docena Amarilla</h3>
+                        <p class="product-description">Ramo de 12 rosas amarillas rodeadas de flor nube, en papel crema con lazo dorado. Alegría en su forma más clásica.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Docena Amarilla (Nº 54) por $140.000. ¿Podrías darme más información?', 'docena_amarilla')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo girasoles" data-number="55" data-keywords="3 girasoles lila girasoles">
                     <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos5.webp" alt="Alegría Multicolor">
+                        <img src="assets/flores_cucuta_55.webp" alt="Tres Soles - Ramo de 3 girasoles con flor nube, envuelto en papel lila con lazo dorado" loading="lazy">
+                        <span class="product-number">Nº 55</span>
+                        <span class="product-price">$130.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Alegría Multicolor</h2>
-                        <p class="product-description">Bouquet de astromelias frescas con base de oasis y tarjeta personalizada. Explosión de alegría en formato versátil. Las astromelias representan amor duradero y gratitud, perfectos para cumpleaños donde quieres expresar que cada año juntos es un regalo. Frescura garantizada con diseño que mantiene las flores radiantes por días.</p>
-                        <div class="product-price">$60,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Alegría Multicolor por $60,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Tres Soles</h3>
+                        <p class="product-description">Ramo de 3 girasoles con flor nube, envuelto en papel lila con lazo dorado. Alegría pura en un tamaño ideal para sorprender.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Tres Soles (Nº 55) por $130.000. ¿Podrías darme más información?', 'tres_soles')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-alto girasoles rosas" data-number="56" data-keywords="60 rosas 1 girasol manzanilla girasoles rosas">
                     <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos1.webp" alt="Monumento de Amor">
+                        <img src="assets/flores_cucuta_56.webp" alt="Girasol entre Rosas - 60 rosas en tonos amarillo y blanco con un girasol en el centro y manzanilla, en papel dorado" loading="lazy">
+                        <span class="product-number">Nº 56</span>
+                        <span class="product-price">$340.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Monumento de Amor</h2>
-                        <p class="product-description">110 rosas dispuestas en forma de corazón con mensaje personalizado en listón y 2 globos en helio. La declaración máxima que trasciende el tiempo. Diseñado para cumpleaños donde quieres crear una memoria imborrable que será recordada para siempre. Impacto monumental que marca la diferencia entre un cumpleaños común y un evento histórico personal.</p>
-                        <div class="product-price">$465,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Monumento de Amor por $465,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Girasol entre Rosas</h3>
+                        <p class="product-description">60 rosas en tonos amarillo y blanco con un girasol en el centro y manzanilla, en papel dorado. Un diseño de lujo para quien lo merece todo.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Girasol entre Rosas (Nº 56) por $340.000. ¿Podrías darme más información?', 'girasol_entre_rosas')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo girasoles" data-number="57" data-keywords="3 girasoles siempre viva statice economico girasoles">
                     <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos6.webp" alt="Estrella Resplandeciente">
+                        <img src="assets/flores_cucuta_57.webp" alt="Girasoles y Siempreviva - Ramo de 3 girasoles con flor siempreviva en tono lila, envuelto en papel blanco" loading="lazy">
+                        <span class="product-number">Nº 57</span>
+                        <span class="product-price">$95.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Estrella Resplandeciente</h2>
-                        <p class="product-description">Bouquet de claveles con tarjeta personalizada. Las claveles simbolizan amistad, devoción y prosperidad - el mensaje perfecto para cumpleaños. Flores de larga duración que representan que los deseos de felicidad trascienden el día. Diseño elegante que combina belleza natural con significado profundo. Ideal para celebrar años de amistad y lealtad.</p>
-                        <div class="product-price">$60,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Estrella Resplandeciente por $60,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Girasoles y Siempreviva</h3>
+                        <p class="product-description">Ramo de 3 girasoles con flor siempreviva en tono lila, envuelto en papel blanco. Colorido, fresco y a muy buen precio.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Girasoles y Siempreviva (Nº 57) por $95.000. ¿Podrías darme más información?', 'girasoles_y_siempreviva')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo girasoles" data-number="58" data-keywords="6 girasoles girasoles">
                     <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos2.webp" alt="Sinfonía Dorada">
+                        <img src="assets/flores_cucuta_58.webp" alt="Seis Girasoles - Ramo de 6 girasoles con flor nube, envuelto en papel crema con tarjeta Duquesa" loading="lazy">
+                        <span class="product-number">Nº 58</span>
+                        <span class="product-price">$145.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Sinfonía Dorada</h2>
-                        <p class="product-description">56 rosas combinadas con 1 girasol radiante y delicada manzanilla. Fusión perfecta entre elegancia (rosas) y felicidad pura (girasol). El ramo que celebra la vida en su máxima expresión. Para cumpleaños donde quieres transmitir que cada año es una nueva oportunidad de brillar. Energía positiva concentrada en un diseño único.</p>
-                        <div class="product-price">$280,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Sinfonía Dorada por $280,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Seis Girasoles</h3>
+                        <p class="product-description">Ramo de 6 girasoles con flor nube, envuelto en papel crema con tarjeta Duquesa. Grande, radiante y listo para alegrar el día.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Seis Girasoles (Nº 58) por $145.000. ¿Podrías darme más información?', 'seis_girasoles')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
+                <div class="product-card" data-section="amarillas" data-tags="amarillas precio-bajo eternas chocolates cajas" data-number="61" data-keywords="caja corazon rosas eternas amarillas 12 ferrero eternas chocolates cajas">
                     <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos3.webp" alt="Nube de Celebración">
+                        <img src="assets/flores_cucuta_61.webp" alt="Corazón Dorado - Caja corazón con rosas eternas amarillas, mariposa dorada y 12 Ferrero Rocher, con lazo amarillo" loading="lazy">
+                        <span class="product-number">Nº 61</span>
+                        <span class="product-price">$103.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Nube de Celebración</h2>
-                        <p class="product-description">52 rosas frescas con delicada flor nube y moño decorativo. Sofisticación pura para quien cumple años con estilo. El balance perfecto entre abundancia y refinamiento. Diseñado para transmitir que este cumpleaños merece lo mejor, sin excesos innecesarios. Clase absoluta en cada detalle.</p>
-                        <div class="product-price">$255,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Nube de Celebración por $255,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Corazón Dorado</h3>
+                        <p class="product-description">Caja corazón con rosas eternas amarillas, mariposa dorada y 12 Ferrero Rocher, con lazo amarillo. Un detalle que dura y endulza.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Corazón Dorado (Nº 61) por $103.000. ¿Podrías darme más información?', 'corazon_dorado')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
+                </div>
+            </section>
 
-                <div class="product-card" data-category="cumpleanos">
-                    <div class="category-badge">Cumpleaños</div>
+            <section class="seccion" id="mas" data-section="mas">
+                <div class="seccion-head">
+                    <h2>✦ Más Arreglos</h2>
+                    <span class="ln"></span>
+                    
+                </div>
+                <p class="seccion-sub">Rosas, eternas, cajas y detalles para toda ocasión</p>
+                <div class="products-grid">
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto especiales destacado" data-number="27" data-keywords="hello kitty gato figura personaje especiales destacado">
                     <div class="product-image">
-                        <img src="../assets/cumpleanos/cumpleanos4.webp" alt="Esencia de Felicidad">
+                        <img src="assets/flores_cucuta_27.webp" alt="Ternura Kitty - Arreglo escultórico en forma de Hello Kitty con crisantemos blancos, moño de rosas rosadas y detalles en rosas amarillas" loading="lazy">
+                        <span class="product-number">Nº 27</span><span class="product-tag">Destacado</span>
+                        <span class="product-price">$520.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Esencia de Felicidad</h2>
-                        <p class="product-description">20 rosas frescas en arreglo clásico con tarjeta personalizada. El balance ideal entre tradición y efectividad. Para cumpleaños donde buscas transmitir afecto genuino sin complicaciones. Directo al corazón, con el simbolismo exacto que toda celebración necesita. Elegancia eficiente que nunca pasa de moda.</p>
-                        <div class="product-price">$160,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa la Esencia de Felicidad por $160,000. ¿Podrías darme más información?', 'producto_cumpleanos')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Ternura Kitty</h3>
+                        <p class="product-description">Arreglo escultórico en forma de Hello Kitty con crisantemos blancos, moño de rosas rosadas y detalles en rosas amarillas. Una pieza única para sorprender de verdad.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ternura Kitty (Nº 27) por $520.000. ¿Podrías darme más información?', 'ternura_kitty')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <!-- ===== Detalles Especiales / Día de la Madre (al final) ===== -->
-
-                <div class="product-card" data-category="dia-madre" data-keywords="caja flores artificiales rosas globo just for you detalle especial">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto especiales destacado cajas girasoles" data-number="32" data-keywords="orquideas lirios gerberas hortensias especiales destacado cajas girasoles">
                     <div class="product-image">
-                        <img src="assets/dia_madres/flores25.webp" alt="Just For You - Caja decorativa con rosas artificiales y globo Happy Day" loading="lazy">
+                        <img src="assets/flores_cucuta_32.webp" alt="Jardín Encantado - Caja rosa con orquídeas cymbidium, lirios naranjas, girasoles, gerberas y rosas lavanda entre hortensias y claveles" loading="lazy">
+                        <span class="product-number">Nº 32</span><span class="product-tag">Destacado</span>
+                        <span class="product-price">$545.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Just For You</h2>
-                        <p class="product-description">Hermoso detalle compuesto por rosas artificiales de excelente calidad, acompañado de un globo con un mensaje especial. Un detalle destinado a durar meses en excelente estado.</p>
-                        <div class="product-price">$89,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Just For You por $89,000. ¿Podrías darme más información?', 'especiales_just_for_you')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Jardín Encantado</h3>
+                        <p class="product-description">Caja rosa con orquídeas cymbidium, lirios naranjas, girasoles, gerberas y rosas lavanda entre hortensias y claveles. Color y sofisticación en gran formato.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Jardín Encantado (Nº 32) por $545.000. ¿Podrías darme más información?', 'jardin_encantado')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="dia-madre" data-keywords="flores naturales ferrero rocher chocolates detalle especial">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio especiales destacado" data-number="35" data-keywords="van gogh azul arte especiales destacado">
                     <div class="product-image">
-                        <img src="assets/dia_madres/flores27.webp" alt="Detalle Natural - Flores naturales con Ferrero Rocher" loading="lazy">
+                        <img src="assets/flores_cucuta_35.webp" alt="Noche Estrellada - Ramo inspirado en “La Noche Estrellada” de Van Gogh: hortensias y rosas azules con crisantemos amarillos y lámina de la obra" loading="lazy">
+                        <span class="product-number">Nº 35</span><span class="product-tag">Destacado</span>
+                        <span class="product-price">$160.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Detalle Natural</h2>
-                        <p class="product-description">Hermoso detalle de flores naturales acompañado con dos Ferrero Rocher. Frescura, color y dulzura en un mismo regalo para sorprender en una ocasión especial.</p>
-                        <div class="product-price">$86,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Detalle Natural por $86,000. ¿Podrías darme más información?', 'especiales_detalle_natural')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Noche Estrellada</h3>
+                        <p class="product-description">Ramo inspirado en “La Noche Estrellada” de Van Gogh: hortensias y rosas azules con crisantemos amarillos y lámina de la obra. Arte que florece.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Noche Estrellada (Nº 35) por $160.000. ¿Podrías darme más información?', 'noche_estrellada')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="dia-madre" data-keywords="flores artificiales eternas mama madre detalle duradero">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas gerberas" data-number="29" data-keywords="gerberas claveles astromelias rojo rosas gerberas">
                     <div class="product-image">
-                        <img src="assets/dia_madres/flores28.webp" alt="Eternidad Floral - Detalle de diversas flores artificiales" loading="lazy">
+                        <img src="assets/flores_cucuta_29.webp" alt="Fuego Silvestre - Ramo rojo con rosas, gerberas, claveles y astromelias, envuelto en papel blanco" loading="lazy">
+                        <span class="product-number">Nº 29</span>
+                        <span class="product-price">$360.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Eternidad Floral</h2>
-                        <p class="product-description">Detalle elaborado con diversas flores artificiales de alta calidad. Un regalo elegante y de larga duración para conservar como recuerdo de un día especial.</p>
-                        <div class="product-price">$110,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Eternidad Floral por $110,000. ¿Podrías darme más información?', 'dia_madre_eternidad_floral')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Fuego Silvestre</h3>
+                        <p class="product-description">Ramo rojo con rosas, gerberas, claveles y astromelias, envuelto en papel blanco. Intensidad y elegancia para una ocasión inolvidable.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Fuego Silvestre (Nº 29) por $360.000. ¿Podrías darme más información?', 'fuego_silvestre')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="dia-madre" data-keywords="girasoles rosas blancas claveles caja grande premium eucalipto especial">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas chocolates especiales" data-number="30" data-keywords="corazon 33 ferrero 52 rosas billetes dinero rosas chocolates especiales">
                     <div class="product-image">
-                        <img src="assets/dia_madres/flores29.webp" alt="Sol Radiante - Gran arreglo en caja con girasoles, rosas blancas y eucalipto" loading="lazy">
+                        <img src="assets/flores_cucuta_30.webp" alt="Corazón Ferrero - Corazón con 33 Ferrero Rocher al centro, 52 rosas rojas y billetes decorativos a elección" loading="lazy">
+                        <span class="product-number">Nº 30</span>
+                        <span class="product-price">$650.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Sol Radiante</h2>
-                        <p class="product-description">Imponente arreglo en caja blanca con girasoles, rosas amarillas, crisantemos blancos, claveles y delicados toques de eucalipto. Una declaración de amor en gran formato, ideal para celebrar a alguien muy especial.</p>
-                        <div class="product-price">$480,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sol Radiante por $480,000. ¿Podrías darme más información?', 'especiales_sol_radiante')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Corazón Ferrero</h3>
+                        <p class="product-description">Corazón con 33 Ferrero Rocher al centro, 52 rosas rojas y billetes decorativos a elección. Precio base del ramo; el dinero se ajusta a tu gusto.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Corazón Ferrero (Nº 30) por $650.000. ¿Podrías darme más información?', 'corazon_ferrero')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="dia-madre" data-keywords="caja redonda hortensias rosas crisantemos rosadas especial">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio rosas especiales" data-number="31" data-keywords="hot wheels carritos autos hombre niño rosas especiales">
                     <div class="product-image">
-                        <img src="assets/dia_madres/flores33.webp" alt="Elegancia Rosada - Caja redonda con hortensias, rosas y crisantemos en tonos rosa" loading="lazy">
+                        <img src="assets/flores_cucuta_31.webp" alt="Ruta de Campeón - 12 rosas rojas con flor nube y 5 carritos Hot Wheels" loading="lazy">
+                        <span class="product-number">Nº 31</span>
+                        <span class="product-price">$167.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Elegancia Rosada</h2>
-                        <p class="product-description">Sofisticada caja redonda rosa con hortensias, rosas y crisantemos en delicados tonos rosa pastel. Un arreglo de aire romántico y femenino que rinde homenaje a la elegancia.</p>
-                        <div class="product-price">$200,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Elegancia Rosada por $200,000. ¿Podrías darme más información?', 'especiales_elegancia_rosada')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Ruta de Campeón</h3>
+                        <p class="product-description">12 rosas rojas con flor nube y 5 carritos Hot Wheels. El regalo perfecto para los amantes de los autos.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Ruta de Campeón (Nº 31) por $167.000. ¿Podrías darme más información?', 'ruta_de_campeon')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="dia-madre" data-keywords="espejo rosas rojas eres la mejor mama madre arreglo circular corona regalo dia de la madre especial premium">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas" data-number="33" data-keywords="60 rosas cerezas tul rosas">
                     <div class="product-image">
-                        <img src="assets/flores_cucuta_26.webp" alt="Reflejo de Amor - Arreglo circular de rosas rojas alrededor de espejo con frase Eres la mejor mamá" loading="lazy">
+                        <img src="assets/flores_cucuta_33.webp" alt="Cerezo Rojo - 60 rosas rojas con cerezas y moño rosado, envueltas en tul beige" loading="lazy">
+                        <span class="product-number">Nº 33</span>
+                        <span class="product-price">$265.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Reflejo de Amor</h2>
-                        <p class="product-description">Espectacular arreglo circular de rosas rojas frescas rodeando un espejo grabado con la frase "Eres la mejor mamá". Un detalle único que combina elegancia, romance y un mensaje eterno para una persona muy especial.</p>
-                        <div class="product-price">$212,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Reflejo de Amor por $212,000. ¿Podrías darme más información?', 'especiales_reflejo_de_amor')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Cerezo Rojo</h3>
+                        <p class="product-description">60 rosas rojas con cerezas y moño rosado, envueltas en tul beige. Pasión y dulzura en una sola presentación.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Cerezo Rojo (Nº 33) por $265.000. ¿Podrías darme más información?', 'cerezo_rojo')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="dia-madre" data-keywords="bouquet grande girasoles rosas rojas listón premium especial">
-                    <div class="category-badge category-badge--featured">Detalles Especiales</div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio rosas" data-number="34" data-keywords="36 rosas pastel lila rosas">
                     <div class="product-image">
-                        <img src="assets/dia_madres/flores38.webp" alt="Reina del Sol - Bouquet con girasoles, rosas rojas y listón decorativo" loading="lazy">
+                        <img src="assets/flores_cucuta_34.webp" alt="Nube Pastel - 36 rosas con mini rosas y claveles en tonos rosa, amarillo y pastel, en papel lila" loading="lazy">
+                        <span class="product-number">Nº 34</span>
+                        <span class="product-price">$232.000</span>
                     </div>
                     <div class="product-content">
-                        <h2 class="product-title">Reina del Sol</h2>
-                        <p class="product-description">Espectacular bouquet con varios girasoles radiantes y rosas rojas, envuelto en papel decorativo con un listón blanco con inscripción dorada. Un homenaje monumental para una persona muy importante en tu vida.</p>
-                        <div class="product-price">$450,000</div>
-                        <button class="product-button"
-                            onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Reina del Sol por $450,000. ¿Podrías darme más información?', 'especiales_reina_del_sol')">
-                            Pedir Ahora
-                        </button>
+                        <h3 class="product-title">Nube Pastel</h3>
+                        <p class="product-description">36 rosas con mini rosas y claveles en tonos rosa, amarillo y pastel, en papel lila. Ternura y frescura en cada pétalo.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Nube Pastel (Nº 34) por $232.000. ¿Podrías darme más información?', 'nube_pastel')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
                     </div>
                 </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo tulipanes" data-number="" data-keywords="tulipanes 4 6 10 colores tulipanes">
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/tulipanes/tulipanes_amarillos.webp" alt="Despertar de Primavera - Bouquet de tulipanes en 4, 6 o 10 unidades, de un solo color o combinados" loading="lazy">
+                        
+                        <span class="product-price">Desde $148.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Despertar de Primavera</h3>
+                        <p class="product-description">Bouquet de tulipanes en 4, 6 o 10 unidades, de un solo color o combinados. Elegante y versátil para cualquier ocasión.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Despertar de Primavera por Desde $148.000. ¿Podrías darme más información?', 'despertar_de_primavera')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo eternas" data-number="" data-keywords="7 rosas eternas mini colores eternas">
+                    <div class="product-image">
+                        <img src="assets/mini_ramo_eternas.webp" alt="Cápsula de Eternidad - Mini ramo de 7 rosas eternas con perlas y mariposas decorativas" loading="lazy">
+                        
+                        <span class="product-price">$53.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Cápsula de Eternidad</h3>
+                        <p class="product-description">Mini ramo de 7 rosas eternas con perlas y mariposas decorativas. Disponible en varios colores.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Cápsula de Eternidad por $53.000. ¿Podrías darme más información?', 'capsula_de_eternidad')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo eternas" data-number="" data-keywords="20 rosas eternas perlas eternas">
+                    <div class="product-image">
+                        <img src="assets/bouquet_eternas.webp" alt="Legado Inmortal - Bouquet de 20 rosas eternas con malla de perlas y mariposas doradas" loading="lazy">
+                        
+                        <span class="product-price">$145.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Legado Inmortal</h3>
+                        <p class="product-description">Bouquet de 20 rosas eternas con malla de perlas y mariposas doradas. Incluye listón y mensaje personalizado.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Legado Inmortal por $145.000. ¿Podrías darme más información?', 'legado_inmortal')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio eternas" data-number="" data-keywords="34 rosas eternas grande eternas">
+                    <div class="product-image">
+                        <img src="assets/bouquet_eternas_grandes.webp" alt="Imperio Eterno - Bouquet de 34 rosas eternas con perlas y mariposas" loading="lazy">
+                        
+                        <span class="product-price">$220.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Imperio Eterno</h3>
+                        <p class="product-description">Bouquet de 34 rosas eternas con perlas y mariposas. Incluye moño y mensaje especial.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Imperio Eterno por $220.000. ¿Podrías darme más información?', 'imperio_eterno')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo rosas cumpleanos" data-number="" data-keywords="20 rosas cumpleaños eucalipto rosas cumpleanos">
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_cumpleanos.webp" alt="Celebración de Vida - Bouquet de 20 rosas frescas con eucalipto en base que las mantiene radiantes" loading="lazy">
+                        
+                        <span class="product-price">$140.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Celebración de Vida</h3>
+                        <p class="product-description">Bouquet de 20 rosas frescas con eucalipto en base que las mantiene radiantes. Incluye tarjeta personalizada.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Celebración de Vida por $140.000. ¿Podrías darme más información?', 'celebracion_de_vida')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio rosas novia" data-number="" data-keywords="novia boda 18 rosas rosas novia">
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/ramo_bouquets/ramos_novias_naturales.webp" alt="Juramento Sagrado - Bouquet de 18 rosas frescas con follajes y listón decorativo" loading="lazy">
+                        
+                        <span class="product-price">$155.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Juramento Sagrado</h3>
+                        <p class="product-description">Bouquet de 18 rosas frescas con follajes y listón decorativo. Diseño delicado para el día más especial.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Juramento Sagrado por $155.000. ¿Podrías darme más información?', 'juramento_sagrado')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas quince" data-number="" data-keywords="quince años 15 corona 48 rosas rosas quince">
+                    <div class="product-image">
+                        <img src="ofertas/imagenes/ramo_bouquets/ramo_flores_quinceaneras.webp" alt="Coronación de Princesa - 48 rosas frescas rodeadas de flor nube, con corona dorada y listón con mensaje" loading="lazy">
+                        
+                        <span class="product-price">$255.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Coronación de Princesa</h3>
+                        <p class="product-description">48 rosas frescas rodeadas de flor nube, con corona dorada y listón con mensaje. Perfecto para los 15 años.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Coronación de Princesa por $255.000. ¿Podrías darme más información?', 'coronacion_de_princesa')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio rosas chocolates" data-number="" data-keywords="11 ferrero rosas base rosas chocolates">
+                    <div class="product-image">
+                        <img src="assets/amoryamistad/amoryamistad2.webp" alt="Arsenal Completo - Rosas frescas, flor nube y 11 Ferrero Rocher en base elegante con lazo dorado" loading="lazy">
+                        
+                        <span class="product-price">$177.500</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Arsenal Completo</h3>
+                        <p class="product-description">Rosas frescas, flor nube y 11 Ferrero Rocher en base elegante con lazo dorado. El detalle que cubre todas las expectativas.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Arsenal Completo por $177.500. ¿Podrías darme más información?', 'arsenal_completo')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo cumpleanos" data-number="" data-keywords="astromelias economico cumpleaños cumpleanos">
+                    <div class="product-image">
+                        <img src="assets/cumpleanos/cumpleanos5.webp" alt="Alegría Multicolor - Bouquet de astromelias frescas con base de oasis y tarjeta personalizada" loading="lazy">
+                        
+                        <span class="product-price">$60.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Alegría Multicolor</h3>
+                        <p class="product-description">Bouquet de astromelias frescas con base de oasis y tarjeta personalizada. Color y frescura que duran varios días.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Alegría Multicolor por $60.000. ¿Podrías darme más información?', 'alegria_multicolor')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas cumpleanos" data-number="" data-keywords="110 rosas corazon globos helio rosas cumpleanos">
+                    <div class="product-image">
+                        <img src="assets/cumpleanos/cumpleanos1.webp" alt="Monumento de Amor - 110 rosas en forma de corazón con mensaje en listón y 2 globos de helio" loading="lazy">
+                        
+                        <span class="product-price">$465.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Monumento de Amor</h3>
+                        <p class="product-description">110 rosas en forma de corazón con mensaje en listón y 2 globos de helio. Una declaración imposible de olvidar.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Monumento de Amor por $465.000. ¿Podrías darme más información?', 'monumento_de_amor')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo cumpleanos" data-number="" data-keywords="claveles economico cumpleaños cumpleanos">
+                    <div class="product-image">
+                        <img src="assets/cumpleanos/cumpleanos6.webp" alt="Estrella Resplandeciente - Bouquet de claveles de larga duración con tarjeta personalizada" loading="lazy">
+                        
+                        <span class="product-price">$60.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Estrella Resplandeciente</h3>
+                        <p class="product-description">Bouquet de claveles de larga duración con tarjeta personalizada. Ideal para celebrar años de amistad.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Estrella Resplandeciente por $60.000. ¿Podrías darme más información?', 'estrella_resplandeciente')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas girasoles cumpleanos" data-number="" data-keywords="56 rosas girasol manzanilla rosas girasoles cumpleanos">
+                    <div class="product-image">
+                        <img src="assets/cumpleanos/cumpleanos2.webp" alt="Sinfonía Dorada - 56 rosas con un girasol radiante y manzanilla" loading="lazy">
+                        
+                        <span class="product-price">$280.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sinfonía Dorada</h3>
+                        <p class="product-description">56 rosas con un girasol radiante y manzanilla. Elegancia y felicidad en un solo ramo.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sinfonía Dorada por $280.000. ¿Podrías darme más información?', 'sinfonia_dorada')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto rosas cumpleanos" data-number="" data-keywords="52 rosas flor nube rosas cumpleanos">
+                    <div class="product-image">
+                        <img src="assets/cumpleanos/cumpleanos3.webp" alt="Nube de Celebración - 52 rosas frescas con flor nube y moño decorativo" loading="lazy">
+                        
+                        <span class="product-price">$255.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Nube de Celebración</h3>
+                        <p class="product-description">52 rosas frescas con flor nube y moño decorativo. Sofisticación pura para celebrar con estilo.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Nube de Celebración por $255.000. ¿Podrías darme más información?', 'nube_de_celebracion')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio rosas cumpleanos" data-number="" data-keywords="20 rosas clasico rosas cumpleanos">
+                    <div class="product-image">
+                        <img src="assets/cumpleanos/cumpleanos4.webp" alt="Esencia de Felicidad - 20 rosas frescas en arreglo clásico con tarjeta personalizada" loading="lazy">
+                        
+                        <span class="product-price">$160.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Esencia de Felicidad</h3>
+                        <p class="product-description">20 rosas frescas en arreglo clásico con tarjeta personalizada. Afecto directo al corazón, sin complicaciones.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Esencia de Felicidad por $160.000. ¿Podrías darme más información?', 'esencia_de_felicidad')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo detalles eternas cajas" data-number="" data-keywords="caja rosas artificiales globo detalles eternas cajas">
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores25.webp" alt="Just For You - Caja con rosas artificiales de alta calidad y un globo con mensaje especial" loading="lazy">
+                        
+                        <span class="product-price">$89.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Just For You</h3>
+                        <p class="product-description">Caja con rosas artificiales de alta calidad y un globo con mensaje especial. Un detalle que dura meses impecable.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Just For You por $89.000. ¿Podrías darme más información?', 'just_for_you')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo detalles chocolates" data-number="" data-keywords="detalle ferrero economico detalles chocolates">
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores27.webp" alt="Detalle Natural - Flores naturales acompañadas de dos Ferrero Rocher" loading="lazy">
+                        
+                        <span class="product-price">$86.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Detalle Natural</h3>
+                        <p class="product-description">Flores naturales acompañadas de dos Ferrero Rocher. Frescura, color y dulzura en un solo regalo.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Detalle Natural por $86.000. ¿Podrías darme más información?', 'detalle_natural')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-bajo detalles eternas" data-number="" data-keywords="flores artificiales recuerdo detalles eternas">
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores28.webp" alt="Eternidad Floral - Detalle de flores artificiales de alta calidad y larga duración" loading="lazy">
+                        
+                        <span class="product-price">$110.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Eternidad Floral</h3>
+                        <p class="product-description">Detalle de flores artificiales de alta calidad y larga duración. Un recuerdo elegante para conservar.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Eternidad Floral por $110.000. ¿Podrías darme más información?', 'eternidad_floral')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto girasoles cajas especiales" data-number="" data-keywords="caja girasoles rosas amarillas grande girasoles cajas especiales">
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores29.webp" alt="Sol Radiante - Caja blanca con girasoles, rosas amarillas, crisantemos, claveles y eucalipto" loading="lazy">
+                        
+                        <span class="product-price">$480.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sol Radiante</h3>
+                        <p class="product-description">Caja blanca con girasoles, rosas amarillas, crisantemos, claveles y eucalipto. Una declaración de cariño en gran formato.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Sol Radiante por $480.000. ¿Podrías darme más información?', 'sol_radiante')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-medio cajas rosas" data-number="" data-keywords="caja redonda hortensias pastel cajas rosas">
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores33.webp" alt="Elegancia Rosada - Caja redonda rosa con hortensias, rosas y crisantemos en tonos pastel" loading="lazy">
+                        
+                        <span class="product-price">$200.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Elegancia Rosada</h3>
+                        <p class="product-description">Caja redonda rosa con hortensias, rosas y crisantemos en tonos pastel. Romántico, femenino y elegante.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Elegancia Rosada por $200.000. ¿Podrías darme más información?', 'elegancia_rosada')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                <div class="product-card" data-section="mas" data-tags="mas precio-alto girasoles rosas especiales" data-number="" data-keywords="girasoles rosas rojas grande girasoles rosas especiales">
+                    <div class="product-image">
+                        <img src="assets/dia_madres/flores38.webp" alt="Reina del Sol - Bouquet con varios girasoles y rosas rojas, papel decorativo y listón blanco con inscripción dorada" loading="lazy">
+                        
+                        <span class="product-price">$450.000</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Reina del Sol</h3>
+                        <p class="product-description">Bouquet con varios girasoles y rosas rojas, papel decorativo y listón blanco con inscripción dorada. Un homenaje monumental.</p>
+                        <button class="product-button" onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, me interesa el Reina del Sol por $450.000. ¿Podrías darme más información?', 'reina_del_sol')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 22a10 10 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg> Pedir por WhatsApp</button>
+                    </div>
+                </div>
+                </div>
+            </section>
 
+            <!-- Productos ocultos temporalmente (fotos 1–26). Siguen en js/landing.js con oculto:true y en catalogo_productos.csv:
+                 · Romance Duquesa — foto 25 — $165.000
+                 · Despertar de Alegría — foto 18 — $95.000
+                 · Fusión Perfecta — foto 2 — $227.500
+                 · Garantía de Amor — foto 17 — $102.500
+                 · Conquista Definitiva — foto 21 — $165.000
+                 · Obra Maestra — foto 1 — $265.000
+                 · Vitamina Emocional — foto 23 — $110.000
+                 · Guardián del Corazón — foto 24 — $275.000
+                 · Reflejo de Amor — foto 26 — $212.000
+            -->
+
+            <div class="cotiza-banner">
+                <div>
+                    <h3>¿Tienes algo en mente?</h3>
+                    <p>Diseñamos el arreglo a tu gusto, ocasión y presupuesto.</p>
+                </div>
+                <button onclick="return trackWhatsAppLead('https://wa.me/573202791687?text=Hola, quiero cotizar un arreglo personalizado. ¿Me ayudan?', 'cotiza_personalizado')">Cotizar por WhatsApp</button>
             </div>
         </div>
-    </section>
+    </main>
+
+    <footer class="footer">
+        <p><strong>DUQUESA FLORAL</strong></p>
+        <p>Cúcuta, Norte de Santander · Domicilios todos los días</p>
+        <p>WhatsApp: <a href="https://wa.me/573202791687">+57 320 279 1687</a></p>
+    </footer>
 
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
-        <a href="#" onclick="return trackWhatsAppLead('https://wa.me/573202791687', 'floating_button_catalogo')">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.488" />
-            </svg>
+        <a href="#" aria-label="WhatsApp" onclick="return trackWhatsAppLead('https://wa.me/573202791687', 'floating_button_catalogo')">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.488" /></svg>
         </a>
     </div>
 
-    <script>
-        // ============================================================
-        // CATALOGO - Filtrado, búsqueda y URL compartible
-        // ============================================================
-        (function () {
-            // Normaliza texto: minúsculas + sin tildes/diacríticos
-            function normalize(str) {
-                return (str || '')
-                    .toString()
-                    .toLowerCase()
-                    .normalize('NFD')
-                    .replace(/[̀-ͯ]/g, '');
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                var filterButtons = document.querySelectorAll('.filter-btn');
-                var productCards = document.querySelectorAll('.product-card');
-                var searchInput = document.getElementById('search-input');
-                var clearBtn = document.getElementById('search-clear');
-                var resultsCount = document.getElementById('results-count');
-                var emptyState = document.getElementById('empty-state');
-
-                // 1) Asignar número a cada producto y construir el "haystack" de búsqueda
-                productCards.forEach(function (card, idx) {
-                    var n = idx + 1;
-                    card.setAttribute('data-number', n);
-
-                    // Insertar badge de número
-                    var imageContainer = card.querySelector('.product-image');
-                    if (imageContainer && !card.querySelector('.product-number')) {
-                        var numBadge = document.createElement('div');
-                        numBadge.className = 'product-number';
-                        numBadge.textContent = '#' + n;
-                        imageContainer.appendChild(numBadge);
-                    }
-
-                    // Construir cadena de búsqueda normalizada
-                    var title = card.querySelector('.product-title');
-                    var desc = card.querySelector('.product-description');
-                    var badge = card.querySelector('.category-badge');
-                    var keywords = card.getAttribute('data-keywords') || '';
-                    var category = card.getAttribute('data-category') || '';
-
-                    var haystack = normalize(
-                        n + ' #' + n + ' ' +
-                        (title ? title.textContent : '') + ' ' +
-                        (desc ? desc.textContent : '') + ' ' +
-                        (badge ? badge.textContent : '') + ' ' +
-                        keywords + ' ' +
-                        category.replace(/-/g, ' ')
-                    );
-                    card.setAttribute('data-haystack', haystack);
-                });
-
-                var currentCategory = 'all';
-
-                function applyFilters() {
-                    var rawSearch = searchInput ? searchInput.value : '';
-                    var search = normalize(rawSearch.trim());
-                    var visible = 0;
-
-                    productCards.forEach(function (card) {
-                        var matchCat = (currentCategory === 'all') ||
-                            (card.getAttribute('data-category') === currentCategory);
-                        var matchSearch = !search ||
-                            (card.getAttribute('data-haystack') || '').indexOf(search) >= 0;
-
-                        if (matchCat && matchSearch) {
-                            card.classList.remove('hidden');
-                            visible++;
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
-
-                    if (resultsCount) resultsCount.textContent = visible;
-                    if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
-
-                    if (clearBtn) {
-                        clearBtn.style.display = rawSearch ? 'flex' : 'none';
-                    }
-                }
-
-                function setActiveButton(category) {
-                    filterButtons.forEach(function (b) { b.classList.remove('active'); });
-                    var btn = document.querySelector('.filter-btn[data-category="' + category + '"]');
-                    if (btn) btn.classList.add('active');
-                }
-
-                function updateURL(category) {
-                    var url = new URL(window.location.href);
-                    if (category === 'all') {
-                        url.searchParams.delete('category');
-                        url.hash = '';
-                        window.history.replaceState({}, '', url.pathname + url.search);
-                    } else {
-                        url.searchParams.set('category', category);
-                        // También agregamos hash legible para compartir (#dia-madre)
-                        window.history.replaceState({}, '', url.pathname + url.search + '#' + category);
-                    }
-                }
-
-                function applyCategory(category, updateUrl) {
-                    var validCategories = Array.from(filterButtons).map(function (b) {
-                        return b.getAttribute('data-category');
-                    });
-                    if (validCategories.indexOf(category) < 0) {
-                        category = 'all';
-                    }
-                    currentCategory = category;
-                    setActiveButton(category);
-                    applyFilters();
-                    if (updateUrl !== false) updateURL(category);
-                }
-
-                // 2) Eventos de los botones de filtro
-                filterButtons.forEach(function (button) {
-                    button.addEventListener('click', function () {
-                        var category = this.getAttribute('data-category');
-                        applyCategory(category, true);
-                    });
-                });
-
-                // 3) Eventos de búsqueda
-                if (searchInput) {
-                    searchInput.addEventListener('input', applyFilters);
-                }
-                if (clearBtn) {
-                    clearBtn.style.display = 'none';
-                    clearBtn.addEventListener('click', function () {
-                        if (searchInput) {
-                            searchInput.value = '';
-                            searchInput.focus();
-                        }
-                        applyFilters();
-                    });
-                }
-
-                // 4) Leer categoría de URL (?category=... o #dia-madre)
-                function readCategoryFromURL() {
-                    var params = new URLSearchParams(window.location.search);
-                    var cat = params.get('category');
-                    if (!cat) {
-                        var hash = window.location.hash.replace(/^#\??/, '').trim();
-                        if (hash) cat = hash;
-                    }
-                    return cat;
-                }
-
-                var initialCategory = readCategoryFromURL();
-                if (initialCategory) {
-                    applyCategory(initialCategory, false);
-                } else {
-                    applyCategory('all', false);
-                }
-
-                // 5) Soporte para navegación atrás/adelante
-                window.addEventListener('popstate', function () {
-                    var cat = readCategoryFromURL() || 'all';
-                    applyCategory(cat, false);
-                });
-                window.addEventListener('hashchange', function () {
-                    var cat = readCategoryFromURL() || 'all';
-                    applyCategory(cat, false);
-                });
-            });
-        })();
-    </script>
-
-    <!-- ════════════════ MODAL DE VISTA PREVIA DE IMAGEN ════════════════ -->
+    <!-- Lightbox -->
     <div id="image-preview-modal" class="image-preview-modal" role="dialog" aria-modal="true" aria-label="Vista previa de imagen" hidden>
         <button class="image-preview-close" type="button" aria-label="Cerrar vista previa">&times;</button>
         <div class="image-preview-content" role="document">
@@ -963,173 +857,178 @@ Detalles en paniculata y eucalipto, una presentación premium ideal para regalar
         </div>
     </div>
 
-    <style>
-        /* ════════════ Vista previa de imagen (lightbox) ════════════ */
-        .product-image { cursor: zoom-in; }
-        .product-image img { transition: transform .25s ease; }
-        .product-image:hover img { transform: scale(1.03); }
-
-        .image-preview-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.88);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            padding: 1rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity .25s ease;
-        }
-        .image-preview-modal[aria-hidden="false"],
-        .image-preview-modal.is-open {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .image-preview-modal[hidden] { display: none !important; }
-
-        .image-preview-content {
-            position: relative;
-            max-width: min(95vw, 1100px);
-            max-height: 92vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            animation: previewZoom .28s ease;
-        }
-        @keyframes previewZoom {
-            from { transform: scale(0.92); opacity: 0; }
-            to   { transform: scale(1);    opacity: 1; }
-        }
-
-        .image-preview-img {
-            max-width: 100%;
-            max-height: 85vh;
-            width: auto;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 25px 60px rgba(0,0,0,.45);
-            background: #fff;
-            object-fit: contain;
-        }
-
-        .image-preview-caption {
-            color: #fff;
-            margin-top: 0.85rem;
-            font-size: 0.95rem;
-            text-align: center;
-            max-width: 90%;
-            text-shadow: 0 2px 6px rgba(0,0,0,.6);
-        }
-
-        .image-preview-close {
-            position: fixed;
-            top: 1rem;
-            right: 1.25rem;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255,255,255,.92);
-            color: #222;
-            font-size: 1.9rem;
-            line-height: 1;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 16px rgba(0,0,0,.35);
-            transition: transform .15s ease, background .15s ease;
-            z-index: 10000;
-        }
-        .image-preview-close:hover { background: #fff; transform: scale(1.08); }
-        .image-preview-close:active { transform: scale(0.95); }
-
-        body.preview-open { overflow: hidden; }
-
-        @media (max-width: 600px) {
-            .image-preview-close {
-                top: 0.6rem;
-                right: 0.6rem;
-                width: 42px;
-                height: 42px;
-                font-size: 1.7rem;
-            }
-            .image-preview-img { max-height: 78vh; border-radius: 8px; }
-            .image-preview-caption { font-size: 0.85rem; }
-        }
-    </style>
+    <!-- Barra de urgencia por fases (fechas y frases en js/urgencia.js) -->
+    <script src="js/urgencia.js"></script>
 
     <script>
-        // ════════════ Vista previa de imágenes de productos ════════════
+        // ============================================================
+        // CATÁLOGO · filtros, búsqueda, contadores, secciones, lightbox
+        // ============================================================
         (function () {
-            var modal   = document.getElementById('image-preview-modal');
-            if (!modal) return;
-            var imgEl   = modal.querySelector('.image-preview-img');
-            var capEl   = modal.querySelector('.image-preview-caption');
-            var closeBt = modal.querySelector('.image-preview-close');
-
-            function openPreview(src, alt, title) {
-                imgEl.src = src;
-                imgEl.alt = alt || '';
-                capEl.textContent = title || alt || '';
-                modal.hidden = false;
-                void modal.offsetWidth;
-                modal.classList.add('is-open');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.classList.add('preview-open');
+            function normalize(str) {
+                return (str || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
             }
 
-            function closePreview() {
-                modal.classList.remove('is-open');
-                modal.setAttribute('aria-hidden', 'true');
-                document.body.classList.remove('preview-open');
-                setTimeout(function () {
-                    modal.hidden = true;
-                    imgEl.src = '';
-                }, 260);
-            }
+            document.addEventListener('DOMContentLoaded', function () {
+                var filterButtons = document.querySelectorAll('.filter-btn');
+                var cards = document.querySelectorAll('.product-card');
+                var sections = document.querySelectorAll('.seccion');
+                var searchInput = document.getElementById('search-input');
+                var clearBtn = document.getElementById('search-clear');
+                var resultsCount = document.getElementById('results-count');
+                var emptyState = document.getElementById('empty-state');
+                var currentCategory = 'all';
 
-            document.addEventListener('click', function (e) {
-                var target = e.target;
-                if (!target) return;
-                if (target.closest && target.closest('button, a')) return;
-                var wrapper = target.closest && target.closest('.product-image');
-                if (!wrapper) return;
-                var img = wrapper.querySelector('img');
-                if (!img) return;
-                e.preventDefault();
-                var card  = wrapper.closest('.product-card');
-                var title = card ? ((card.querySelector('.product-title') || {}).textContent || '') : '';
-                openPreview(img.currentSrc || img.src, img.alt, title.trim());
-            });
+                // Haystack de búsqueda por tarjeta
+                cards.forEach(function (card) {
+                    var n = card.getAttribute('data-number') || '';
+                    var title = card.querySelector('.product-title');
+                    var desc = card.querySelector('.product-description');
+                    var hay = normalize(
+                        (n ? n + ' #' + n + ' n' + n + ' nº' + n + ' ' : '') +
+                        (title ? title.textContent : '') + ' ' +
+                        (desc ? desc.textContent : '') + ' ' +
+                        (card.getAttribute('data-keywords') || '') + ' ' +
+                        (card.getAttribute('data-tags') || '').replace(/-/g, ' ')
+                    );
+                    card.setAttribute('data-haystack', hay);
+                });
 
-            closeBt.addEventListener('click', closePreview);
-            modal.addEventListener('click', function (e) {
-                if (e.target === modal) closePreview();
-            });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.classList.contains('is-open')) closePreview();
+                function applyFilters() {
+                    var rawSearch = searchInput ? searchInput.value : '';
+                    var search = normalize(rawSearch.trim());
+                    var visible = 0;
+                    cards.forEach(function (card) {
+                        var tags = ' ' + (card.getAttribute('data-tags') || '') + ' ';
+                        var matchCat = currentCategory === 'all' || tags.indexOf(' ' + currentCategory + ' ') >= 0;
+                        var matchSearch = !search || (card.getAttribute('data-haystack') || '').indexOf(search) >= 0;
+                        if (matchCat && matchSearch) { card.classList.remove('hidden'); visible++; }
+                        else { card.classList.add('hidden'); }
+                    });
+                    // Ocultar secciones vacías
+                    sections.forEach(function (sec) {
+                        var any = sec.querySelector('.product-card:not(.hidden)');
+                        sec.classList.toggle('hidden', !any);
+                    });
+                    if (resultsCount) resultsCount.textContent = visible;
+                    if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
+                    if (clearBtn) clearBtn.style.display = rawSearch ? 'flex' : 'none';
+                }
+
+                function setActiveButton(category) {
+                    filterButtons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-category') === category); });
+                }
+
+                function updateURL(category) {
+                    var url = new URL(window.location.href);
+                    if (category === 'all') {
+                        url.searchParams.delete('category');
+                        window.history.replaceState({}, '', url.pathname + url.search);
+                    } else {
+                        url.searchParams.set('category', category);
+                        window.history.replaceState({}, '', url.pathname + url.search + '#' + category);
+                    }
+                }
+
+                function applyCategory(category, updateUrl) {
+                    var valid = Array.prototype.map.call(filterButtons, function (b) { return b.getAttribute('data-category'); });
+                    if (valid.indexOf(category) < 0) category = 'all';
+                    currentCategory = category;
+                    setActiveButton(category);
+                    applyFilters();
+                    if (updateUrl !== false) updateURL(category);
+                }
+
+                filterButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        applyCategory(this.getAttribute('data-category'), true);
+                    });
+                });
+
+                if (searchInput) searchInput.addEventListener('input', applyFilters);
+                if (clearBtn) {
+                    clearBtn.style.display = 'none';
+                    clearBtn.addEventListener('click', function () {
+                        if (searchInput) { searchInput.value = ''; searchInput.focus(); }
+                        applyFilters();
+                    });
+                }
+
+                function readCategoryFromURL() {
+                    var params = new URLSearchParams(window.location.search);
+                    var cat = params.get('category');
+                    if (!cat) {
+                        var hash = window.location.hash.replace(/^#\??/, '').trim();
+                        // Los anclas de sección (#amor, #amarillas, #mas) no filtran, solo desplazan
+                        if (hash && hash !== 'amor' && hash !== 'amarillas' && hash !== 'mas') cat = hash;
+                    }
+                    return cat;
+                }
+
+                var initial = readCategoryFromURL();
+                applyCategory(initial || 'all', false);
+
+                window.addEventListener('popstate', function () { applyCategory(readCategoryFromURL() || 'all', false); });
+
+                // Nav de secciones: resaltar la sección visible
+                var navLinks = document.querySelectorAll('.section-nav a');
+                if ('IntersectionObserver' in window) {
+                    var io = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (en) {
+                            if (en.isIntersecting) {
+                                var id = en.target.id;
+                                navLinks.forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-section') === id); });
+                            }
+                        });
+                    }, { rootMargin: '-40% 0px -55% 0px' });
+                    sections.forEach(function (s) { io.observe(s); });
+                }
+
+                // Contadores regresivos por fecha (frase según la fase; ver js/urgencia.js)
+                document.querySelectorAll('.countdown[data-date]').forEach(function (el) {
+                    var iso = el.getAttribute('data-date');
+                    if (window.DuquesaUrgencia) { el.textContent = window.DuquesaUrgencia.pastilla(iso); return; }
+                    var parts = iso.split('-');
+                    var target = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+                    var today = new Date(); today.setHours(0, 0, 0, 0);
+                    var days = Math.round((target - today) / 86400000);
+                    if (days > 1) el.textContent = 'Faltan ' + days + ' días';
+                    else if (days === 1) el.textContent = '¡Es mañana!';
+                    else if (days === 0) el.textContent = '¡Es hoy!';
+                    else el.textContent = '';
+                });
+
+                // Lightbox
+                var modal = document.getElementById('image-preview-modal');
+                var imgEl = modal.querySelector('.image-preview-img');
+                var capEl = modal.querySelector('.image-preview-caption');
+                function openPreview(src, alt, title) {
+                    imgEl.src = src; imgEl.alt = alt || ''; capEl.textContent = title || alt || '';
+                    modal.hidden = false; void modal.offsetWidth;
+                    modal.classList.add('is-open'); document.body.classList.add('preview-open');
+                }
+                function closePreview() {
+                    modal.classList.remove('is-open'); document.body.classList.remove('preview-open');
+                    setTimeout(function () { modal.hidden = true; imgEl.src = ''; }, 260);
+                }
+                document.addEventListener('click', function (e) {
+                    var t = e.target;
+                    if (!t || (t.closest && t.closest('button, a'))) return;
+                    var wrap = t.closest && t.closest('.product-image');
+                    if (!wrap) return;
+                    var img = wrap.querySelector('img');
+                    if (!img) return;
+                    e.preventDefault();
+                    var card = wrap.closest('.product-card');
+                    var tt = card ? card.querySelector('.product-title') : null;
+                    openPreview(img.currentSrc || img.src, img.alt, tt ? tt.textContent.trim() : '');
+                });
+                modal.querySelector('.image-preview-close').addEventListener('click', closePreview);
+                modal.addEventListener('click', function (e) { if (e.target === modal) closePreview(); });
+                document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePreview(); });
             });
         })();
     </script>
-
-    <!-- Carrusel automático de la card "Cotiza tu arreglo personalizado" -->
-    <script>
-    (function () {
-        var slides = document.querySelectorAll('.cotiza-carousel .cotiza-slide');
-        if (slides.length < 2) return;
-        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var i = 0;
-        setInterval(function () {
-            slides[i].classList.remove('is-active');
-            i = (i + 1) % slides.length;
-            slides[i].classList.add('is-active');
-        }, 3500);
-    })();
-    </script>
-
 </body>
+
 </html>
