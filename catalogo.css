@@ -293,3 +293,23 @@ body.preview-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ───────── Día de los Hot Wheels (30 sept) ───────── */
+.hot-cta {
+    display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
+    margin-top: 16px; padding: 10px 18px; border-radius: 999px;
+    background: #C8102E; color: #fff; text-decoration: none;
+    font-size: .8rem; font-weight: 600; letter-spacing: .3px;
+    border: 2px solid #D9B569; box-shadow: 0 6px 18px rgba(200,16,46,.35);
+    transition: transform .2s, box-shadow .2s;
+}
+.hot-cta span { background: #151515; color: #D9B569; padding: 4px 10px; border-radius: 999px; font-size: .72rem; text-transform: uppercase; letter-spacing: 1px; }
+.hot-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(200,16,46,.45); }
+.section-nav a.nav-hot { color: #fff; background: #C8102E; border-color: #C8102E; border-radius: 4px 4px 0 0; }
+.section-nav a.nav-hot:hover, .section-nav a.nav-hot.on { color: #fff; background: #a50d26; border-color: #D9B569; }
+.filter-btn--hot { background: #C8102E; color: #fff; border-color: #C8102E; font-weight: 600; }
+.filter-btn--hot:hover { background: #a50d26; border-color: #a50d26; color: #fff; }
+.filter-btn--hot.active { background: #151515; color: #fff; border-color: #C8102E; }
+.seccion--hot .seccion-head h2 { color: #C8102E; }
+.seccion--hot .seccion-head .ln { background: repeating-linear-gradient(90deg, #151515 0 8px, #fff 8px 16px); height: 6px; border: 1px solid #151515; }
+@media (max-width: 600px) { .hot-cta { font-size: .72rem; padding: 9px 14px; } }

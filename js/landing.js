@@ -23,6 +23,7 @@ const ADS_CONVERSION_ID = 'AW-17503274952/zu_KCLCYgaQcEMiPm5pB';
 
 // Secciones del catálogo (orden de aparición)
 const SECCIONES = [
+    { id: 'hotwheels', titulo: 'Día de los Hot Wheels', emoji: '🏎️', fecha: '30 de septiembre', iso: '2026-09-30', sub: 'Ramos y cajas con carros Hot Wheels para sorprenderlo a él' },
     { id: 'amor',      titulo: 'Amor y Amistad',  emoji: '❤️', fecha: '19 de septiembre', iso: '2026-09-19', sub: 'Detalles para celebrar el amor y la amistad' },
     { id: 'amarillas', titulo: 'Flores Amarillas', emoji: '💛', fecha: '21 de septiembre', iso: '2026-09-21', sub: 'Girasoles, tulipanes y rosas amarillas para el 21' },
     { id: 'mas',       titulo: 'Más Arreglos',     emoji: '✦',  fecha: '',                 iso: '',           sub: 'Rosas, eternas, cajas y detalles para toda ocasión' }
@@ -30,10 +31,16 @@ const SECCIONES = [
 
 // Catálogo de productos.
 //  - num: número de la foto (assets/flores_cucuta_N.webp); se muestra como "Nº N"
-//  - seccion: amor | amarillas | mas
+//  - seccion: hotwheels | amor | amarillas | mas
 //  - oculto: true → no se muestra (productos con fotos 1–26, ocultos temporalmente)
 //  - desde: true → el precio se muestra como "Desde $"
 const CATALOGO = [
+    // ─── DÍA DE LOS HOT WHEELS · 30 SEPT ───
+    { num: 67, nombre: "Pit Stop Azul", descripcion: "Bouquet de 5 rosas eternas azules con perlas y 3 carros Hot Wheels, con tarjeta personalizable. Para el que vive a toda velocidad.", precio: 138000, imagen: "../assets/flores_cucuta_67.webp", seccion: "hotwheels", tags: ["eternas"], kw: "hot wheels carros carritos rosas eternas azules tarjeta hombre novio" },
+    { num: 68, nombre: "Ruta de Rosas", descripcion: "Ramo de 12 rosas rojas naturales con flor nube y 5 carros Hot Wheels en papel negro. Flores para él, sin dejar de ser detalle.", precio: 170000, imagen: "../assets/flores_cucuta_68.webp", seccion: "hotwheels", tags: ["rosas"], kw: "hot wheels carros carritos 12 rosas rojas naturales hombre novio" },
+    { num: 69, nombre: "Caja Campeón", descripcion: "Caja con 1 carro Hot Wheels, 2 fotos personalizadas, 3 Ferrero Rocher y luces decorativas. Mensaje personalizable en la caja y en la tarjeta.", precio: 73000, imagen: "../assets/flores_cucuta_69.webp", seccion: "hotwheels", tags: ["chocolates",  "cajas"], kw: "hot wheels carro caja fotos personalizadas ferrero luces mensaje novio economico" },
+    { num: 70, nombre: "Caja Gran Premio", descripcion: "Caja decorada con 2 carros Hot Wheels, 3 Ferrero Rocher, luces LED y portarretrato con tu foto. Un recuerdo que se queda en su escritorio.", precio: 113000, imagen: "../assets/flores_cucuta_70.webp", seccion: "hotwheels", tags: ["chocolates",  "cajas"], kw: "hot wheels carros caja portarretrato foto personalizada ferrero luces led novio" },
+    { num: 31, nombre: "Ruta de Campeón", descripcion: "12 rosas rojas con flor nube y 5 carritos Hot Wheels. El regalo perfecto para los amantes de los autos.", precio: 167000, imagen: "../assets/flores_cucuta_31.webp", seccion: "hotwheels", tags: ["rosas", "especiales"], kw: "hot wheels carritos autos hombre niño" },
     // ─── AMOR Y AMISTAD · 19 SEPT ───
     { num: 36, nombre: "Kit Amor Propio", descripcion: "Set de balaca y muñequeras, parches anti acné, 3 pomos para polvos, mascarilla velo, pañitos para rostro, parche de colágeno con niacinamida para ojeras y colágeno para labios. Un regalo de autocuidado para consentir a quien más quieres.", precio: 91000, imagen: "../assets/flores_cucuta_36.webp", seccion: "amor", tags: ["detalles"], kw: "skincare cuidado facial spa regalo mujer amiga" },
     { num: 37, nombre: "Oso de Rosas", descripcion: "Oso de 30 cm elaborado en rosas, presentado en caja de acetato con lazo rojo y acompañado de 2 globos de helio. Un detalle que no se marchita y llena de emoción cualquier espacio.", precio: 275000, imagen: "../assets/flores_cucuta_37.webp", seccion: "amor", tags: ["peluches", "eternas"], kw: "osito foamy globos helio caja" },
@@ -76,7 +83,6 @@ const CATALOGO = [
     // ─── MÁS ARREGLOS ───
     { num: 29, nombre: "Fuego Silvestre", descripcion: "Ramo rojo con rosas, gerberas, claveles y astromelias, envuelto en papel blanco. Intensidad y elegancia para una ocasión inolvidable.", precio: 360000, imagen: "../assets/flores_cucuta_29.webp", seccion: "mas", tags: ["rosas", "gerberas"], kw: "gerberas claveles astromelias rojo" },
     { num: 30, nombre: "Corazón Ferrero", descripcion: "Corazón con 33 Ferrero Rocher al centro, 52 rosas rojas y billetes decorativos a elección. Precio base del ramo; el dinero se ajusta a tu gusto.", precio: 650000, imagen: "../assets/flores_cucuta_30.webp", seccion: "mas", tags: ["rosas", "chocolates", "especiales"], kw: "corazon 33 ferrero 52 rosas billetes dinero" },
-    { num: 31, nombre: "Ruta de Campeón", descripcion: "12 rosas rojas con flor nube y 5 carritos Hot Wheels. El regalo perfecto para los amantes de los autos.", precio: 167000, imagen: "../assets/flores_cucuta_31.webp", seccion: "mas", tags: ["rosas", "especiales"], kw: "hot wheels carritos autos hombre niño" },
     { num: 33, nombre: "Cerezo Rojo", descripcion: "60 rosas rojas con cerezas y moño rosado, envueltas en tul beige. Pasión y dulzura en una sola presentación.", precio: 265000, imagen: "../assets/flores_cucuta_33.webp", seccion: "mas", tags: ["rosas"], kw: "60 rosas cerezas tul" },
     { num: 34, nombre: "Nube Pastel", descripcion: "36 rosas con mini rosas y claveles en tonos rosa, amarillo y pastel, en papel lila. Ternura y frescura en cada pétalo.", precio: 232000, imagen: "../assets/flores_cucuta_34.webp", seccion: "mas", tags: ["rosas"], kw: "36 rosas pastel lila" },
     { nombre: "Despertar de Primavera", descripcion: "Bouquet de tulipanes en 4, 6 o 10 unidades, de un solo color o combinados. Elegante y versátil para cualquier ocasión.", precio: 148000, imagen: "../ofertas/imagenes/tulipanes/tulipanes_amarillos.webp", seccion: "mas", tags: ["tulipanes"], desde: true, kw: "tulipanes 4 6 10 colores" },
