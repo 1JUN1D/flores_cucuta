@@ -21,8 +21,7 @@
     /* ─── 1. Fechas (editar cada año) ─── */
     var EVENTOS = [
         { id: 'amor',      nombre: 'Amor y Amistad',  emoji: '❤️', iso: '2026-09-19', diaLargo: 'sábado 19 de septiembre', corto: 'el 19', ancla: '#amor' },
-        { id: 'amarillas', nombre: 'Flores Amarillas', emoji: '💛', iso: '2026-09-21', diaLargo: 'lunes 21 de septiembre',  corto: 'el 21', ancla: '#amarillas' },
-        { id: 'hotwheels', nombre: 'Día de los Hot Wheels', emoji: '🏎️', iso: '2026-09-30', diaLargo: 'miércoles 30 de septiembre', corto: 'el 30', ancla: '#hotwheels' }
+        { id: 'amarillas', nombre: 'Flores Amarillas', emoji: '💛', iso: '2026-09-21', diaLargo: 'lunes 21 de septiembre',  corto: 'el 21', ancla: '#amarillas' }
     ];
     var DIAS_REDENCION = 2;          // días después de un evento en que se ofrece el siguiente como "segunda oportunidad"
     var ROTACION_MS = 5500;          // cada cuánto cambia la frase
