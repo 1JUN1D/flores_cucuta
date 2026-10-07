@@ -25,7 +25,7 @@
     ];
     var DIAS_REDENCION = 2;          // días después de un evento en que se ofrece el siguiente como "segunda oportunidad"
     var ROTACION_MS = 5500;          // cada cuánto cambia la frase
-    var WA_NUMERO = '573202791687';
+    var WA_NUMERO = '573213943309';
 
     /* ─── 2. Frases por fase ───
        {n} = nombre del evento · {d} = días que faltan · {corto} = "el 19" · {dia} = "sábado 19 de septiembre" */

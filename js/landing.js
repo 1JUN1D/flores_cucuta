@@ -17,7 +17,7 @@
 })();
 
 // Configuración global
-const WA_NUMBER = '573202791687';
+const WA_NUMBER = '573213943309';
 const BUSINESS_NAME = 'Duquesa Floral';
 const ADS_CONVERSION_ID = 'AW-17503274952/zu_KCLCYgaQcEMiPm5pB';
 
